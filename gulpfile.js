@@ -120,9 +120,9 @@
  gulp.task('deploy', function() {
 
      var conn = ftp.create({
-         host: 'eundervisning-wp.dk',
-         user: 'eundervisning-wp.dk',
-         password: 'fronter1',
+         host: 'u13dfs6.nixweb09.dandomain.dk',
+         user: 'u13dfs6',
+         password: 'x3pXLTtVY',
          parallel: 3,
          log: gutil.log
      });
@@ -146,8 +146,8 @@
              cwd: 'objekter/production/**',
              buffer: false
          })
-         .pipe(conn.differentSize('/public_html/')) // only upload newer files 
-         .pipe(conn.dest('/public_html/'));
+         .pipe(conn.differentSize('/www/')) // only upload differrentSize files 
+         .pipe(conn.dest('/www/'));
 
  });
 
