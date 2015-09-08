@@ -163,7 +163,7 @@
 
  gulp.task('connect', function() {
      connect.server({
-         root: 'objekter/development',
+         root: 'objekter/development/',
          livereload: true
      });
      gutil.log("Hej fra connect");
