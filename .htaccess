@@ -1,3 +1,8 @@
 ErrorDocument 404 /kvuc_404_error/kvuc_404_error.html
 
-DirectoryIndex index.html 
+DirectoryIndex index.html
+
+
+RewriteEngine On 
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://www.vucdigital.dk/$1 [R,L]
