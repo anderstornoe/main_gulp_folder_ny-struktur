@@ -9,32 +9,14 @@ function replace_letters(div_container) {
 }
 
 
-/// footer() is discontinued... Remains for testing purposes..
 
-function footer() {
-    $(".container, .container-fluid").append("<div class='col-xs-12 vuc_footer'><h2>Digitale læringsmaterialer på voksenuddannelser</h2><h6 class='footerText'>Udviklet af et produktionsfællesskab mellem otte VUC’er til anvendelse på de deltagende skoler: <br/> Hf og VUC Nordsjælland, VUC Hvidovre-Amager, VUC Roskilde, VUC Vestegnen, VUF, VUC Storstrøm, VUC Aarhus og Københavns VUC (KVUC).</h6> <h6 class='footerCopywrite'> Copyright 2015 </h6></div >");
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-62686407-1', 'auto');
-    ga('send', 'pageview');
-}
 
 function one_line_footer() {
     //$('.container, .container-fluid').append('<div class="col-xs-12"><h6 class="footerCopywrite"> <a href="../../../kemiC_visningsite/builds/development/om_projektet.html">Digitale læringsmaterialer  Copyright 2015</a></h6></div>')
-  // $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='../pf_kem2015/om_projektet.html'>Digitale læringsmaterialer  Copyright 2015</a></h6></div>");
-  $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='../pf_about/index.html'>Digitale læringsmaterialer  Copyright 2015</a></h6></div>");
+    // $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='../pf_kem2015/om_projektet.html'>Digitale læringsmaterialer  Copyright 2015</a></h6></div>");
+    $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='../pf_about/index.html'>Digitale læringsmaterialer  Copyright 2015</a></h6></div>");
 
-  //$(".container, .container-fluid").append("<div class='col-xs-12 vuc_footer'><h2>Digitale læringsmaterialer på voksenuddannelser</h2><h6 class='footerText'>Udviklet af et produktionsfællesskab mellem otte VUC’er til anvendelse på de deltagende skoler: <br/> Hf og VUC Nordsjælland, VUC Hvidovre-Amager, VUC Roskilde, VUC Vestegnen, VUF, VUC Storstrøm, VUC Aarhus og Københavns VUC (KVUC).</h6> <h6 class='footerCopywrite'> Copyright 2015 </h6></div >");
+    //$(".container, .container-fluid").append("<div class='col-xs-12 vuc_footer'><h2>Digitale læringsmaterialer på voksenuddannelser</h2><h6 class='footerText'>Udviklet af et produktionsfællesskab mellem otte VUC’er til anvendelse på de deltagende skoler: <br/> Hf og VUC Nordsjælland, VUC Hvidovre-Amager, VUC Roskilde, VUC Vestegnen, VUF, VUC Storstrøm, VUC Aarhus og Københavns VUC (KVUC).</h6> <h6 class='footerCopywrite'> Copyright 2015 </h6></div >");
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
         i[r] = i[r] || function() {
@@ -50,7 +32,7 @@ function one_line_footer() {
     ga('create', 'UA-62686407-1', 'auto');
     ga('send', 'pageview');
     //console.log("GA COMPLETE");
-    
+
 }
 
 /// INDLEJRINGS    FUNKTIONALITET  ///////
@@ -163,7 +145,7 @@ function embedlink(obj) {
 // EXAMPLE CALL:
 //          MarkCertainCharactersAsSpecial([".AtomName", ".AtomSymbol"], ["H","L", "S"], ["FontGreen", "FontRed", "FontBlue"], "#");
 // - which will make all L's red and all H's green in the text-strings associated with the target CSS classes ".AtomName" and ".AtomSymbol".
-function MarkCertainCharactersAsSpecial(TargetSelectorArray, LetterArray, LetterClassArray, Delimiter) {
+/*function MarkCertainCharactersAsSpecial(TargetSelectorArray, LetterArray, LetterClassArray, Delimiter) {
     for (var TargetSelector in TargetSelectorArray) {
         $(TargetSelectorArray[TargetSelector]).each(function(index, element) {
             for (var l in LetterArray) { // First surround all letters (or clusters of letters) in LetterArray with delimiters, eg. If letter = L and delimiter = #, then #L#.
@@ -183,6 +165,8 @@ function MarkCertainCharactersAsSpecial(TargetSelectorArray, LetterArray, Letter
         });
     }
 }
+
+*/
 
 // Example of use:
 //      UserMsgBox(".FeedbackWrap", "Hurra - korrekt svar!");
@@ -206,68 +190,6 @@ function UserMsgBox(TargetSelector, UserMsg) {
 }
 
 
-// Dette er en hjælpefunktion til funktionen ChemLatexToHtml() forneden:
-function LatexEnclosedPramToHtml(LatexStr, Delimiter) {
-
-    var StartPos = 0;
-    var EndPos = 0;
-    var Val = "";
-    var count = 0;
-    do {
-        StartPos = LatexStr.indexOf(Delimiter + "{", EndPos);
-        if (StartPos !== -1) {
-            EndPos = LatexStr.indexOf("}", StartPos + 2);
-            if (EndPos !== -1) {
-                Val = LatexStr.substring(StartPos + 2, EndPos);
-                LatexStr = LatexStr.substring(0, StartPos) + ((Delimiter == "^") ? '<sup>' + Val + '</sup>' : '<sub>' + Val + '</sub>') + LatexStr.substring(EndPos + 1);
-            } else {
-                alert("Fejl i LaTex udtryk:\nStart-tuborg-parentes " + String(StartPos) + " tegn inde i LaTex-udtrykket har ikke en slut-tuborg-parentes!");
-                break;
-            }
-        }
-        ++count;
-    } while ((StartPos !== -1) && (count < 100));
-
-    return LatexStr;
-}
-
-
-// Dette er en hjælpefunktion til funktionen ChemLatexToHtml() forneden:
-function LatexPramToHtml(LatexStr, Delimiter) {
-
-    var StartPos = 0;
-    var Val = "";
-    var count = 0;
-    do {
-        StartPos = LatexStr.indexOf(Delimiter);
-        if (StartPos !== -1) {
-            Val = LatexStr.substring(StartPos + 1, StartPos + 2);
-            LatexStr = LatexStr.substring(0, StartPos) + ((Delimiter == "^") ? '<sup>' + Val + '</sup>' : '<sub>' + Val + '</sub>') + LatexStr.substring(StartPos + 2);
-        }
-        ++count;
-    } while ((StartPos !== -1) && (count < 100));
-
-    return LatexStr;
-}
-
-
-// Denne funktion oversætter en kemisk formel for et stof skrevet med LaTex tekststreng til et HTML udtryk. 
-// Index tal (de små tal): skrives "_x" for et ciffer, og "_{XX}" for to eller flere cifre.
-// Ladningstal: skrives "^+" eller "^-" for enkelt ladninger og "^{3+}" eller "^{2-}" for at angive flere ladninger.
-// EKSEMPLER: 
-//      (1)     ChemLatexToHtml( "Fe_2(SO_4)_3_{(s)}" );   bliver til:  Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub><sub>(s)</sub>
-//      (2)     ChemLatexToHtml( "3SO_4^{2+}_{(aq)}" );    bliver til:  3SO<sub>4</sub><sup>2+</sup><sub>(aq)</sub>
-//      (3)     Man kan også vælge at skrive hele formler som LaTex agument til funktionen, som f.eks:  "Fe_2(SO_4)_3_{(s)} ----> 2Fe^{3+}_{(aq)} + 3SO_4^{2+}_{(aq)}"
-function ChemLatexToHtml(LatexStr) {
-
-    // IMPORTANT NOTE: LatexEnclosedPramToHtml() has to be called before LatexPramToHtml() because of delimiters "_{" and "^{" contains the "{" start-bracket.
-    LatexStr = LatexEnclosedPramToHtml(LatexStr, "_");
-    LatexStr = LatexEnclosedPramToHtml(LatexStr, "^");
-    LatexStr = LatexPramToHtml(LatexStr, "_");
-    LatexStr = LatexPramToHtml(LatexStr, "^");
-
-    return LatexStr;
-}
 
 
 /// INDLEJLRING SLUT !
@@ -291,11 +213,33 @@ $.fn.shuffle_div_position = function() {
     return $(shuffled);
 };
 
+
+
 function shuffle_Array(o) {
     for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 }
 
+
+
+// Hvis objektet ligger i en frame, så lave et link i toppen af dokumentet //
+
+$(document).ready(function() {
+
+    var isInIFrame = (window.location != window.parent.location);
+    console.log("Er i rammen? : " + isInIFrame);
+    if (isInIFrame) {
+        $("body").append("<a class='new_window_link' href='" + window.location.href + "' target='_blank'><span class='glyphicon glyphicon-new-window'></span> Åbn siden i sit eget vindue</a>");
+    }
+});
+
+
+
+// Her kan man se hvilke browsere der understøtter favicons:
+//      https://en.wikipedia.org/wiki/Favicon
+function AddFavicon() {
+    $('head').append('<link type="image/x-icon" rel="shortcut icon" href="../library/img/testFavicon.ico" />');
+}
 
 
 
@@ -558,21 +502,3 @@ var GeneralOverlayClass = {
 };
 
 var GeneralOverlayObj = Object.create(GeneralOverlayClass);
-
-
-
-// hvis objektet ligger i en frame, 
-$(document).ready(function() {
-
-    var isInIFrame = (window.location != window.parent.location);
-    console.log("hej: " + isInIFrame);
-    if (isInIFrame) {
-        $("h1").append("<a class='new_window_link' href='" + window.location.href + "' target='_blank'><span class='glyphicon glyphicon-new-window'></span>Åbn i nyt vindue</a>");
-    }
-});
-
-// Her kan man se hvilke browsere der understøtter favicons:
-//      https://en.wikipedia.org/wiki/Favicon
-function AddFavicon(){
-    $('head').append('<link type="image/x-icon" rel="shortcut icon" href="../library/img/testFavicon.ico" />');
-}

@@ -227,9 +227,9 @@ function shuffle_Array(o) {
 $(document).ready(function() {
 
     var isInIFrame = (window.location != window.parent.location);
-    console.log("hej: " + isInIFrame);
+    console.log("Er i rammen? : " + isInIFrame);
     if (isInIFrame) {
-        $("h1").append("<a class='new_window_link' href='" + window.location.href + "' target='_blank'><span class='glyphicon glyphicon-new-window'></span> Åbn siden sit eget vindue</a>");
+        $("body").append("<a class='new_window_link' href='" + window.location.href + "' target='_blank'><span class='glyphicon glyphicon-new-window'></span> Åbn siden i sit eget vindue</a>");
     }
 });
 
