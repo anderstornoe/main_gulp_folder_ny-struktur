@@ -61,7 +61,12 @@ function embedlink(obj) {
 
     var UrlVarStr;
     // UrlVarStr = String(window.location).split("/", 3).join("/").replace("http", "https");  // Udkommenteret af THAN d. 8/9-2015 da vi er gået over på vucdigital.dk som køre https.
-    UrlVarStr = String(window.location).split("/", 3).join("/");
+    UrlVarStr = "https://www.vucdigital.dk/engelsk/";  // String(window.location)
+    if (UrlVarStr.indexOf("https") !== -1)
+        UrlVarStr = UrlVarStr.split("/", 3).join("/");
+    else
+        UrlVarStr = UrlVarStr.split("/", 3).join("/").replace("http", "https");
+    
     console.log("embedlink - UrlVarStr: " + UrlVarStr);
 
     var HrefObj = obj.parent().parent().find("a").eq(0).attr("href").replace("../", "/");
@@ -72,6 +77,7 @@ function embedlink(obj) {
 
     // var embedFronter = '<iframe height="570" width="820" src="http://eundervisning-wp.dk/pf_kem2015/' + obj.parent().parent().find("a").eq(0).attr("href") + '"></iframe>';
     // var embedMoodle = '<embed height="670" width="970" src="http://eundervisning-wp.dk/pf_kem2015/' + obj.parent().parent().find("a").eq(0).attr("href") + '"></embed>';
+
 
 
     var embedArray = [embedMoodle, embedFronter];
