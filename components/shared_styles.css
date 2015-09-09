@@ -1,38 +1,48 @@
 .QuestionTask {
-    color:black;
+    color: black;
 }
-.TaskNumberImg{
-	width: 20px; 
-	margin-bottom: 3px;
-}
-.CapitalI{font-family: "Merriweather"; font-weight: 200;}
 
-.new_window_link{
-	font-size: 12px;
+.TaskNumberImg {
+    width: 20px;
+    margin-bottom: 3px;
 }
+
+.CapitalI {
+    font-family: "Merriweather";
+    font-weight: 200;
+}
+
+.new_window_link {
+    font-size: 12px;
+    left: 50%;
+    position: absolute;
+    top: 6px;
+}
+
 .footerCopywrite {
-	margin:50px 0 20px 0;
-	text-align: center;
+    margin: 50px 0 20px 0;
+    text-align: center;
 }
+
 .footerCopywrite a {
-	color: #777;
+    color: #777;
 }
 
 #UserMsgBox {
-  border: 0px solid silver;
-  background-color: rgba(248,248,246,0.9);
-  border-radius: 3px;
-  padding: 30px 30px 40px 40px;
-  width: 400px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  top: 30%;
-  cursor: pointer;
-  font-size: 16px;
-  line-height: 1.3em;   
-  position: absolute;
+    border: 0px solid silver;
+    background-color: rgba(248, 248, 246, 0.9);
+    border-radius: 3px;
+    padding: 30px 30px 40px 40px;
+    width: 400px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 30%;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1.3em;
+    position: absolute;
 }
 
 .MsgBox_bgr {
@@ -43,6 +53,7 @@
     z-index: 10;
     /*margin-top: -20px;*/
 }
+
 .CloseClass {
     margin-top: -15px;
     margin-right: -15px;
@@ -67,6 +78,7 @@
       Nedenstående overført fra shared_functions_styles.css styles.css fra det gamle Engelsk B workflow, THAN d. 10-08-2015
 =================================================================================================================================== */
 
+
 /* ==========  UserMsgBox  ========== */
 
 .clear {
@@ -76,6 +88,7 @@
 .OverlayTextContainer {
     max-width: 1164px;
 }
+
 
 /* ==========  Indlejring  ========== */
 
@@ -92,9 +105,9 @@
     padding: 0px 5px;
     border-radius: 2px;
     float: left;
-     background-color: #eee;
+    background-color: #eee;
     color: #222;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .togglecontainer {
@@ -113,11 +126,13 @@
     background-color: white;
 }
 
+
 /* ==========  footer()  ========== */
 
 .container .vuc_footer {
     margin-top: 0;
 }
+
 .vuc_footer {
     background-color: #f8f8f6;
     margin-top: 20px;
@@ -126,11 +141,25 @@
     text-align: center;
 }
 
+.vuc_footer {
+    margin-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #f8f8f6;
+}
 
-.vuc_footer{margin-top: 20px; padding-top: 30px; padding-bottom: 30px; background-color: #f8f8f6;}
-.vuc_footer h2 {margin-top: 0px; margin-bottom: 20px; padding: 0px;}
-.footerText{margin: 0px; color: #666;}
-.footerCopywrite{margin-top: 20px; margin-bottom: 0px;}
+.vuc_footer h2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding: 0px;
+}
 
+.footerText {
+    margin: 0px;
+    color: #666;
+}
 
-
+.footerCopywrite {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
