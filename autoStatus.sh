@@ -1,5 +1,10 @@
 #!/bin/bash
 sep='---------------'
+
+dir=${PWD##*/}
+echo $sep "Processing:" $dir $sep
+git status
+
 for d in objekter/development/*; do
 	df=${d##*/}  # extracting the folder-names
 	# echo $d

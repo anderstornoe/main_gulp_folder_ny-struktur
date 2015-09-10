@@ -1,12 +1,12 @@
 // 
 
 
-// Funktion der sætter fødder på store I'er og små l'er:: 
-function replace_letters(div_container) {
+// // Funktion der sætter fødder på store I'er og små l'er:: 
+// function replace_letters(div_container) {
 
 
-    return replaced_string;
-}
+//     return replaced_string;
+// }
 
 
 
@@ -242,129 +242,40 @@ function AddFavicon() {
 }
 
 
+// MARK 16:05
+
 
 var GeneralOverlayClass = {
 
+    HowWhyData: "",
 
-    ButtonControler_why: '<div id="OverlyContainerWhy">' +
-        '<a href="#" id="OverlayWhy" class="OverlayButton btn btn-default"> WHY </a>' +
-        // '<span class="OverlayBtnText"></span>' +
-        '</div>',
-
-    ButtonControler_how: '<div id="OverlyContainerHow">' +
-        '<a href="#" id="OverlayHow" class="OverlayButton btn btn-default"> HOW</a>' +
-        // '<span class="OverlayBtnText"></span>' +
-        '</div>',
-
-    OverlayMarkup: '<div class="Overlay"></div>' +
-        '<div class="OverlayTextContainer">' +
-        '<span class="right glyphicon glyphicon-remove"></span>' +
-        '<div class="clear"></div>' +
-        '<h1><span class="OverlayTextHeader"></span></h1>' +
-        '<div class="OverlayText"></div>' +
-        '</div>',
-
-    JsonWhyHow: {
-        "stiliseret_soegning": {
-            "why_btntext": "Why-button instruction text",
-            "why_content": "Skimming and sorting information are both important abilities to have when you study, this assignment helps you practice them. You also gain knowledge about The American Dream.",
-            "how_btntext": "How-button instruction text",
-            "how_content": "Start by searching the words and phrases you associate with &quot;The American Dream&quot;, for instance &quot;The American Dream&quot;, identity, &quot;rags to riches&quot;."
-        },
-        "vid_set_da": {
-            "why_btntext": "Why-button instruction text",
-            "why_content": "This exercise has a double purpose, on the one hand you practice recognizing different aspects of setting on an actual film and get feedback so you can tell if you are on the right track. On the other hand you get a better understanding of this particular film.",
-            "how_btntext": "How-button instruction text",
-            "how_content": "Watch the film and answer the questions as you go along. Be sure to read the feedback after each answer."
-        },
-        "vid_shot_da": {
-            "why_btntext": "Why-button instruction text",
-            "why_content": "This exercise has a double purpose, one the one hand you practice recognizing different aspects of the area of analysis dealing with shot on an actual film and get feedback so you can tell if you are on the right track. On the other hand you get a better understanding of this particular film.",
-            "how_btntext": "How-button instruction text",
-            "how_content": "Watch the film and answer the questions as you go along. Be sure to read the feedback after each answer."
-        },
-        "vid_plot_da": {
-            "why_btntext": "Why-button instruction text",
-            "why_content": "This exercise has a double purpose, one the one hand you practice recognizing different aspects of plot on an actual film and get feedback so you can tell if you are on the right track. On the other hand you get a better understanding of this particular film.",
-            "how_btntext": "How-button instruction text",
-            "how_content": "Watch the film and answer the questions as you go along. Be sure to read the feedback after each answer."
-        },
-        // ------
-        "billeddrag_dearamericans_1": {
-            "why_btntext": "Why-button instruction text",
-            "why_content": "In this exercise you work with understanding the two main characters and their development. You also practice descriptive vocabulary.",
-            "how_btntext": "How-button instruction text",
-            "how_content": "Watch the first half of the film and choose the words you think describe each character best.<br/>Click the words you have placed to get feedback. <br/>Hold translate to translate words to Danish.<br/>Not all words will fit the characters."
-        },
-        "billeddrag_dearamericans_2": {
-            "why_btntext": "Why-button instruction text",
-            "why_content": "In this exercise you work with understanding the two main characters and their development. You also practice descriptive vocabulary.",
-            "how_btntext": "How-button instruction text",
-            "how_content": "Watch the second half of the film and choose the words you think describe each character best.<br/>Click the words you have placed to get feedback. <br/>Hold translate to translate words to Danish.<br/>Not all words will fit the characters."
-        },
-        // ------
-        "vid_an": {
-            "why_btntext": "Why-button instruction text",
-            "why_content": "This exercise has a double purpose, one the one hand you practice recognizing different aspects of film analysis including both SHOT, SET and PLOTon an actual film and get feedback so you can tell if you are on the right track. On the other hand you get a better understanding of this particular film.",
-            "how_btntext": "How-button instruction text",
-            "how_content": "Watch the film and answer the questions as you go along. Be sure to read the feedback after each answer."
-        },
-        "billeddrag_antisocial": {
-            "why_btntext": "Why-button instruction text",
-            "why_content": "In this exercise you work with understanding the two main characters and their development. You also practice descriptive vocabulary.",
-            "how_btntext": "How-button instruction text",
-            "how_content": "Watch the second half of the film and choose the words you think describe each character best.<br/>Click the words you have placed to get feedback. <br/>Hold translate to translate words to Danish.<br/>Not all words will fit the characters."
-        },
-        "search_american_dream": {
-            "why_btntext": "Why-button instruction text",
-            "why_content": "Skimming and sorting information are both important abilities to have when you study, this assignment helps you practice them. You also gain knowledge about The American Dream.",
-            "how_btntext": "How-button instruction text",
-            "how_content": "Start by searching the words and phrases you associate with &quot;The American Dream&quot;, for instance &quot;The American Dream&quot;, identity, &quot;rags to riches&quot;."
-        },
-        "search_social_media": {
-            "why_btntext": "Why-button instruction text",
-            "why_content": "Skimming and sorting information are both important abilities to have when you study, this assignment helps you practice them. You also gain knowledge about social media.",
-            "how_btntext": "How-button instruction text",
-            "how_content": "Begin by searching for the words you associate with &quot;social media&quot; for instance communication, estrangement, network, online friendship, &quot;selfie&quot;. Refine your search as you learn more."
-        },
-        "berettermodel": {
-            "why_btntext": "Why-button instruction text",
-            "why_content": "This assignment lets you practice recognizing plot structure.",
-            "how_btntext": "How-button instruction text",
-            "how_content": "Look at the material about plot structure, choose the correct term in each phase of the Hollywood model."
-        },
-        "videoplaylister": {
-            "why_btntext": "Why-button instruction text",
-            "why_content": "Working with film-analysis is part of the subject of English and to do that in a meaningful way you need the proper vocabulary and an understanding of what to look for. The following video will introduce you to the main film techniques.",
-            "how_btntext": "How-button instruction text",
-            "how_content": "<ul>" +
-                "<li>Get an introduction to film analysis</li>" +
-                "<li>Get the content as text</li>" +
-                "<li>Get an overview of the three main analysis concepts: set, plot, shot</li>" +
-                "<li>Read the helpful questions</li>" +
-                "<li>Watch the introduction first. Then go into the film techniques in depth</li>" +
-                "</ul>"
-        },
-        "generisk_videoquiz": {
-            "why_btntext": "Why-button instruction text",
-            "why_content": "Lorem ipsum dolor sit amet, ut egestas maecenas iaculis dictumst eros. Donec integer ante vel. Dolor nullam ac, lacus augue. Vel eget auctor, hac nec tortor non aliquam suscipit, rhoncus vulputate nulla enim quam elit consequat, luctus wisi tortor, elit pretium dictum nec sit curabitur. Eget mauris hac, sit nec velit ultricies praesent wisi sit, turpis non ut sapien, velit nunc lorem, arcu venenatis consectetuer esse eget non.Lacinia odio felis, nec in est et, mollis egestas, dui est sociis, esse eu. Ante euismod, ac quis dictum libero rerum, mollis morbi sollicitudin luctus. In felis ipsum mi, aliquet purus aute, lectus quidem odio suscipit, facilisis rutrum sed egestas, faucibus justo.",
-            "how_btntext": "How-button instruction text",
-            "how_content": "Lorem ipsum dolor sit amet, ut egestas maecenas iaculis dictumst eros. Donec integer ante vel. Dolor nullam ac, lacus augue. Vel eget auctor, hac nec tortor non aliquam suscipit, rhoncus vulputate nulla enim quam elit consequat, luctus wisi tortor, elit pretium dictum nec sit curabitur. Eget mauris hac, sit nec velit ultricies praesent wisi sit, turpis non ut sapien, velit nunc lorem, arcu venenatis consectetuer esse eget non.Lacinia odio felis, nec in est et, mollis egestas, dui est sociis, esse eu. Ante euismod, ac quis dictum libero rerum, mollis morbi sollicitudin luctus. In felis ipsum mi, aliquet purus aute, lectus quidem odio suscipit, facilisis rutrum sed egestas, faucibus justo."
-        },
-        "the_conflict_box": {
-            "why_btntext": "Learn about how to analyze the conflict between characters.",
-            "why_content": "This assignment lets you practice recognizing plot structure.",
-            "how_btntext": "Click in the box.",
-            "how_content": "Follow the different steps in the document."
-        }
+    ReturnAjaxData: function(Type, Url, Async, DataType) {
+        $.ajax({
+            type: Type,
+            url: Url,
+            async: Async,
+            dataType: DataType,
+            success: function(Data) {
+                console.log("ReturnAjaxData: " + JSON.stringify(Data));
+                HowWhyData = JSON.parse(JSON.stringify(Data));
+                // JsonExternalData = JSON.parse(JSON.stringify(Data));
+                // console.log("HowWhyData: " + HowWhyData);
+            }
+        }).fail(function() {
+            alert("GeneralOverlayClass.ReturnAjaxData: Ajax failed to fetch data");
+        });
     },
 
 
     ApplyOverlay_why: function(Selector, EleraningObj) {
 
-        $(Selector).before(this.ButtonControler_why);
+        this.ReturnAjaxData("GET", "../library/json/HowWhyData.json", false, "json");
 
-        var OverlayBtnText = this.JsonWhyHow[EleraningObj].why_btntext;
+        console.log("ApplyOverlay_why - HowWhyData: " + JSON.stringify(HowWhyData) );
+
+        $(Selector).before(HowWhyData.ButtonControler_why); 
+
+        var OverlayBtnText = HowWhyData.JsonWhyHow[EleraningObj].why_btntext;
         $("#OverlyContainerWhy .OverlayBtnText").html(OverlayBtnText);
 
         var thisObj = this;
@@ -380,7 +291,7 @@ var GeneralOverlayClass = {
             // alert("WHY");
 
             if ($(".Overlay").length === 0) // Ensures that only one overlay is added.
-                $(Selector).before(thisObj.OverlayMarkup);
+                $(Selector).before(HowWhyData.OverlayMarkup);
 
             // AKTIVER KUN HVIS OVERLAY SKAL RAMME EN SPECIFIK WRAPPER:
             // thisObj.ResizeAndPositionOverlayWindow(Selector, ".Overlay");
@@ -394,7 +305,7 @@ var GeneralOverlayClass = {
             var ButtonId = $(this).prop("id");
             console.log("ButtonId: " + ButtonId);
 
-            OverlayText = thisObj.JsonWhyHow[EleraningObj].why_content;
+            OverlayText = HowWhyData.JsonWhyHow[EleraningObj].why_content;
             OverlayTextHeader = "WHY";
 
             console.log("ButtonId: " + ButtonId + ", \nOverlayTextHeader: " + OverlayTextHeader + ", \nOverlayText: " + OverlayText);
@@ -411,9 +322,13 @@ var GeneralOverlayClass = {
 
     ApplyOverlay_how: function(Selector, EleraningObj) {
 
-        $(Selector).before(this.ButtonControler_how);
+        this.ReturnAjaxData("GET", "../library/json/HowWhyData.json", false, "json");
 
-        var OverlayBtnText = this.JsonWhyHow[EleraningObj].how_btntext;
+        console.log("ApplyOverlay_how - HowWhyData: " + JSON.stringify(HowWhyData) );
+
+        $(Selector).before(HowWhyData.ButtonControler_how);
+
+        var OverlayBtnText = HowWhyData.JsonWhyHow[EleraningObj].how_btntext;
         $("#OverlyContainerHow .OverlayBtnText").html(OverlayBtnText);
 
         var thisObj = this;
@@ -429,7 +344,7 @@ var GeneralOverlayClass = {
             // alert("HOW");
 
             if ($(".Overlay").length === 0) // Ensures that only one overlay is added.
-                $(Selector).before(thisObj.OverlayMarkup);
+                $(Selector).before(HowWhyData.OverlayMarkup);
 
             // AKTIVER KUN HVIS OVERLAY SKAL RAMME EN SPECIFIK WRAPPER:
             // thisObj.ResizeAndPositionOverlayWindow(Selector, ".Overlay");
@@ -443,7 +358,7 @@ var GeneralOverlayClass = {
             var ButtonId = $(this).prop("id");
             console.log("ButtonId: " + ButtonId);
 
-            OverlayText = thisObj.JsonWhyHow[EleraningObj].how_content;
+            OverlayText = HowWhyData.JsonWhyHow[EleraningObj].how_content;
             OverlayTextHeader = "HOW";
 
             console.log("ButtonId: " + ButtonId + ", \nOverlayTextHeader: " + OverlayTextHeader + ", \nOverlayText: " + OverlayText);
@@ -502,3 +417,5 @@ var GeneralOverlayClass = {
 };
 
 var GeneralOverlayObj = Object.create(GeneralOverlayClass);
+
+// GeneralOverlayObj.ReturnAjaxData("GET", "../library/json/HowWhyData.json", false, "json");
