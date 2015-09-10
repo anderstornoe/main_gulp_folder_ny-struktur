@@ -1,5 +1,13 @@
 #!/bin/bash
+
 sep='---------------'
+
+# This processes the main-folder:
+echo ""
+echo $sep "Processing:" ${PWD##*/} $sep
+git pull origin master
+
+# This processes the object-folders:
 for d in objekter/development/*; do
 	df=${d##*/}  # extracting the folder-names
 	# echo $d
