@@ -41,9 +41,8 @@ function embedlink(obj) {
 
     // alert($(".tab").length);
 
-    var UrlVarStr;
-    // UrlVarStr = String(window.location).split("/", 3).join("/").replace("http", "https");  // Udkommenteret af THAN d. 8/9-2015 da vi er gået over på vucdigital.dk som køre https.
-    UrlVarStr = "https://www.vucdigital.dk/engelsk/";  // String(window.location)
+    var UrlVarStr = String(window.location); 
+    // var UrlVarStr = "https://www.vucdigital.dk/engelsk/";  // String(window.location)
     if (UrlVarStr.indexOf("https") !== -1)
         UrlVarStr = UrlVarStr.split("/", 3).join("/");
     else
