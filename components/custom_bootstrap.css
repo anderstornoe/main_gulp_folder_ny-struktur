@@ -101,16 +101,8 @@ h5,
 }
 
 p {
-    letter-spacing: 0.8px;
+    
     font-weight: 200;
-}
-
-body {
-    letter-spacing: 0.8px;
-}
-
-h5 {
-    letter-spacing: 0.8px;
 }
 
 .btn {
