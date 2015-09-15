@@ -9,7 +9,7 @@
 
 .CapitalI {
     font-family: "Merriweather";
-    font-weight: 200;
+    font-weight: 100;
 }
 
 .new_window_link {
@@ -59,12 +59,6 @@
     margin-right: -15px;
     color: rgba(0, 0, 0, 0.5);
 }
-
-.CapitalI {
-    font-family: "Georgia";
-    font-weight: 100;
-}
-
 .left {
     float: left;
 }
