@@ -14,13 +14,16 @@
 
 .new_window_link {
     font-size: 12px;
-    left: 65px;
+    left: 30px;
     position: absolute;
     top: 6px;
     color: #0071BC;
     line-height: 1,5;
 }
-
+.new_window_link .btn {
+    color:black;
+    width:auto;
+}
 .footerCopywrite {
     margin: 50px 0 20px 0;
     text-align: center;
