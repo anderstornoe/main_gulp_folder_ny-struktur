@@ -228,7 +228,7 @@ $(document).ready(function() {
     var isInIFrame = (window.location != window.parent.location);
     console.log("Er i rammen? : " + isInIFrame);
     if (isInIFrame) {
-        $("body").append("<a class='new_window_link' href='" + window.location.href + "' target='_blank'><span class='glyphicon glyphicon-new-window'></span> Åbn siden i sit eget vindue</a>");
+        $("body").append("<div class='new_window_link'> Ser det mærkeligt ud? <a class='btn btn-info btn-xs embedlink' href='" + window.location.href + "' target='_blank'>  Åbn i nyt browservindue</a></div>");
     }
 });
 
