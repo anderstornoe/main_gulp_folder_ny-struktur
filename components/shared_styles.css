@@ -13,10 +13,11 @@
 }
 
 .new_window_link {
-    font-size: 12px;
-    left: 50%;
+   font-size: 12px;
     position: absolute;
     top: 6px;
+    color: #999;
+    left: 30px;
 }
 
 .footerCopywrite {
@@ -33,7 +34,7 @@
     background-color: rgba(248, 248, 246, 0.9);
     border-radius: 3px;
     padding: 30px 30px 40px 40px;
-    width: 400px;
+    width: 70%;
     left: 0;
     right: 0;
     margin-left: auto;
