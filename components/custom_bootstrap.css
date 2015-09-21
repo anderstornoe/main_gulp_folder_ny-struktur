@@ -12,7 +12,16 @@
   src: local('Merriweather Light'), local('Merriweather-Light'), url("../fonts/merriweather.woff") format('woff');
 }
 
+/* Udkommenteret af THAN d. 21-09-2015 */
+/*  
 html {
+  font-family: "OpenSans", Helvetica, Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*/
+
+body {  /* Tilføjet af THAN d. 21-09-2015 */ 
   font-family: "OpenSans", Helvetica, Arial, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
