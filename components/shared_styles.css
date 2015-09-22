@@ -20,13 +20,16 @@
     color: #0071BC;
     line-height: 1,5;
 }
-.new_window_link .btn {
+.new_window_link .btn-info {
     color:black;
     width:auto;
     background-color: #E7E6E2;
     border-color: #E7E6E2;
 }
-
+.new_window_link .btn-info:hover {
+    background-color: #D0CEC6;
+    border-color: #D0CEC6;
+}
 .footerCopywrite {
     margin: 50px 0 20px 0;
     text-align: center;
