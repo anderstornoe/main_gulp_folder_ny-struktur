@@ -23,6 +23,8 @@
 .new_window_link .btn {
     color:black;
     width:auto;
+    background-color: #D0CEC6;
+    border-color: #CBC9C1;
 }
 .footerCopywrite {
     margin: 50px 0 20px 0;
