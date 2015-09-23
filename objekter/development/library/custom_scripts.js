@@ -53,7 +53,7 @@ function embedlink(obj) {
     var HrefObj = obj.parent().parent().find("a").eq(0).attr("href").replace("../", "/");
     console.log("embedlink - HrefObj: " + HrefObj);
 
-    var embedFronter = '<iframe height="570" width="820" src="' + UrlVarStr + HrefObj + '"></iframe>';
+    var embedFronter = '<iframe height="570" width="820" frameborder="0" src="' + UrlVarStr + HrefObj + '"></iframe>';
     var embedMoodle = '<embed height="670" width="970" src="' + UrlVarStr + HrefObj + '"></embed>';
 
     // var embedFronter = '<iframe height="570" width="820" src="http://eundervisning-wp.dk/pf_kem2015/' + obj.parent().parent().find("a").eq(0).attr("href") + '"></iframe>';
