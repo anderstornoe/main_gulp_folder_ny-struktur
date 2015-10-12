@@ -252,3 +252,14 @@ img.pdf-icon {
     line-height: 1.2;
     text-align: left;
 }
+
+.modal-body {
+    position: relative;
+    padding: 15px;
+    text-align: center;
+}
+
+.modal-header {
+
+    border-bottom: 0px;
+}

@@ -41,29 +41,33 @@ function embedlink(obj) {
 
     // alert($(".tab").length);
 
-    var UrlVarStr = String(window.location); 
+    var UrlVarStr = String(window.location);
     // var UrlVarStr = "https://www.vucdigital.dk/engelsk/";  // String(window.location)
     if (UrlVarStr.indexOf("https") !== -1)
         UrlVarStr = UrlVarStr.split("/", 3).join("/");
     else
         UrlVarStr = UrlVarStr.split("/", 3).join("/").replace("http", "https");
-    
+
     console.log("embedlink - UrlVarStr: " + UrlVarStr);
 
     var HrefObj = obj.parent().parent().find("a").eq(0).attr("href").replace("../", "/");
     console.log("embedlink - HrefObj: " + HrefObj);
 
     var embedFronter = '<iframe height="570" width="100%" frameborder="0" src="' + UrlVarStr + HrefObj + '"></iframe>';
+<<<<<<< HEAD
     var embedMoodle = '<embed height="670" width="100%" src="' + UrlVarStr + HrefObj + '"></embed>';
+=======
+    var embedMoodle = '<embed height="670" width="970" src="' + UrlVarStr + HrefObj + '"></embed>';
+>>>>>>> 74fec925709b0def67b697ad47831c62fd4ebf36
 
     // var embedFronter = '<iframe height="570" width="820" src="http://eundervisning-wp.dk/pf_kem2015/' + obj.parent().parent().find("a").eq(0).attr("href") + '"></iframe>';
     // var embedMoodle = '<embed height="670" width="970" src="http://eundervisning-wp.dk/pf_kem2015/' + obj.parent().parent().find("a").eq(0).attr("href") + '"></embed>';
 
 
 
-    var embedArray = [embedMoodle, embedFronter];
+    var embedArray = [embedFronter, embedMoodle];
 
-    var embedwrapping = "<div class='embedToggle'><p>Indsæt dette link i dit LMS eller på din webside</p><div class='tabcontainer'><div class='tab_1 tab activetab'>Fronter(embed)</div><div class='tab_2 tab'>Moodle(iframe)</div></div><div class='togglecontainer'><input class='embedtext' type='text' value='" + embedArray[0] + "'></input><a class='MetaDataLink' href='https://www.youtube.com/watch?v=vjh6z6EACqQ'>Hjælp til indlejring (embedding) </a></div></div>";
+    var embedwrapping = "<div class='embedToggle'><p>Indsæt dette link i dit LMS eller på din webside</p><div class='tabcontainer'><div class='tab_1 tab activetab'>Moodle</div><div class='tab_2 tab'>Fronter</div></div><div class='togglecontainer'><input class='embedtext' type='text' value='" + embedArray[0] + "'></input><a class='MetaDataLink' href='https://www.youtube.com/watch?v=0cKkCRRTC_c'>Hjælp til indlejring i Moodle </a></div></div>";
 
     var embedWidth;
     var embedHeight;
@@ -271,9 +275,9 @@ var GeneralOverlayClass = {
 
         this.ReturnAjaxData("GET", "../library/json/HowWhyData.json", false, "json");
 
-        console.log("ApplyOverlay_why - HowWhyData: " + JSON.stringify(HowWhyData) );
+        console.log("ApplyOverlay_why - HowWhyData: " + JSON.stringify(HowWhyData));
 
-        $(Selector).before(HowWhyData.ButtonControler_why); 
+        $(Selector).before(HowWhyData.ButtonControler_why);
 
         var OverlayBtnText = HowWhyData.JsonWhyHow[EleraningObj].why_btntext;
         $("#OverlyContainerWhy .OverlayBtnText").html(OverlayBtnText);
@@ -324,7 +328,7 @@ var GeneralOverlayClass = {
 
         this.ReturnAjaxData("GET", "../library/json/HowWhyData.json", false, "json");
 
-        console.log("ApplyOverlay_how - HowWhyData: " + JSON.stringify(HowWhyData) );
+        console.log("ApplyOverlay_how - HowWhyData: " + JSON.stringify(HowWhyData));
 
         $(Selector).before(HowWhyData.ButtonControler_how);
 
@@ -419,3 +423,19 @@ var GeneralOverlayClass = {
 var GeneralOverlayObj = Object.create(GeneralOverlayClass);
 
 // GeneralOverlayObj.ReturnAjaxData("GET", "../library/json/HowWhyData.json", false, "json");
+
+
+// Brug denne funktion til at initialisere et model html objekt, som du så kan putte indhold i: $("modal-body").html("Dit indhold her..")
+function modal() {
+    $("body").append("<div class='modal fade' id='myModal' role='dialog'>" +
+        "<div class='modal-dialog'>" +
+        "<div class='modal-content'>" +
+        "<div class='modal-header'>" +
+        "<button type='button' class='close' data-dismiss='modal'>&times;</button>" +
+        "</div>" +
+        "<div class='modal-body'>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "< /div>");
+    }
