@@ -54,11 +54,11 @@ function embedlink(obj) {
     console.log("embedlink - HrefObj: " + HrefObj);
 
     var embedFronter = '<iframe height="570" width="100%" frameborder="0" src="' + UrlVarStr + HrefObj + '"></iframe>';
-<<<<<<< HEAD
+// <<<<<<< HEAD
     var embedMoodle = '<embed height="670" width="100%" src="' + UrlVarStr + HrefObj + '"></embed>';
-=======
+// =======
     var embedMoodle = '<embed height="670" width="970" src="' + UrlVarStr + HrefObj + '"></embed>';
->>>>>>> 74fec925709b0def67b697ad47831c62fd4ebf36
+// >>>>>>> 74fec925709b0def67b697ad47831c62fd4ebf36
 
     // var embedFronter = '<iframe height="570" width="820" src="http://eundervisning-wp.dk/pf_kem2015/' + obj.parent().parent().find("a").eq(0).attr("href") + '"></iframe>';
     // var embedMoodle = '<embed height="670" width="970" src="http://eundervisning-wp.dk/pf_kem2015/' + obj.parent().parent().find("a").eq(0).attr("href") + '"></embed>';
