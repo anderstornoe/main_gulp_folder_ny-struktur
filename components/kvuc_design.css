@@ -1,0 +1,15 @@
+/************************************************************************************
+                Styles fra MAM fra Historie B (oktober 2015) og frem. 
+************************************************************************************/
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #56bfc5;
+  border-color: #56bfc5;
+}
+
+.btn-primary:hover {
+  color: #ffffff;
+  background-color: #05a0a8;
+  border-color: #05a0a8;
+}
