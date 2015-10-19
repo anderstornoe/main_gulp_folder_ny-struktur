@@ -4,7 +4,8 @@ sep='---------------'
 # This processes the main-folder:
 echo ""
 echo $sep "Processing:" ${PWD##*/} $sep
-git commit -a -m "autoCommit by terminal"
+git add .
+git commit -m "autoCommit by terminal"
 git push origin master
 
 # This processes the object-folders:
@@ -16,7 +17,8 @@ for d in objekter/development/*; do
 	then
 		echo ""
 		echo $sep "Processing:" $df $sep
-		git -C $d commit -a -m "autoCommit by terminal" 
+		git -C $d add .
+		git -C $d commit -m "autoCommit by terminal" 
 		git -C $d push origin master
 	fi
 done
