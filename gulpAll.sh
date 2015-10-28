@@ -1,7 +1,7 @@
 #!/bin/bash
 
-gulp copy_production
-gulp trim_files
+gulp copy_production;
+gulp trim_files;
 gulp deploy
 
 # README:

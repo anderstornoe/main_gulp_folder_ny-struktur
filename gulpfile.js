@@ -73,83 +73,124 @@
 
 
 
-//ALT DER VEDRØRER PRODUCTION, TRIMMING OG DEPLOYMENT:
+//ALT DER VEDRØRER PRODUCTION, TRIMMING OG DEPLOYMENT:  POSSIBLE ARGUMENT-CALL FROM TERMINAL: "gulp copy_production --option objekter/development/My_Object_Folder_Name"
  gulp.task('copy_production', function() {
+
+    var objSrcFolder = "**";
+    var objDistFolder = "";
+    var objPath = process.argv[4];  // Get the argument "objekter/development/My_Object_Folder_Name" from the call.
+    
+    if (typeof objPath !== "undefined"){ // Only executed if an argument is given in the call to the gulp-task.
+        objPath = String(objPath);
+        objSrcFolder = String(objPath.split("/")[2]);  // Get "My_Object_Folder_Name" from the objPath.
+        objDistFolder = objSrcFolder;
+    }
+    gutil.log("copy_production - objPath: "+String(objPath)+", objSrcFolder: "+objSrcFolder);
      
      //gutil.log("Its time to production mode it!");
      //objekter/kemi_drag/builds/development/
-     gulp.src(['objekter/development/**/*'])
+     gulp.src(['objekter/development/'+objSrcFolder+'/*'])
 
-     .pipe(gulp.dest('objekter/production'))
+     .pipe(gulp.dest('objekter/production/'+objDistFolder))
          //.pipe(wait(1500))
          //gulp.task('trim_files');
 
-     gulp.src(['objekter/library/**/*'])
-
-     .pipe(gulp.dest('objekter/production/library'))
+    if (typeof objPath === "undefined"){ // Only executed if an argument is NOT given in the call to the gulp-task, eg. call: "gulp copy_production"
+        gulp.src(['objekter/library/**/*'])
+        .pipe(gulp.dest('objekter/production/library'))
+    }
          //.pipe(wait(1500))
          //gulp.task('trim_files');
-
 
  });
 
+
+// POSSIBLE ARGUMENT-CALL FROM TERMINAL: "gulp deploy --option objekter/development/My_Object_Folder_Name"
  gulp.task('trim_files', function() {
-     gulp.src("objekter/production/**/*.css")
+
+    var objSrcFolder = "**";
+    var objDistFolder = "";
+    var objPath = process.argv[4]; // Get the argument "objekter/development/My_Object_Folder_Name" from the call.
+    
+    if (typeof objPath !== "undefined"){  // Only executed if an argument is given in the call to the gulp-task.
+        objPath = String(objPath);
+        objSrcFolder = String(objPath.split("/")[2]); // Get "My_Object_Folder_Name" from the objPath.
+        objDistFolder = objSrcFolder;
+    }
+    gutil.log("trim_files - objPath: "+String(objPath)+", objSrcFolder: "+objSrcFolder);
+
+
+     gulp.src("objekter/production/"+objSrcFolder+"/*.css")
          //.pipe(wait(1500))
          .pipe(minifyCSS({
              keepBreaks: false
          }))
-         .pipe(gulp.dest('objekter/production/'))
+         .pipe(gulp.dest('objekter/production/'+objDistFolder))
 
-     gulp.src("objekter/production/**/*.html")
+     gulp.src("objekter/production/"+objSrcFolder+"/*.html")
          .pipe(minifyHTML({
              quotes: true
          }))
-         .pipe(gulp.dest('objekter/production/'))
+         .pipe(gulp.dest('objekter/production/'+objDistFolder))
 
-     gulp.src("objekter/production/**/*.js")
+     gulp.src("objekter/production/"+objSrcFolder+"/*.js")
          .pipe(uglify())
-         .pipe(gulp.dest('objekter/production/'))
+         .pipe(gulp.dest('objekter/production/'+objDistFolder))
 
      gutil.log("all done");
  });
 
 
- // Deploy production folder to ftp server: 
+// Deploy production folder to ftp server. POSSIBLE ARGUMENT-CALL FROM TERMINAL: "gulp deploy --option objekter/development/My_Object_Folder_Name"
+gulp.task('deploy', function() {
 
- gulp.task('deploy', function() {
+    var objFolder = "";
+    var objPath = process.argv[4]; // Get the argument "objekter/development/My_Object_Folder_Name" from the call.
+    
+    if (typeof objPath === "undefined"){
+        objPath = 'objekter/production';
+    } else {   // Only executed if an argument is given in the call to the gulp-task.
+        objPath = String(objPath);
+        objFolder = String(objPath.split("/")[2]);  // Get "My_Object_Folder_Name" from the objPath.
+    }
+    gutil.log("deploy - objPath: "+objPath+", objFolder: "+objFolder);
 
-     var conn = ftp.create({
-         host: 'u13dfs6.nixweb09.dandomain.dk',
-         user: 'u13dfs6',
-         password: 'x3pXLTtVY',
-         parallel: 3,
-         log: gutil.log
-     });
+    var conn = ftp.create({
+        host: 'u13dfs6.nixweb09.dandomain.dk',
+        user: 'u13dfs6',
+        password: 'x3pXLTtVY',
+        parallel: 3,
+        log: gutil.log
+    });
 
-     gutil.log(conn);
+    gutil.log(conn);
 
-     var globs = [
-         /*'src/**',
-         'css/**',
-         'js/**'*/
-         'objekter/production/**',
-         '*.*'
-     ];
+    var globs = [
+        /*'src/**',
+        'css/**',
+        'js/**'*/
+        // 'objekter/production/**',
+        objPath+'/**',
+        '*.*'
+    ];
 
-     gutil.log();
-     // using base = '.' will transfer everything to /public_html correctly 
-     // turn off buffering in gulp.src for best performance 
+    gutil.log();
+    // using base = '.' will transfer everything to /public_html correctly 
+    // turn off buffering in gulp.src for best performance 
 
 
-     return gulp.src(globs, {
-             cwd: 'objekter/production/**',
-             buffer: false
-         })
-         .pipe(conn.differentSize('/www/')) // only upload differrentSize files 
-         .pipe(conn.dest('/www/'));
+    return gulp.src(globs, {
+        cwd: objPath+'/**',
+        buffer: false
+    })
+    .pipe(conn.differentSize('/www/'+objFolder)) // only upload differrentSize files 
+    .pipe(conn.dest('/www/'+objFolder));
 
- });
+});
+
+// POSSIBLE CALL FROM TERMINAL: gulp pushObj --option objekter/development/My_Object_Folder_Name
+// gulp.task('pushObj', ['copy_production', 'trim_files', 'deploy']);
+
 
  //Hold øje med ændringer i html, css og js filer --> reload og concat (js / css): 
 
