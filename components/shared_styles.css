@@ -167,3 +167,8 @@
     margin-top: 20px;
     margin-bottom: 0px;
 }
+
+.ScoreText{
+    color: #000;
+    font-weight: 600;
+}
