@@ -264,3 +264,11 @@ img.pdf-icon {
     border-bottom: 0px;
 }
 
+.glyphicon-remove{
+    font-size: 1.6em;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.glyphicon-remove:hover{
+    color: rgba(0, 0, 0, 1);
+}
