@@ -120,7 +120,7 @@ a {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    top: 30%;
+    top: 15%;
     cursor: pointer;
     font-size: 16px;
     line-height: 1.3em;
@@ -130,7 +130,7 @@ a {
 .MsgBox_bgr {
     background-color: rgba(0, 0, 0, 0.5);
     height: 100%;
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 10;
 }
