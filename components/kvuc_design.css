@@ -23,3 +23,20 @@
     margin-left: 2%;
     margin-bottom: 1%;
 }
+
+.thumb_overlay {
+    background-color: rgba(5, 160, 168, 0.06);
+    bottom: 100%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    transition: background-color 0.3s ease 0s;
+    width: 100%;
+    z-index: 3;
+}
+
+.thumb_overlay:hover {
+    background-color: rgba(5, 160, 168, 0.5);
+}
