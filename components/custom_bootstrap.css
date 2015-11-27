@@ -2,17 +2,20 @@
     font-family: 'OpenSans';
     font-style: normal;
     font-weight: 200;
-     src: local('Open Sans'), local('OpenSans'), url("../fonts/open-sans.woff") format('woff');
+    src: local('Open Sans'), local('OpenSans'), url("../fonts/open-sans.woff") format('woff');
 }
 
 @font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 200;
-  src: local('Merriweather Light'), local('Merriweather-Light'), url("../fonts/merriweather.woff") format('woff');
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Merriweather Light'), local('Merriweather-Light'), url("../fonts/merriweather.woff") format('woff');
 }
 
+
 /* Udkommenteret af THAN d. 21-09-2015 */
+
+
 /*  
 html {
   font-family: "OpenSans", Helvetica, Arial, sans-serif;
@@ -21,10 +24,11 @@ html {
 }
 */
 
-body {  /* Tilføjet af THAN d. 21-09-2015 */ 
-  font-family: "OpenSans", Helvetica, Arial, sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+body {
+    /* Tilføjet af THAN d. 21-09-2015 */
+    font-family: "OpenSans", Helvetica, Arial, sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 @media (max-width: 992px) {
@@ -54,69 +58,52 @@ body {  /* Tilføjet af THAN d. 21-09-2015 */
 .btn {
     /*padding: 4px 20px;*/
     margin-right: 20px;
-}
-
-h4,
-.h4,
-h5,
-.h5 {
-    color: #777;
-}
-
-.btn-lg,
-.btn-group-lg > .btn {
-    border-radius: 6px;
-    font-size: 18px;
+    font-weight: 300;
     line-height: 1.33333;
-    margin: 20px 20px 40px 0;
-    padding: 10px 30px;
-}
-
-.btn-default {
-    background: transparent;
-    color: #000;
-    border: 1px solid #717272;
-    /* CSS Transition */
-    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
-    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
-    -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
-    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
-    transition: background .2s ease-in-out, border .2s ease-in-out;
-}
-
-.btn-default-inverse {
-    background: transparent;
-    color: #fff;
-    border: 1px solid #fff;
-    /* CSS Transition */
-    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
-    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
-    -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
-    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
-    transition: background .2s ease-in-out, border .2s ease-in-out;
-}
-
-.btn-default-inverse:hover,
-.btn-default-inverse:focus,
-.btn-default-inverse.focus {
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.2);
-    text-decoration: none;
+    margin: 15px 15px 30px 0;
+    padding: 7px 15px;
+    letter-spacing: 0 px;
 }
 
 .btn-lg {
+    border-radius: 6 px;
+    font-size: 18px;
+    line-height: 1.33333;
+    margin: 20px 20px 40px 0;
+    padding: 10px 20px;
+    letter-spacing: 0.5 px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 400;
 }
 
-p {
-    
-    font-weight: 200;
+.btn-sm {
+    font-weight: 300;
+    border-radius: 3 px;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 15px 15px 20px 0;
+    padding: 5px 10px;
+    letter-spacing: 0 px;
 }
 
-.btn {
-    letter-spacing: 0px;
+.btn-xs {
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 1px 5px;
 }
+
+.btn-default:hover {
+    border-color: #e6e6e6;
+}
+
+
+
+body {
+    font-weight: 300;
+}
+
+
 
 h5,
 h6 {
@@ -260,6 +247,5 @@ img.pdf-icon {
 }
 
 .modal-header {
-
     border-bottom: 0px;
 }
