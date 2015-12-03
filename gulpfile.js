@@ -183,7 +183,7 @@ gulp.task('deploy', function() {
         cwd: objPath+'/**',
         buffer: false
     })
-    .pipe(conn.differentSize('/www/'+objFolder)) // only upload differrentSize files 
+    //.pipe(conn.differentSize('/www/'+objFolder)) // only upload differrentSize files 
     .pipe(conn.dest('/www/'+objFolder));
 
 });
