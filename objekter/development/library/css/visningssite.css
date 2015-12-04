@@ -1,3 +1,6 @@
+body{
+    background-color: white;
+}
 .btn-lg {
     display: table-cell;
     font-weight: 200;
