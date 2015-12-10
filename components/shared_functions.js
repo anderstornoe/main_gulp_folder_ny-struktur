@@ -450,3 +450,7 @@ function allIndexOf(str, toSearch) {
     }
     return counter;
 }
+
+function showIosOverlay() {
+    $(".embed-responsive-16by9").prepend("<img src='../library/img/iPad_videoquiz_overlay.png' class='ipad'>")
+}
