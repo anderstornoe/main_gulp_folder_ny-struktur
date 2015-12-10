@@ -1,0 +1,165 @@
+body{
+    background-color: white;
+}
+.btn-lg {
+    display: table-cell;
+    font-weight: 200;
+}
+
+h1 {
+    margin-left: 20px;
+}
+
+.col-sm-12,
+.col-md-6 {
+    padding-right: 20px;
+}
+
+.MetaDataLink {
+    color: #0071bc;
+    margin-right: 20px;
+}
+
+.jumbotron a {
+    font-weight: 200;
+    margin-top: 15px;
+}
+
+.jumbotron {
+    margin-right: 16.6667%;
+}
+
+.om_header h1 {
+    margin-left: 0;
+}
+
+.om_container {
+    margin-right: 25%;
+}
+
+.row {
+    margin-left: 0;
+}
+
+.thumb_img_container {
+    position: relative;
+}
+
+.thumb_img_container img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    vertical-align: middle;
+    margin-bottom:20px;
+}
+
+.thumb_overlay {
+    background-color: rgba(5, 160, 168, 0.06);
+    bottom: 100%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    transition: background-color 0.3s ease 0s;
+    width: 100%;
+    z-index: 3;
+}
+
+.thumb_overlay:hover {
+    background-color: rgba(5, 160, 168, 0.2);
+}
+
+.indlejring_container a {
+    margin-right: 0;
+}
+
+.indlejring_container {
+    display: block;
+    float: right;
+    margin-top: -50px;
+}
+
+.MetaDataLink {
+    color: #05a0a8;
+    margin-right: 20px;
+}
+
+.btn_container {
+    font-weight: 200;
+    margin-top: 20px;
+}
+
+.embedToggle {
+    margin-top: 8px;
+}
+
+.tabcontainer {
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.tab {
+    background-color: #eee;
+    border-radius: 2px;
+    color: #222;
+    cursor: pointer;
+    float: left;
+    padding: 0 5px;
+}
+
+.activetab {
+    background-color: white;
+}
+
+.togglecontainer {
+    background-color: white;
+    border: 1px solid #eee;
+    clear: both;
+    padding: 4px;
+}
+
+.embedtext {
+    margin-top: -8px;
+    width: 100%;
+}
+
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.glyphicon {
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+.btn-lg {padding: 10px 20px;}
+
+.vuc_footer{margin-top: 20px; padding-top: 30px; padding-bottom: 30px; background-color: #f8f8f6;; text-align: center}
+.vuc_footer h2 {margin-top: 0px; margin-bottom: 20px; padding: 0px;}
+.footerText{margin: 0px; color: #666;}
+.footerCopywrite{margin-top: 20px; margin-bottom: 0px;}
+
+.container_main{
+    background-color: white;
+}
+
+.thumbnail{
+    border:none;
+}
+/*gør .btn-lg mindre mellem første og tredje break-point*/
+@media only screen and (min-width:992px) and (max-width: 1199px)  {
+    .btn-lg {
+        font-size:14px;
+    }
+}
+@media only screen and (max-width: 992px)  {
+    .indlejring_container{
+        display: none;   
+    }
+}
