@@ -170,7 +170,7 @@ gulp.task('deploy', function() {
         /*'src/**',
         'css/**',
         'js/**'*/
-        // 'objekter/production/**',
+        // 'objekter/production/**', 
         objPath+'/**',
         '*.*'
     ];
