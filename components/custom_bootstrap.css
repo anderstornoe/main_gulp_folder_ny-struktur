@@ -4,8 +4,8 @@
     src: local('Open Sans'), local('OpenSans'), url("../fonts/open-sans.woff") format('woff');
 }
 
-/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400italic,600italic,700italic,800italic,400,300,600,700,800";*/
 
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400italic,600italic,700italic,800italic,400,300,600,700,800";*/
 
 @font-face {
     font-family: 'Merriweather';
@@ -145,8 +145,6 @@ body {
     background-color: transparent;
 }
 
-
-
 a.MetaDataLink {
     text-decoration: none;
 }
@@ -159,8 +157,6 @@ img.pdf-icon {
     width: 40px;
     margin-right: 5px;
 }
-
-
 
 .feedbackbox_txtstyle_overskrift {
     font-size: 18px;
@@ -213,4 +209,36 @@ h4 {
 h5,
 h6 {
     margin-bottom: 10px
+}
+
+
+/*******************************************************************************
+                Nedenstående styling knytter sig til den oprindelige/rigtige JS pager
+            *******************************************************************************/
+
+.PagerClass {
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+#PagerContainer {
+    display: inline-block;
+}
+
+#PagerContainer ul {
+    padding: 0px;
+}
+
+#PagerContainer ul li {
+    display: inline;
+}
+
+.PagerButton {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+}
+
+.dshow {
+    display: block
 }
