@@ -3,22 +3,21 @@
 ************************************************************************************/
 
 .btn-primary {
-    color: #ffffff;
-    background-color: #56bfc5;
-    border-color: #56bfc5;
+  color: #ffffff;
+  background-color: #56bfc5;
+  border-color: #56bfc5;
 }
 
 .btn-primary:hover {
-    color: #ffffff;
-    background-color: #05a0a8;
-    border-color: #05a0a8;
+  color: #ffffff;
+  background-color: #05a0a8;
+  border-color: #05a0a8;
 }
 
 
 /************************************************************************************
                 Styles Historie B (oktober 2015) og frem. 
 ************************************************************************************/
-
 .kilde_henvisning {
     margin-top: 2%;
     margin-left: 2%;
@@ -42,18 +41,15 @@
     background-color: rgba(5, 160, 168, 0.5);
 }
 
+.instruktion {
+    border-bottom: 2px solid #ddd;
+    border-top: 2px solid #ddd;
+    font-weight: 400;
+    padding: 5px;
+}
 
-/************************************************************************************
-                Styles Dansk (december 2015) og frem. 
-************************************************************************************/
-
-.TextHolder {
-    min-height: 100px;
-    max-height: 550px;
-    width: 750 px;
-    padding: 20px 40px 20px 20px;
-    margin: 0px, 30px, 30px, 0px;
-    background: #fff; 
-    border-radius: 6px;
-    overflow: auto;
+.instruktion > .glyphicon-arrow-right {
+    color: #05a0a8;
+    font-size: 16px;
+    margin-right: 10px;
 }
