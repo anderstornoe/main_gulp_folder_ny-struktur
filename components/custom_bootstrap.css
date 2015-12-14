@@ -242,3 +242,13 @@ h6 {
 .dshow {
     display: block
 }
+
+.score_container{
+    color: green;
+    background-color: #fff;
+    padding: 12px 50px 12px 20px;
+    display: inline;
+    margin-top: 20px;
+    position: absolute;
+    border-radius: 4px;
+}
