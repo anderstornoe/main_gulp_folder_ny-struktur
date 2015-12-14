@@ -40,3 +40,16 @@
 .thumb_overlay:hover {
     background-color: rgba(5, 160, 168, 0.5);
 }
+
+.instruktion {
+    border-bottom: 2px solid #ddd;
+    border-top: 2px solid #ddd;
+    font-weight: 400;
+    padding: 5px;
+}
+
+.instruktion > .glyphicon-arrow-right {
+    color: #05a0a8;
+    font-size: 16px;
+    margin-right: 10px;
+}
