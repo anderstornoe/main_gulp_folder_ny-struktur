@@ -5,4 +5,5 @@ Iconr
 /objekter/production/*
 /objekter/development/*
 !objekter/development/library
+objekter/development/library/css/styles.css
 !objekter/development/indeks.html
