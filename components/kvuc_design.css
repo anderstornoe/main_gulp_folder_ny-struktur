@@ -16,7 +16,6 @@
     /************************************************************************************
                 Styles Historie B (oktober 2015) og frem. 
 ************************************************************************************/
-    
     .kilde_henvisning {
         margin-top: 2%;
         margin-left: 2%;
@@ -73,6 +72,8 @@
         top: 2px;
     }
 }
+
+
 .textHolder {
     /*Til afgrænsede tertsstykker, fx kilder */
     
@@ -94,7 +95,7 @@
     margin-top: 20px;
 }
 .checkAnswer {
-    float: left;
+   /* float: left;*/
 }
 .score_container {
     /*Til den løbende, opdaterende score*/
@@ -104,8 +105,12 @@
     margin-top: 20px;
     max-width: 300px;
     border-radius: 6px;
-    float: left;
+    display: inline;
+    position: absolute;
 }
+
+
+
 .score_container .QuestionCounter{
     margin-right: 20px;
 }
@@ -124,3 +129,4 @@
     font-style: italic;
     margin-left: 20px;
 }
+*/
