@@ -246,4 +246,7 @@ h6 {
     display: block
 }
 
+.badge, .label {
+    font-weight: 600;  /* ret */
+}
 
