@@ -18,17 +18,17 @@
 /* Udkommenteret af THAN d. 21-09-2015 */
 
 
-/*  
-html {
+
+body {
   font-family: "OpenSans", Helvetica, Arial, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-*/
+
 
 html {
     /* Tilføjet af THAN d. 21-09-2015 */
-    -ms-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
 
