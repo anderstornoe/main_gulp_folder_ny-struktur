@@ -157,13 +157,19 @@ a {
     max-width: 1164px;
 }
 
+#UserMsgBox p {
+    margin: 0px;
+}
+
 #UserMsgBox .score_container {
     margin-top: 0px;
     position: inherit;
+    background-color: #f8f8f6;
 }
 
 #UserMsgBox .resultText {
     padding: 12px 0px 12px 0px;
+    float: left;
 }
 
 #UserMsgBox .label {
@@ -190,22 +196,19 @@ a {
     margin-left: 15px;
 }
 
-#UserMsgBox .btn-lg{  /* rettet */
+#UserMsgBox .btn-lg{  
     margin: 0px;
 }
 
-#UserMsgBox .btn{  /* rettet */
+#UserMsgBox .btn{  
     margin-top: 20px;
 }
 
 /*==  RETTELSER MED MAM 17/12-2015  =*/
 
 
-.badge, .label {
-    font-weight: 600;  /* ret */
-    /*line-height: 1;
-    text-align: center;
-    white-space: nowrap;*/
-}
+
+
+
 
 
