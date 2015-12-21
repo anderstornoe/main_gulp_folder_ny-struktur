@@ -55,7 +55,7 @@ function embedlink(obj) {
 
     var embedFronter = '<iframe height="570" width="100%" frameborder="0" src="' + UrlVarStr + HrefObj + '"></iframe>';
     // <<<<<<< HEAD
-    var embedMoodle = '<embed height="670" width="100%" src="' + UrlVarStr + HrefObj + '"></embed>';
+    var embedMoodle = embedFronter; //'<embed height="670" width="100%" src="' + UrlVarStr + HrefObj + '"></embed>';
     // =======
     // var embedMoodle = '<embed height="670" width="970" src="' + UrlVarStr + HrefObj + '"></embed>';
     // >>>>>>> 74fec925709b0def67b697ad47831c62fd4ebf36
@@ -67,7 +67,8 @@ function embedlink(obj) {
 
     var embedArray = [embedFronter, embedMoodle];
 
-    var embedwrapping = "<div class='embedToggle'><p>Indsæt dette link i dit LMS eller på din webside</p><div class='tabcontainer'><div class='tab_1 tab activetab'>Moodle</div><div class='tab_2 tab'>Fronter</div></div><div class='togglecontainer'><input class='embedtext' type='text' value='" + embedArray[0] + "'></input><a class='MetaDataLink' href='https://www.youtube.com/watch?v=0cKkCRRTC_c'>Hjælp til indlejring i Moodle </a></div></div>";
+    //var embedwrapping = "<div class='embedToggle'><p>Indsæt dette link i dit LMS eller på din webside</p><input class='embedtext' type='text' value='" + embedArray[0] + "'></input><div class='tabcontainer'><div class='tab_1 tab activetab'>Moodle</div><div class='tab_2 tab'>Fronter</div></div><div class='togglecontainer'><a class='MetaDataLink' href='https://www.youtube.com/watch?v=0cKkCRRTC_c'>Hjælp til indlejring i Moodle </a></div></div>";
+    var embedwrapping = "<div class='embedToggle'><p>Indsæt dette link i dit LMS eller på din webside</p><input class='embedtext' type='text' value='" + embedArray[0] + "'></input><a class='MetaDataLink' target='_blank' href='https://www.youtube.com/watch?v=0cKkCRRTC_c'>Hjælp til indlejring i Moodle </a><a class='MetaDataLink' target='_blank' href='https://www.youtube.com/embed/kUsW0vEXeF4'>Hjælp til indlejring i Fronter </a></div></div>";
 
     var embedWidth;
     var embedHeight;
