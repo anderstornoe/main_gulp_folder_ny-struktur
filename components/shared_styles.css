@@ -131,3 +131,13 @@
     color: #000;
     font-weight: 600;
 }
+
+
+/* ==========  pager  ========== */
+
+.PagerClass{display: inline-block; margin-bottom: 0px;}
+.PagerContainer{display: inline-block;}
+.PagerContainer ul {margin: 0px; padding: 0px}
+.PagerContainer ul li {display: inline; margin: 0px; padding: 0px;}
+.PagerButtonLeft{margin-right: 8px; position: relative;}
+.PagerButtonRight{position: relative; left: -8px;}

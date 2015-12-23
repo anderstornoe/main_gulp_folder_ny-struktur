@@ -457,11 +457,32 @@ function showIosOverlay() {
 }
 
 
-// This class makes a pager for controling the CSS display-property of a number of pages (or containers) with a class of your own choosing.
+// This class makes a pager for controlling the CSS display-property of a number of pages (or containers) with a class of your own choosing.
 // USAGE:
 // ======
+//
 //      HTML:
 //      =====
+//              <span id="myPagerContainer"></span>
+//
+//              <div class="myPageClass"> PAGE 1 </div>
+//              <div class="myPageClass"> PAGE 2 </div>
+//              <div class="myPageClass"> PAGE 3 </div>
+//
+//      JS:
+//      ===
+//              You first need to make an instance of the object like so:
+//
+//                      var myPagerObj = Object.create(pagerClass);
+//
+//              then you initialize the pager with two arguments:
+//
+//                      myPagerObj.init("#myPagerContainer", ".myPageClass");
+//
+//              The first argument (here the id "#myPagerContainer") can be either an id or class. Use a class if you need two or more
+//              pageres to control your pages. The pager will be dynamicllay created inside "#myPagerContainer".
+//
+//              The second argument need to be a class - the class has to be added to the containers you wish to control.
 var pagerClass = {
     Range: 5,            // The default number visible buttons on the pager. 
     ActiveLinkNum: 1,    // The default active page number.
