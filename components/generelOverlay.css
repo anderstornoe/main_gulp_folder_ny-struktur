@@ -169,7 +169,7 @@ a {
 
 #UserMsgBox .resultText {
     padding: 12px 0px 12px 0px;
-    float: left;
+    /*float: left;*/
 }
 
 #UserMsgBox .label {
@@ -203,6 +203,15 @@ a {
 #UserMsgBox .btn{  
     margin-top: 20px;
 }
+
+#UserMsgBox .scoreText{  
+    margin-bottom: 20px;
+}
+
+#UserMsgBox .scoreWrapper{  
+    clear: both;
+}
+
 
 /*==  RETTELSER MED MAM 17/12-2015  =*/
 
