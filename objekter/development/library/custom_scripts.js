@@ -480,7 +480,7 @@ function showIosOverlay() {
 //                      myPagerObj.init("#myPagerContainer", ".myPageClass");
 //
 //              The first argument (here the id "#myPagerContainer") can be either an id or class. Use a class if you need two or more
-//              pageres to control your pages. The pager will be dynamicllay created inside "#myPagerContainer".
+//              pageres to control your pages. The pager will be dynamically created inside "#myPagerContainer".
 //
 //              The second argument need to be a class - the class has to be added to the containers you wish to control.
 var pagerClass = {
