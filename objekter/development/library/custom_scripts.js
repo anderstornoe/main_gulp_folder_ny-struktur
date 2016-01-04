@@ -455,3 +455,155 @@ function allIndexOf(str, toSearch) {
 function showIosOverlay() {
     $(".embed-responsive-16by9").prepend("<img src='../library/img/iPad_videoquiz_overlay.png' class='ipad'>")
 }
+
+
+// This class makes a pager for controlling the CSS display-property of a number of pages (or containers) with a class of your own choosing.
+// USAGE:
+// ======
+//
+//      HTML:
+//      =====
+//              <span id="myPagerContainer"></span>
+//
+//              <div class="myPageClass"> PAGE 1 </div>
+//              <div class="myPageClass"> PAGE 2 </div>
+//              <div class="myPageClass"> PAGE 3 </div>
+//
+//      JS:
+//      ===
+//              You first need to make an instance of the object like so:
+//
+//                      var myPagerObj = Object.create(pagerClass);
+//
+//              then you initialize the pager with two arguments:
+//
+//                      myPagerObj.init("#myPagerContainer", ".myPageClass");
+//
+//              The first argument (here the id "#myPagerContainer") can be either an id or class. Use a class if you need two or more
+//              pageres to control your pages. The pager will be dynamically created inside "#myPagerContainer".
+//
+//              The second argument need to be a class - the class has to be added to the containers you wish to control.
+var pagerClass = {
+    Range: 5,            // The default number visible buttons on the pager. 
+    ActiveLinkNum: 1,    // The default active page number.
+    PagerSelector: null, 
+    TargetSelectorChild: null, 
+    NumOfPages: null,    // Contains the number of pages/containers once counted.
+    init : function(PagerSelector, TargetSelectorChild){  // This "constructor" initiates the pager functionality.
+        this.PagerSelector = PagerSelector;
+        this.TargetSelectorChild = TargetSelectorChild;
+
+        this.pager();       // Call the pager.
+        this.pagerEvents(); // Set event-listners.
+    },
+    pager : function(){
+        
+        var Xthis = this;
+
+        if (Xthis.NumOfPages === null){  // Count the number of pages the pager has to handle - and only do it once.
+            Xthis.NumOfPages = 0;
+            $(Xthis.TargetSelectorChild).each(function(index, element) {
+                ++Xthis.NumOfPages;
+            });
+        }
+        
+        var HTML = '<ul class="PagerClass">';
+        // HTML += '<li><span class="PagerButtonLeft">&lt;</span></li>'; 
+        HTML += '<li><span class="PagerButtonLeft glyphicon glyphicon-chevron-left"></span></li>'; 
+        
+        for (var j = 1; j <= this.NumOfPages; j++) {
+            HTML += '<li><a href="#" class="PagerButton btn btn-sm btn-info">' + j + '</a></li>';
+        }
+            
+        // HTML += '<li> <span class="PagerButtonRight">&gt;</span> </li>';
+        HTML += '<li> <span class="PagerButtonRight glyphicon glyphicon-chevron-right"></span> </li>'; 
+        HTML += '</ul>';
+
+        // Generate the pager:
+        $(Xthis.PagerSelector).html(HTML);
+
+        Xthis.showHide();
+
+        console.log("ActiveLinkNum 1: " + this.ActiveLinkNum + ", NumOfPages: " + this.NumOfPages);
+    },
+    pagerEvents : function(){ // Set event-listeners.
+        
+        var Xthis = this;
+
+        $(Xthis.PagerSelector + " .PagerButtonLeft").click(function(e) { 
+            if (1 < Xthis.ActiveLinkNum) {  // Only perform pager functionality if the "active" page is larger than one.
+                Xthis.ActiveLinkNum -= 1;
+                console.log("PagerButtonLeft - ActiveLinkNum 1: " + Xthis.ActiveLinkNum);
+
+                $(Xthis.PagerSelector + " .PagerButton").removeClass("btn-info btn-primary");
+                $(Xthis.PagerSelector + " .PagerButton").addClass("btn-info");
+
+                Xthis.showHide(); // Show the active page and hide other pages. Show the "range" of pagerButtons and hide other pagerButtons.
+            }
+        });
+
+        $(Xthis.PagerSelector + " .PagerButtonRight").click(function(e) { 
+            if (Xthis.ActiveLinkNum < Xthis.NumOfPages) { // Only perform pager functionality if the "active" page is smaller than the number of pages.
+                Xthis.ActiveLinkNum += 1;
+                console.log("PagerButtonRight - ActiveLinkNum 2: " + Xthis.ActiveLinkNum);
+
+                $(Xthis.PagerSelector + " .PagerButton").removeClass("btn-info btn-primary");
+                $(Xthis.PagerSelector + " .PagerButton").addClass("btn-info");
+
+                Xthis.showHide(); // Show the active page and hide other pages. Show the "range" of pagerButtons and hide other pagerButtons.
+            }
+            
+        });
+
+        $(Xthis.PagerSelector + " .PagerButton").click(function(e) { // If a ".PagerButton" is pressed, then...
+            e.preventDefault(); // Prevent the link-nature of the anchor-tag.
+            
+            Xthis.ActiveLinkNum = parseInt($(this).text()); // Get the number of the pressed ".PagerButton".
+            console.log("PagerButton - ActiveLinkNum 3: " + Xthis.ActiveLinkNum);
+
+            Xthis.showHide(); // Show the active page and hide other pages. Show the "range" of pagerButtons and hide other pagerButtons.
+
+            $(Xthis.PagerSelector + " .PagerButton").removeClass("btn-info btn-primary");
+            $(Xthis.PagerSelector + " .PagerButton").addClass("btn-info");
+
+            var parentIndexNum; // The following code findes the parentIndexNum by adding the class "PagerMarker" and removing it again (the ".index()" method does not work here):
+            $(this).closest(Xthis.PagerSelector).addClass("PagerMarker");
+            $(Xthis.PagerSelector).each(function(index, element) {
+                if ($(element).hasClass("PagerMarker")) {
+                    parentIndexNum = index;
+                    $(element).removeClass("PagerMarker");
+                }
+            });
+            console.log("ON CLICK .PagerButton - parentIndexNum: " + parentIndexNum);
+         
+            var i = parseInt(Xthis.ActiveLinkNum)-1;
+            i = (i >= Xthis.NumOfPages)?(parentIndexNum+1)*parseInt(Xthis.NumOfPages)-i-1:i; 
+            $(Xthis.PagerSelector).each(function(index, element) {
+                $(".PagerButton:eq("+i+")", element).toggleClass("btn-info btn-primary");
+            });
+        });
+    }, showHide: function(){
+
+        var Xthis = this;
+
+        // NOTE: the StartIndex is a startingpoint for a range of number that ensures an "interval" of shown ".PagerButton"'s at the boundaries for the range [1, 2, 3, ... , NumOfPages]
+        var StartIndex = Xthis.ActiveLinkNum - Math.round((Xthis.Range - 1) / 2); // Find the startindex based on ActiveLinkNum.
+        if (StartIndex < 1) StartIndex = 1; // Ajust startindex for low ActiveLinkNum
+        if (Xthis.Range + StartIndex > Xthis.NumOfPages) StartIndex = Xthis.NumOfPages - Xthis.Range +1; // Ajust startindex for high ActiveLinkNum
+    
+        $(Xthis.PagerSelector + " .PagerButton").hide();  // Hide all ".PagerButton"'s.
+        $(Xthis.TargetSelectorChild).hide();   // Hide all pages.
+
+        $(Xthis.PagerSelector).each(function(index1, element1) {  // For each ".PagerButton" do...
+            $(" .PagerButton", element1).each(function(index2, element2) {  // For each ".PagerButton" do...
+                if ((StartIndex <= index2+1) && (index2+1 < Xthis.Range + StartIndex)){  // If ".PagerButton" (and therfore also the "page") is in the range [StartIndex, StartIndex + Range], then...
+                    $(element2).show();   // Show the ".PagerButton"'s in the range [StartIndex, StartIndex + Range].
+                    if (parseInt($(element2).text()) == Xthis.ActiveLinkNum) {
+                        $(element2).toggleClass("btn-info btn-primary");  // Set the pressed ".PagerButton" as btn-primary.
+                        $(Xthis.TargetSelectorChild+':eq('+String(parseInt(Xthis.ActiveLinkNum)-1)+')').show(); // Show the page.
+                    }
+                }
+            });
+        });
+    }
+}
