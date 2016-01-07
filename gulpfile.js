@@ -18,7 +18,7 @@
          'bower_components/bootstrap/dist/js/bootstrap.js',
          'bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.js',
          'bower_components/jquery-ui-sortable-animation/jquery.ui.sortable-animation.js',
-         'bower_components/jquery.countdown/dist/jquery.jquery.countdown.js'
+         'bower_components/jquery.countdown/dist/jquery.countdown.js'
          
      ],
 
