@@ -18,20 +18,21 @@
 /* Udkommenteret af THAN d. 21-09-2015 */
 
 
-/*  
-html {
+
+body {
   font-family: "OpenSans", Helvetica, Arial, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-*/
+
 
 html {
     /* Tilføjet af THAN d. 21-09-2015 */
-    -ms-text-size-adjust: 100%;
+    /**/
+        -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
-
+/*
 @media (max-width: 992px) {
     .h2 {
         font-size: 22px;
@@ -41,6 +42,9 @@ html {
     }
     .h4 {
         font-size: 14px;
+    }
+    .h8{
+        color:yellow;
     }
 }
 
@@ -54,7 +58,11 @@ html {
     .h4 {
         font-size: 12px;
     }
+    .btn{
+        margin-bottom: 10px;
+    }
 }
+*/
 
 .btn {
     /*padding: 4px 20px;*/
@@ -242,3 +250,8 @@ h6 {
 .dshow {
     display: block
 }
+
+.badge, .label {
+    font-weight: 600;  /* ret */
+}
+

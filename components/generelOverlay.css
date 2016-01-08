@@ -109,25 +109,6 @@ a {
     color: rgba(0, 0, 0, 1);
 }
 
-#UserMsgBox {
-    border: 0px solid silver;
-    background-color: rgba(248, 248, 246, 0.9);
-    border-radius: 3px;
-    /* padding: 30px 30px 40px 40px; */
-    padding: 40px 40px 40px 40px;  /* MAMs rettelse 30-10-2015 */
-    width: 70%;
-    max-width: 720px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    top: 20%;
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 1.3em;
-    position: absolute;
-}
-
 .MsgBox_bgr {
     background-color: rgba(0, 0, 0, 0.5);
     height: 100%;
@@ -141,3 +122,102 @@ a {
     margin-right: -15px;
     color: rgba(0, 0, 0, 0.5);
 }
+
+
+#UserMsgBox {
+    border: 0px solid silver;
+    /*background-color: rgba(248, 248, 246, 0.9);*/
+    background-color: #fff;
+    border-radius: 3px;
+    /* padding: 30px 30px 40px 40px; */
+    /*padding: 40px 40px 40px 40px; */ /* MAMs rettelse 30-10-2015 */
+    padding: 30px;  /* rettet */
+    width: 70%;
+    max-width: 720px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 20%;
+    cursor: pointer;
+    /*font-size: 16px;*/
+    /*line-height: 1.3em;*/
+    line-height: 1.5em; /* rettet */
+    position: absolute;
+}
+
+
+/* ==========  UserMsgBox RETTELSER MED MAM 17/12-2015 ========== */
+
+.clear {
+    clear: both;
+}
+
+.OverlayTextContainer {
+    max-width: 1164px;
+}
+
+#UserMsgBox p {
+    margin: 0px;
+}
+
+#UserMsgBox .score_container {
+    margin-top: 0px;
+    position: inherit;
+    background-color: #f8f8f6;
+}
+
+#UserMsgBox .resultText {
+    padding: 12px 0px 12px 0px;
+    /*float: left;*/
+}
+
+#UserMsgBox .label {
+    margin-left: 10px;
+}
+
+#UserMsgBox .label-danger {
+    background-color: #ed3e3a;
+    border-radius: 4px;
+}
+
+#UserMsgBox .ScoreBox {
+    background-color: #f8f8f6;
+    border-radius: 6px;
+}
+
+#UserMsgBox .ScoreBox h5 {
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#UserMsgBox .ml15 {
+    margin-left: 15px;
+}
+
+#UserMsgBox .btn-lg{  
+    margin: 0px;
+}
+
+#UserMsgBox .btn{  
+    margin-top: 20px;
+}
+
+#UserMsgBox .scoreText{  
+    margin-bottom: 20px;
+}
+
+#UserMsgBox .scoreWrapper{  
+    clear: both;
+}
+
+
+/*==  RETTELSER MED MAM 17/12-2015  =*/
+
+
+
+
+
+
+
