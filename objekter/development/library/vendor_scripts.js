@@ -25827,7 +25827,7 @@ var tooltip = $.widget( "ui.tooltip", {
 
 }));
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under the MIT license
  */
@@ -25839,13 +25839,13 @@ if (typeof jQuery === 'undefined') {
 +function ($) {
   'use strict';
   var version = $.fn.jquery.split(' ')[0].split('.')
-  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 2)) {
-    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 3')
+  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1)) {
+    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher')
   }
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: transition.js v3.3.6
+ * Bootstrap: transition.js v3.3.5
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -25905,7 +25905,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: alert.js v3.3.6
+ * Bootstrap: alert.js v3.3.5
  * http://getbootstrap.com/javascript/#alerts
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -25924,7 +25924,7 @@ if (typeof jQuery === 'undefined') {
     $(el).on('click', dismiss, this.close)
   }
 
-  Alert.VERSION = '3.3.6'
+  Alert.VERSION = '3.3.5'
 
   Alert.TRANSITION_DURATION = 150
 
@@ -26000,7 +26000,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: button.js v3.3.6
+ * Bootstrap: button.js v3.3.5
  * http://getbootstrap.com/javascript/#buttons
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -26020,7 +26020,7 @@ if (typeof jQuery === 'undefined') {
     this.isLoading = false
   }
 
-  Button.VERSION  = '3.3.6'
+  Button.VERSION  = '3.3.5'
 
   Button.DEFAULTS = {
     loadingText: 'loading...'
@@ -26121,7 +26121,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: carousel.js v3.3.6
+ * Bootstrap: carousel.js v3.3.5
  * http://getbootstrap.com/javascript/#carousel
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -26152,7 +26152,7 @@ if (typeof jQuery === 'undefined') {
       .on('mouseleave.bs.carousel', $.proxy(this.cycle, this))
   }
 
-  Carousel.VERSION  = '3.3.6'
+  Carousel.VERSION  = '3.3.5'
 
   Carousel.TRANSITION_DURATION = 600
 
@@ -26359,7 +26359,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: collapse.js v3.3.6
+ * Bootstrap: collapse.js v3.3.5
  * http://getbootstrap.com/javascript/#collapse
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -26389,7 +26389,7 @@ if (typeof jQuery === 'undefined') {
     if (this.options.toggle) this.toggle()
   }
 
-  Collapse.VERSION  = '3.3.6'
+  Collapse.VERSION  = '3.3.5'
 
   Collapse.TRANSITION_DURATION = 350
 
@@ -26571,7 +26571,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: dropdown.js v3.3.6
+ * Bootstrap: dropdown.js v3.3.5
  * http://getbootstrap.com/javascript/#dropdowns
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -26591,7 +26591,7 @@ if (typeof jQuery === 'undefined') {
     $(element).on('click.bs.dropdown', this.toggle)
   }
 
-  Dropdown.VERSION = '3.3.6'
+  Dropdown.VERSION = '3.3.5'
 
   function getParent($this) {
     var selector = $this.attr('data-target')
@@ -26623,7 +26623,7 @@ if (typeof jQuery === 'undefined') {
       if (e.isDefaultPrevented()) return
 
       $this.attr('aria-expanded', 'false')
-      $parent.removeClass('open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
+      $parent.removeClass('open').trigger('hidden.bs.dropdown', relatedTarget)
     })
   }
 
@@ -26657,7 +26657,7 @@ if (typeof jQuery === 'undefined') {
 
       $parent
         .toggleClass('open')
-        .trigger($.Event('shown.bs.dropdown', relatedTarget))
+        .trigger('shown.bs.dropdown', relatedTarget)
     }
 
     return false
@@ -26737,7 +26737,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: modal.js v3.3.6
+ * Bootstrap: modal.js v3.3.5
  * http://getbootstrap.com/javascript/#modals
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -26771,7 +26771,7 @@ if (typeof jQuery === 'undefined') {
     }
   }
 
-  Modal.VERSION  = '3.3.6'
+  Modal.VERSION  = '3.3.5'
 
   Modal.TRANSITION_DURATION = 300
   Modal.BACKDROP_TRANSITION_DURATION = 150
@@ -27075,7 +27075,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: tooltip.js v3.3.6
+ * Bootstrap: tooltip.js v3.3.5
  * http://getbootstrap.com/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ========================================================================
@@ -27102,7 +27102,7 @@ if (typeof jQuery === 'undefined') {
     this.init('tooltip', element, options)
   }
 
-  Tooltip.VERSION  = '3.3.6'
+  Tooltip.VERSION  = '3.3.5'
 
   Tooltip.TRANSITION_DURATION = 150
 
@@ -27590,7 +27590,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: popover.js v3.3.6
+ * Bootstrap: popover.js v3.3.5
  * http://getbootstrap.com/javascript/#popovers
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -27610,7 +27610,7 @@ if (typeof jQuery === 'undefined') {
 
   if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
 
-  Popover.VERSION  = '3.3.6'
+  Popover.VERSION  = '3.3.5'
 
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
     placement: 'right',
@@ -27699,7 +27699,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: scrollspy.js v3.3.6
+ * Bootstrap: scrollspy.js v3.3.5
  * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -27728,7 +27728,7 @@ if (typeof jQuery === 'undefined') {
     this.process()
   }
 
-  ScrollSpy.VERSION  = '3.3.6'
+  ScrollSpy.VERSION  = '3.3.5'
 
   ScrollSpy.DEFAULTS = {
     offset: 10
@@ -27872,7 +27872,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: tab.js v3.3.6
+ * Bootstrap: tab.js v3.3.5
  * http://getbootstrap.com/javascript/#tabs
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -27892,7 +27892,7 @@ if (typeof jQuery === 'undefined') {
     // jscs:enable requireDollarBeforejQueryAssignment
   }
 
-  Tab.VERSION = '3.3.6'
+  Tab.VERSION = '3.3.5'
 
   Tab.TRANSITION_DURATION = 150
 
@@ -28028,7 +28028,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: affix.js v3.3.6
+ * Bootstrap: affix.js v3.3.5
  * http://getbootstrap.com/javascript/#affix
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -28057,7 +28057,7 @@ if (typeof jQuery === 'undefined') {
     this.checkPosition()
   }
 
-  Affix.VERSION  = '3.3.6'
+  Affix.VERSION  = '3.3.5'
 
   Affix.RESET    = 'affix affix-top affix-bottom'
 
@@ -28489,238 +28489,3 @@ if (typeof jQuery === 'undefined') {
 })(window, jQuery);
 
 }));
-/*!
- * The Final Countdown for jQuery v2.1.0 (http://hilios.github.io/jQuery.countdown/)
- * Copyright (c) 2015 Edson Hilios
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy of
- * this software and associated documentation files (the "Software"), to deal in
- * the Software without restriction, including without limitation the rights to
- * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
- * the Software, and to permit persons to whom the Software is furnished to do so,
- * subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
- * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
- * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
- * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
- * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-(function(factory) {
-    "use strict";
-    if (typeof define === "function" && define.amd) {
-        define([ "jquery" ], factory);
-    } else {
-        factory(jQuery);
-    }
-})(function($) {
-    "use strict";
-    var instances = [], matchers = [], defaultOptions = {
-        precision: 100,
-        elapse: false
-    };
-    matchers.push(/^[0-9]*$/.source);
-    matchers.push(/([0-9]{1,2}\/){2}[0-9]{4}( [0-9]{1,2}(:[0-9]{2}){2})?/.source);
-    matchers.push(/[0-9]{4}([\/\-][0-9]{1,2}){2}( [0-9]{1,2}(:[0-9]{2}){2})?/.source);
-    matchers = new RegExp(matchers.join("|"));
-    function parseDateString(dateString) {
-        if (dateString instanceof Date) {
-            return dateString;
-        }
-        if (String(dateString).match(matchers)) {
-            if (String(dateString).match(/^[0-9]*$/)) {
-                dateString = Number(dateString);
-            }
-            if (String(dateString).match(/\-/)) {
-                dateString = String(dateString).replace(/\-/g, "/");
-            }
-            return new Date(dateString);
-        } else {
-            throw new Error("Couldn't cast `" + dateString + "` to a date object.");
-        }
-    }
-    var DIRECTIVE_KEY_MAP = {
-        Y: "years",
-        m: "months",
-        n: "daysToMonth",
-        w: "weeks",
-        d: "daysToWeek",
-        D: "totalDays",
-        H: "hours",
-        M: "minutes",
-        S: "seconds"
-    };
-    function escapedRegExp(str) {
-        var sanitize = str.toString().replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
-        return new RegExp(sanitize);
-    }
-    function strftime(offsetObject) {
-        return function(format) {
-            var directives = format.match(/%(-|!)?[A-Z]{1}(:[^;]+;)?/gi);
-            if (directives) {
-                for (var i = 0, len = directives.length; i < len; ++i) {
-                    var directive = directives[i].match(/%(-|!)?([a-zA-Z]{1})(:[^;]+;)?/), regexp = escapedRegExp(directive[0]), modifier = directive[1] || "", plural = directive[3] || "", value = null;
-                    directive = directive[2];
-                    if (DIRECTIVE_KEY_MAP.hasOwnProperty(directive)) {
-                        value = DIRECTIVE_KEY_MAP[directive];
-                        value = Number(offsetObject[value]);
-                    }
-                    if (value !== null) {
-                        if (modifier === "!") {
-                            value = pluralize(plural, value);
-                        }
-                        if (modifier === "") {
-                            if (value < 10) {
-                                value = "0" + value.toString();
-                            }
-                        }
-                        format = format.replace(regexp, value.toString());
-                    }
-                }
-            }
-            format = format.replace(/%%/, "%");
-            return format;
-        };
-    }
-    function pluralize(format, count) {
-        var plural = "s", singular = "";
-        if (format) {
-            format = format.replace(/(:|;|\s)/gi, "").split(/\,/);
-            if (format.length === 1) {
-                plural = format[0];
-            } else {
-                singular = format[0];
-                plural = format[1];
-            }
-        }
-        if (Math.abs(count) === 1) {
-            return singular;
-        } else {
-            return plural;
-        }
-    }
-    var Countdown = function(el, finalDate, options) {
-        this.el = el;
-        this.$el = $(el);
-        this.interval = null;
-        this.offset = {};
-        this.options = $.extend({}, defaultOptions);
-        this.instanceNumber = instances.length;
-        instances.push(this);
-        this.$el.data("countdown-instance", this.instanceNumber);
-        if (options) {
-            if (typeof options === "function") {
-                this.$el.on("update.countdown", options);
-                this.$el.on("stoped.countdown", options);
-                this.$el.on("finish.countdown", options);
-            } else {
-                this.options = $.extend({}, defaultOptions, options);
-            }
-        }
-        this.setFinalDate(finalDate);
-        this.start();
-    };
-    $.extend(Countdown.prototype, {
-        start: function() {
-            if (this.interval !== null) {
-                clearInterval(this.interval);
-            }
-            var self = this;
-            this.update();
-            this.interval = setInterval(function() {
-                self.update.call(self);
-            }, this.options.precision);
-        },
-        stop: function() {
-            clearInterval(this.interval);
-            this.interval = null;
-            this.dispatchEvent("stoped");
-        },
-        toggle: function() {
-            if (this.interval) {
-                this.stop();
-            } else {
-                this.start();
-            }
-        },
-        pause: function() {
-            this.stop();
-        },
-        resume: function() {
-            this.start();
-        },
-        remove: function() {
-            this.stop.call(this);
-            instances[this.instanceNumber] = null;
-            delete this.$el.data().countdownInstance;
-        },
-        setFinalDate: function(value) {
-            this.finalDate = parseDateString(value);
-        },
-        update: function() {
-            if (this.$el.closest("html").length === 0) {
-                this.remove();
-                return;
-            }
-            var hasEventsAttached = $._data(this.el, "events") !== undefined, now = new Date(), newTotalSecsLeft;
-            newTotalSecsLeft = this.finalDate.getTime() - now.getTime();
-            newTotalSecsLeft = Math.ceil(newTotalSecsLeft / 1e3);
-            newTotalSecsLeft = !this.options.elapse && newTotalSecsLeft < 0 ? 0 : Math.abs(newTotalSecsLeft);
-            if (this.totalSecsLeft === newTotalSecsLeft || !hasEventsAttached) {
-                return;
-            } else {
-                this.totalSecsLeft = newTotalSecsLeft;
-            }
-            this.elapsed = now >= this.finalDate;
-            this.offset = {
-                seconds: this.totalSecsLeft % 60,
-                minutes: Math.floor(this.totalSecsLeft / 60) % 60,
-                hours: Math.floor(this.totalSecsLeft / 60 / 60) % 24,
-                days: Math.floor(this.totalSecsLeft / 60 / 60 / 24) % 7,
-                daysToWeek: Math.floor(this.totalSecsLeft / 60 / 60 / 24) % 7,
-                daysToMonth: Math.floor(this.totalSecsLeft / 60 / 60 / 24 % 30.4368),
-                totalDays: Math.floor(this.totalSecsLeft / 60 / 60 / 24),
-                weeks: Math.floor(this.totalSecsLeft / 60 / 60 / 24 / 7),
-                months: Math.floor(this.totalSecsLeft / 60 / 60 / 24 / 30.4368),
-                years: Math.abs(this.finalDate.getFullYear() - now.getFullYear())
-            };
-            if (!this.options.elapse && this.totalSecsLeft === 0) {
-                this.stop();
-                this.dispatchEvent("finish");
-            } else {
-                this.dispatchEvent("update");
-            }
-        },
-        dispatchEvent: function(eventName) {
-            var event = $.Event(eventName + ".countdown");
-            event.finalDate = this.finalDate;
-            event.elapsed = this.elapsed;
-            event.offset = $.extend({}, this.offset);
-            event.strftime = strftime(this.offset);
-            this.$el.trigger(event);
-        }
-    });
-    $.fn.countdown = function() {
-        var argumentsArray = Array.prototype.slice.call(arguments, 0);
-        return this.each(function() {
-            var instanceNumber = $(this).data("countdown-instance");
-            if (instanceNumber !== undefined) {
-                var instance = instances[instanceNumber], method = argumentsArray[0];
-                if (Countdown.prototype.hasOwnProperty(method)) {
-                    instance[method].apply(instance, argumentsArray.slice(1));
-                } else if (String(method).match(/^[$A-Z_][0-9A-Z_$]*$/i) === null) {
-                    instance.setFinalDate.call(instance, method);
-                    instance.start();
-                } else {
-                    $.error("Method %s does not exist on jQuery.countdown".replace(/\%s/gi, method));
-                }
-            } else {
-                new Countdown(this, argumentsArray[0], argumentsArray[1]);
-            }
-        });
-    };
-});
