@@ -198,7 +198,7 @@ gulp.task('deploy', function() {
  //Hold øje med ændringer i html, css og js filer --> reload og concat (js / css): 
 
  gulp.task('watch', function() {
-     gulp.watch(['objekter/development/**/*.js', 'objekter/development/**/*.html', 'objekter/development/**/*.css'], ['reload']);
+     gulp.watch(['objekter/development/**/*.js', 'objekter/development/**/*.html', 'objekter/development/**/*.css','objekter/development/**/json/*.json'], ['reload']);
      gulp.watch(['components/*.css'], ['reload', 'css']);
      gulp.watch(['components/*.js'], ['reload', 'js']);
 
