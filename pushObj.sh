@@ -109,6 +109,7 @@ then
 	# gulp pushObj --option ${pathArray[objNum]};   #  ACTIVATE!!!
 	gulp copy_production --option ${pathArray[objNum]};
 	gulp trim_files --option ${pathArray[objNum]};
+	
 	gulp deploy --option ${pathArray[objNum]}
 fi
 
