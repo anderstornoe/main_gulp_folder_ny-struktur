@@ -109,9 +109,9 @@ body {
 }
 
 .container-fluid {
-    max-width: 1164px;
+    max-width: 1170px;
     /*background-color: #f8f8f6;*/
-    padding: 0 30px 30px 30px;
+    padding: 0px;
 }
 
 
@@ -253,5 +253,10 @@ h6 {
 
 .badge, .label {
     font-weight: 600;  /* ret */
+}
+
+.row{
+    margin-left: 0px;
+    margin-right : 0px; 
 }
 
