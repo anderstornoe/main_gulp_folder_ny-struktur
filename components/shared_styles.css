@@ -141,3 +141,79 @@
 .PagerContainer ul li {display: inline; margin: 0px; padding: 0px;}
 .PagerButtonLeft{margin-right: 8px; position: relative;}
 .PagerButtonRight{position: relative; left: -8px;}
+
+
+/*******************************************************************************************************************   
+        Nedestaaende indsat af THAN d. 27-01-2016: CSS til JS-funktionerne "inctruction()" og "explanation()"   
+*******************************************************************************************************************/
+
+.Clear{
+    clear: both;
+}
+
+
+.explanation {
+    margin-bottom: 20px;
+}
+
+.explanation div:nth-child(2){
+    width: 80%;
+}
+
+.explanation > .glyphicon{
+    color: #56bfc5;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.7;
+    margin-left: 10px;
+    margin-right: 15px;
+    /*top: 2px;*/
+}
+
+.instruktion {  /* Flyttet fra kvuc_design.css */
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    font-weight: 600;
+    padding: 15px;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    float: left;
+    position: relative;
+}
+    
+.instruktion:before {  /* Flyttet fra kvuc_design.css */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: -2px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+    
+.instruktion > .glyphicon-arrow-right {  /* Flyttet fra kvuc_design.css */
+    color: #56bfc5;
+    font-size: 18px;
+    margin-right: 15px;
+    font-weight: 600;
+    line-height: 1.7;
+    top: 2px;
+}
+
+
+.instruktion {
+    width: 100%;
+    padding-left: 10px;
+}
+.instruktion div:nth-child(2){
+    width: 90%;
+}
+
+@media (max-width: 750px) {
+    .instruktion > .glyphicon{
+        font-size: 14px;
+    }
+}
