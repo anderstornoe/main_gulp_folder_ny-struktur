@@ -229,6 +229,8 @@ function shuffle_Array(o) {
 
 $(document).ready(function() {
 
+    AddFavicon();
+
     var isInIFrame = (window.location != window.parent.location);
     console.log("Er i rammen? : " + isInIFrame);
     if (isInIFrame) {
@@ -242,7 +244,8 @@ $(document).ready(function() {
 // Her kan man se hvilke browsere der understøtter favicons:
 //      https://en.wikipedia.org/wiki/Favicon
 function AddFavicon() {
-    $('head').append('<link type="image/x-icon" rel="shortcut icon" href="../library/img/testFavicon.ico" />');
+
+$("head").append("<link rel='shortcut icon' href='../library/img/test_1Favicon.ico' type='image/x-icon'><link rel='icon' href='../library/img/test_1Favicon.ico' type='image/x-icon'>");
 }
 
 
