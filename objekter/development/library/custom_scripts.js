@@ -245,7 +245,7 @@ $(document).ready(function() {
 //      https://en.wikipedia.org/wiki/Favicon
 function AddFavicon() {
 
-$("head").append("<link rel='shortcut icon' href='../library/img/test_1Favicon.ico' type='image/x-icon'><link rel='icon' href='../library/img/test_1Favicon.ico' type='image/x-icon'>");
+$("head").append("<link rel='shortcut icon' href='../library/img/vuc_favicon.ico' type='image/x-icon'><link rel='icon' href='../library/img/vuc_favicon.ico' type='image/x-icon'>");
 }
 
 
