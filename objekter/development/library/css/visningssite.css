@@ -6,14 +6,7 @@ body{
     font-weight: 200;
 }
 
-h1 {
-    margin-left: 20px;
-}
 
-.col-sm-12,
-.col-md-6 {
-    padding-right: 20px;
-}
 
 .MetaDataLink {
     color: #0071bc;
@@ -27,6 +20,7 @@ h1 {
 
 .jumbotron {
     margin-right: 16.6667%;
+    margin-left: 0px;
 }
 
 .om_header h1 {
