@@ -157,3 +157,6 @@ textarea {
         display: none;   
     }
 }
+.btnSubText{
+    padding-left: 10px;
+}
