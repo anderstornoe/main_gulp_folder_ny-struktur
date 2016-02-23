@@ -46,10 +46,11 @@ html {
         color:yellow;
     }
 }
+*/
 
-@media (max-width: 768px) {
-    .h2 {
-        font-size: 18px;
+@media (min-width: 768px) {
+    .h1 {
+        font-size: 12px;
     }
     .h3 {
         font-size: 16px;
@@ -61,7 +62,7 @@ html {
         margin-bottom: 10px;
     }
 }
-*/
+
 
 .btn {
     /*padding: 4px 20px;*/
