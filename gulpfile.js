@@ -208,7 +208,7 @@
 
  gulp.task('connect', function() {
      connect.server({
-         root: 'objekter/production/',
+         root: 'objekter/development/',
          // root: 'objekter/production/',   // Added to test if "things" work when copied to production. 
          livereload: true
      });
