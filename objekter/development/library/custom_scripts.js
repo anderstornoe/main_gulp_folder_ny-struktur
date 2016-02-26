@@ -612,6 +612,238 @@ var pagerClass = {
 }
 
 
+
+/*******************************************************
+ *      objectStorageClass documentation
+ *******************************************************
+ *
+ * BASIC USAGE:
+ * ============
+ *
+ *  1.  Initialize a local storage object "lsObj" by using the two commands:
+ *
+ *          var lsObj = Object.create(objectStorageClass);
+ *          lsObj.init("my_local_storage_object_name");
+ *
+ *      - where "my_local_storage_object_name" is a name of the object of your own choosing.
+ *      You always need to initialize a local storage object before you can use any commands like "load", "save", "delete" etc. You only need to
+ *      initialize a local storage object (eg. "lsObj") once in your program.
+ *
+ *  2.  Next, load the name of a PREVIOUSLY stored/saved variable - e.g. "myVarName1":
+ *
+ *          var myVarName1 = lsObj.load("myVarName1");
+ *
+ *  3.  If myVarName1 == null, then the student has not made the e-learning exercise before: load your e-learning exercise start-scenario. 
+ *      If myVarName1 != null, then the student has made the e-learning exercise before: myVarName1 has whatever value you have stored 
+ *      in it from the last/previous "session" - load therefor the appropriate e-learning exercise scenario.
+ *
+ *  4.  To save a variable like "myVarName1" (do that at a appropriate point in your e-learning exercise), you do:
+ *  
+ *          lsObj.save("myVarName1", myVarName1);
+ *
+ *      "myVarName1" is now stored in "my_local_storage_object_name", and can be retrieved by the "load" shown step 2 above. You can save 
+ *      as many variables inside "my_local_storage_object_name" as you nedd – you just do: 
+ *
+ *          lsObj.save("myVarName1", myVarName1);
+ *          lsObj.save("myVarName2", myVarName2);
+ *              ...
+ *          lsObj.save("myVarNameN", myVarNameN);
+ *
+ *  5.  If you need to remove/delete the session, you do:
+ *
+ *          lsObj.delete():
+ *
+ *      - which will remove/delete the local storage object "my_local_storage_object_name".
+ *
+ * AUTOSAVE:
+ * =========
+ *
+ *  1.  Initialize a local storage object "lsObj" by using the two commands:
+ *
+ *          var lsObj = Object.create(objectStorageClass);
+ *          lsObj.init("my_local_storage_object_name");
+ *
+ *      - where "my_local_storage_object_name" is a name of the object of your own choosing.
+ *      You always need to initialize a local storage object before you can use any commands like "load", "save", "delete" etc. You only need to
+ *      initialize a local storage object (eg. "lsObj") once in your program.
+ *
+ *  2.  To start autosaving a variable "myVarName1", you do:
+ *          
+ *          lsObj.startAutoSave("myVarName1", myVarName1, timeInMilliSec);
+ *      
+ *      - where "timeInMilliSec" is the time (in milliseconds) between each saving action of "myVarName1". You can have autosave on as many 
+ *      variables as you need - you just do: 
+ *
+ *          lsObj.startAutoSave("myVarName1", myVarName1, timeInMilliSec1);
+ *          lsObj.startAutoSave("myVarName2", myVarName2, timeInMilliSec2);
+ *              ...
+ *          lsObj.startAutoSave("myVarNameN", myVarNameN, timeInMilliSecN);
+ *
+ *  3.  If you for some reason need to limit the duration/number of times the startAutoSave-function performs its saving-action on a given 
+ *      variable, you do:
+ *
+ *          lsObj.setAutoSaveMaxCount("myVarName1", maxSaveCount);
+ *
+ *      - where maxSaveCount is the maximum number of times the startAutoSave-function performs its saving-action.
+ *
+ *  4.  To stop the startAutoSave-function, you do:
+ *
+ *          lsObj.stopAutoSave("myVarName1");
+ */
+
+var objectStorageClass = {
+    // defaultMsg : 'Du har lavet denne øvelse før.',
+    localStorageObjName : null, // The name of the storage object.
+    localStorageObjData : {timeStamp: null},  // The default storage object.
+    init : function(localStorageObjName){
+        if(typeof(Storage) !== "undefined"){
+            console.log("objectStorageClass.init - LocalStorage supported!");
+            this.localStorageObjName = localStorageObjName;
+            this.localStorageObjData.timeStamp = this.setTimeStamp();
+            var localStorageObjData =  JSON.parse(localStorage.getItem(this.localStorageObjName));
+            console.log("objectStorageClass.init - localStorageObjName: " + this.localStorageObjName + ", localStorageObjData: " + JSON.stringify(localStorageObjData));
+        } else {
+            console.log("objectStorageClass.init - LocalStorage NOT supported!");
+        } 
+    },
+    save : function(varName, varData) {
+        if(typeof(Storage) !== "undefined"){
+            console.log("objectStorageClass.save - LocalStorage supported!");
+
+            this.localStorageObjData.timeStamp = this.setTimeStamp();
+            console.log('objectStorageClass.save - timeStamp: ' + this.localStorageObjData.timeStamp);
+
+            if (!this.localStorageObjData.hasOwnProperty(varName)) {
+                console.log("objectStorageClass.save - 0");
+                this.localStorageObjData[varName] = '';
+            } 
+
+            console.log('objectStorageClass.save - varData: '+JSON.stringify(varData));
+
+            console.log("objectStorageClass.save - this.localStorageObjData 1 : " + JSON.stringify(this.localStorageObjData));
+            this.localStorageObjData[varName] = varData;
+            console.log("objectStorageClass.save - this.localStorageObjData 2 : " + JSON.stringify(this.localStorageObjData));
+            console.log("objectStorageClass.save - typeof(this.localStorageObjData): " + typeof(this.localStorageObjData));
+
+
+            try {
+                localStorage.setItem(this.localStorageObjName, JSON.stringify(this.localStorageObjData));
+            }
+
+            catch(error) {
+                console.log("objectStorageClass.save - LocalStorage error: " + error.message);
+            }
+            
+        } else {
+            console.log("objectStorageClass.save - LocalStorage NOT supported!");
+        }
+    },
+    load : function(varName) {
+        if(typeof(Storage) !== "undefined"){
+            console.log("objectStorageClass.load - 0");
+            var localStorageObjData = JSON.parse(localStorage.getItem(this.localStorageObjName));
+            console.log("objectStorageClass.load - localStorageObjName: " + this.localStorageObjName + ", localStorageObjData: " + JSON.stringify(localStorageObjData));
+            if (localStorageObjData !== null) {  // If the variable exists, then return it:
+                console.log("objectStorageClass.load - A1");
+                console.log("objectStorageClass.load - typeof(localStorageObjData):" + typeof(localStorageObjData) + 
+                    ", localStorageObjData.length: " + localStorageObjData.length +
+                    ", localStorageObjData: " + JSON.stringify(localStorageObjData) + 
+                    ", localStorageObjData: " + localStorageObjData);
+
+                // this.localStorageObjData = localStorageObjData;  // only needs overwriting when saving.
+                if (localStorageObjData.hasOwnProperty(varName)){
+                    console.log("objectStorageClass.load - A2");
+                    return localStorageObjData[varName];       
+                } else {
+                    console.log("objectStorageClass.load - A3");
+                    return null;
+                }   
+            } else {
+                console.log("objectStorageClass.load - A4");
+                return null;
+            }
+        } else {
+            console.log("objectStorageClass.load - LocalStorage NOT supported!");
+            return null;
+        } 
+    },
+    delete : function(localStorageVarName) {
+        if(typeof(Storage) !== "undefined"){
+            console.log("objectStorageClass.delete - LocalStorage supported!");
+            localStorage.removeItem(localStorageVarName);
+        } else {
+            console.log("objectStorageClass.delete - LocalStorage NOT supported!");
+        }
+    },
+    exist : function(varName){
+        if(typeof(Storage) !== "undefined"){
+            console.log("objectStorageClass.exist - LocalStorage supported!");
+            var localStorageObjData = JSON.parse(localStorage.getItem(this.localStorageObjName));
+            if (localStorageObjData !== null) {
+                console.log("objectStorageClass.exist - this.localStorageObjName exist!!!");
+                console.log('objectStorageClass.exist - typeof(localStorageObjData): '+typeof(localStorageObjData)+', localStorageObjData: '+JSON.stringify(localStorageObjData));
+                if (localStorageObjData.hasOwnProperty(varName)) {
+                    console.log("objectStorageClass.exist."+varName+" - TRUE ");
+                } else {
+                    console.log("objectStorageClass.exist."+varName+" - FALSE ");
+                }
+            } else {
+                console.log("objectStorageClass.exist - this.localStorageObjName does NOT exist!!!");
+            }
+        } else {
+            console.log("objectStorageClass.exist - LocalStorage NOT supported!");
+        }
+    },
+    setTimeStamp : function(){
+        return new Date().getTime(); 
+    },
+    getTimeStamp : function(){
+        return this.localStorageObjData.timeStamp;
+    },
+    startAutoSave : function(varName, varData, timeInMilliSec){  // Starts "auto save" of a variable "varName".
+        console.log("objectStorageClass.startAutoSave - localStorageObjData 1: " + JSON.stringify(this.localStorageObjData));
+        if (!this.localStorageObjData.hasOwnProperty('autoSaveTimeIdObj')) {
+            console.log("objectStorageClass.startAutoSave - autoSaveTimeIdObj - OK!!");
+            this.localStorageObjData.autoSaveTimeIdObj = {};
+        } 
+        if (!this.localStorageObjData.autoSaveTimeIdObj.hasOwnProperty(varName)) {
+            console.log("objectStorageClass.startAutoSave - autoSaveTimeIdObj."+varName+" - OK!");
+            this.localStorageObjData.autoSaveTimeIdObj[varName] = {id: 0, saveCount: 0, maxSaveCount : null};  // "maxSaveCount = null" makes it save indefinitely.
+        } 
+        console.log("objectStorageClass.startAutoSave - jsonData 2: " + JSON.stringify(this.localStorageObjData));
+        console.log("objectStorageClass.startAutoSave - autoSaveTimeIdObj."+varName+" - START");
+        var xthis = this;
+        var LSA = this.localStorageObjData.autoSaveTimeIdObj[varName];
+        LSA.id = setInterval(function(){ 
+            xthis.save(varName, varData); 
+            ++LSA.saveCount;
+            console.log("objectStorageClass.startAutoSave - autoSaveTimeIdObj."+varName+" - SAVE "+ LSA.saveCount);
+            if ((LSA.maxSaveCount !== null) && (LSA.saveCount >= LSA.maxSaveCount)){
+                xthis.stopAutoSave(varName);
+            }
+        }, timeInMilliSec);
+    }, 
+    stopAutoSave : function(varName){  // Stops "auto save" of a variable "varName".
+        if (this.localStorageObjData.hasOwnProperty('autoSaveTimeIdObj')) {
+            if (this.localStorageObjData.autoSaveTimeIdObj.hasOwnProperty(varName)) {
+                console.log("objectStorageClass.stopAutoSave - autoSaveTimeIdObj."+varName+" - STOP");
+                clearInterval(this.localStorageObjData.autoSaveTimeIdObj[varName].id);
+            } 
+        }
+    },
+    setAutoSaveMaxCount : function(varName, maxSaveCount){  // Sets the maximum number of times the function startAutoSave saves the variable varName. Set maxSaveCount to null for making it save indefinitely.
+        if (this.localStorageObjData.hasOwnProperty('autoSaveTimeIdObj')) {
+            if (this.localStorageObjData.autoSaveTimeIdObj.hasOwnProperty(varName)) {
+                console.log("objectStorageClass.setAutoSaveMaxCount - autoSaveTimeIdObj."+varName+".maxSaveCount - SET");
+                this.localStorageObjData.autoSaveTimeIdObj[varName].maxSaveCount = maxSaveCount;
+            } 
+        }
+    }
+}
+
+
+
+
 function instruction(instructionText) {
     HTML =  '<h4 class="instruktion">';
     HTML +=     '<div class="left glyphicon glyphicon-arrow-right"></div>';
