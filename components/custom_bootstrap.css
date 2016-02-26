@@ -1,8 +1,21 @@
 @font-face {
     font-family: 'OpenSans';
-    font-style: normal;
-    src: local('Open Sans'), local('OpenSans'), url("../fonts/OpenSans-Light-webfont.woff") format('woff');
+    font-weight:400;
+    src: local('Open Sans'), local('OpenSans Regular'), url("../fonts/OpenSans-Regular-webfont.woff") format('woff');
 }
+
+@font-face {
+    font-family: 'OpenSans';
+    font-weight:300;
+    src: local('Open Sans'), local('OpenSans Light'), url("../fonts/OpenSans-Light-webfont.woff") format('woff');
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    font-weight:600;
+    src: local('Open Sans'), local('OpenSans Semibold'), url("../fonts/OpenSans-Semibold-webfont.woff") format('woff');
+}
+
 
 
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400italic,600italic,700italic,800italic,400,300,600,700,800";*/
@@ -198,7 +211,7 @@ h3,
 h4,
 h5,
 h6 {
-    margin-top: 0px
+    margin-top: 0px;
 }
 
 h2 {
