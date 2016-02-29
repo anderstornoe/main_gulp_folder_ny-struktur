@@ -107,9 +107,9 @@ then
 	echo $sep$sep$sep$sep
 	
 	# gulp pushObj --option ${pathArray[objNum]};   #  ACTIVATE!!!
+
 	gulp copy_production --option ${pathArray[objNum]};
 	gulp trim_files --option ${pathArray[objNum]};
-	
 	gulp deploy --option ${pathArray[objNum]}
 fi
 
@@ -131,9 +131,10 @@ then
 					echo $sep$sep$sep$sep
 
 					# gulp pushObj --option $path   #  ACTIVATE!!!
-					gulp copy_production --option $path;
-					gulp trim_files --option $path;
-					gulp deploy --option $path
+
+					gulp copy_production --option $path;  
+					gulp trim_files --option $path;		
+					gulp deploy --option $path 			
 				fi
 			done
 			#------

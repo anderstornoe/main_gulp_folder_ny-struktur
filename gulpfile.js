@@ -83,12 +83,14 @@
      var objDistFolder = "";
      var objPath = process.argv[4]; // Get the argument "objekter/development/My_Object_Folder_Name" from the call.
 
+     gutil.log("copy_production - objPath 1: " + objPath );  //  TILFOEJET d. 29-02-2016
+
      if (typeof objPath !== "undefined") { // Only executed if an argument is given in the call to the gulp-task.
          objPath = String(objPath);
          objSrcFolder = String(objPath.split("/")[2]); // Get "My_Object_Folder_Name" from the objPath.
          objDistFolder = objSrcFolder;
      }
-     gutil.log("copy_production - objPath: " + String(objPath) + ", objSrcFolder: " + objSrcFolder);
+     gutil.log("copy_production - objPath: " + String(objPath) + ", objSrcFolder: " + objSrcFolder + ", objDistFolder: " + objDistFolder);
 
      //gutil.log("Its time to production mode it!");
      //objekter/kemi_drag/builds/development/
@@ -120,8 +122,7 @@
          objSrcFolder = String(objPath.split("/")[2]); // Get "My_Object_Folder_Name" from the objPath.
          objDistFolder = objSrcFolder;
      }
-     gutil.log("trim_files - objPath: " + String(objPath) + ", objSrcFolder: " + objSrcFolder);
-
+     gutil.log("trim_files - objPath: " + String(objPath) + ", objSrcFolder: " + objSrcFolder + ", objDistFolder: " + objDistFolder);
 
      gulp.src("objekter/production/" + objSrcFolder + "/*.css")
          //.pipe(wait(1500))
@@ -151,13 +152,16 @@
      var objFolder = "";
      var objPath = process.argv[4]; // Get the argument "objekter/development/My_Object_Folder_Name" from the call.
 
+     // gutil.log("deploy - objPath 1: " + objPath + ", objFolder: " + objFolder);  //  TILFOEJET d. 29-02-2016
      if (typeof objPath === "undefined") {
          objPath = 'objekter/production';
      } else { // Only executed if an argument is given in the call to the gulp-task.
-         objPath = String(objPath);
-         objFolder = String(objPath.split("/")[2]); // Get "My_Object_Folder_Name" from the objPath.
+
+        objPath = String(objPath);
+        objPath = objPath.replace('development', 'production'); //  TILFOEJET d. 29-02-2016
+        objFolder = String(objPath.split("/")[2]); // Get "My_Object_Folder_Name" from the objPath.
      }
-     gutil.log("deploy - objPath: " + objPath + ", objFolder: " + objFolder);
+     gutil.log("deploy - objPath : " + objPath + ", objFolder: " + objFolder);
 
      var conn = ftp.create({
          host: 'u13dfs6.nixweb09.dandomain.dk',
