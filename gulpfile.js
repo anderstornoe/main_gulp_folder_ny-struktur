@@ -155,6 +155,7 @@
          objPath = 'objekter/production';
      } else { // Only executed if an argument is given in the call to the gulp-task.
          objPath = String(objPath);
+         gutil.log("Objekt sti: " + objPath);
          objFolder = String(objPath.split("/")[2]); // Get "My_Object_Folder_Name" from the objPath.
      }
      gutil.log("deploy - objPath: " + objPath + ", objFolder: " + objFolder);
