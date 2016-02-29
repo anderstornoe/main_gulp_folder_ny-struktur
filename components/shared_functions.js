@@ -16,24 +16,30 @@ function one_line_footer() {
     // $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='../pf_kem2015/om_projektet.html'>Digitale læringsmaterialer  Copyright 2015</a></h6></div>");
     $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='https://www.vucdigital.dk'>Digitale læringsmaterialer  Copyright 2015</a></h6></div>");
 
-    //$(".container, .container-fluid").append("<div class='col-xs-12 vuc_footer'><h2>Digitale læringsmaterialer på voksenuddannelser</h2><h6 class='footerText'>Udviklet af et produktionsfællesskab mellem otte VUC’er til anvendelse på de deltagende skoler: <br/> Hf og VUC Nordsjælland, VUC Hvidovre-Amager, VUC Roskilde, VUC Vestegnen, VUF, VUC Storstrøm, VUC Aarhus og Københavns VUC (KVUC).</h6> <h6 class='footerCopywrite'> Copyright 2015 </h6></div >");
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-62686407-1', 'auto');
-    ga('send', 'pageview');
-    //console.log("GA COMPLETE");
+    //Tjek om scriptet kører på vucdigital, hvis ja: kør google analytics: 
+    if (window.location.href.indexOf("vucdigital.dk") > -1) {
 
+        //$(".container, .container-fluid").append("<div class='col-xs-12 vuc_footer'><h2>Digitale læringsmaterialer på voksenuddannelser</h2><h6 class='footerText'>Udviklet af et produktionsfællesskab mellem otte VUC’er til anvendelse på de deltagende skoler: <br/> Hf og VUC Nordsjælland, VUC Hvidovre-Amager, VUC Roskilde, VUC Vestegnen, VUF, VUC Storstrøm, VUC Aarhus og Københavns VUC (KVUC).</h6> <h6 class='footerCopywrite'> Copyright 2015 </h6></div >");
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-62686407-1', 'auto');
+        ga('send', 'pageview');
+        console.log("GA COMPLETE");
+    }
 }
+
+
 
 /// INDLEJRINGS    FUNKTIONALITET  ///////
 
@@ -245,7 +251,7 @@ $(document).ready(function() {
 //      https://en.wikipedia.org/wiki/Favicon
 function AddFavicon() {
 
-$("head").append("<link rel='shortcut icon' href='../library/img/vuc_favicon.ico' type='image/x-icon'><link rel='icon' href='../library/img/vuc_favicon.ico' type='image/x-icon'>");
+    $("head").append("<link rel='shortcut icon' href='../library/img/vuc_favicon.ico' type='image/x-icon'><link rel='icon' href='../library/img/vuc_favicon.ico' type='image/x-icon'>");
 }
 
 
@@ -448,9 +454,9 @@ function modal() {
 // Funktion til at finde en streng i en streng
 
 function allIndexOf(str, toSearch) {
-    var counter = 0; 
+    var counter = 0;
     for (var pos = str.indexOf(toSearch); pos !== -1; pos = str.indexOf(toSearch, pos + 1)) {
-        counter ++; 
+        counter++;
     }
     return counter;
 }
@@ -487,39 +493,39 @@ function showIosOverlay() {
 //
 //              The second argument need to be a class - the class has to be added to the containers you wish to control.
 var pagerClass = {
-    Range: 5,            // The default number visible buttons on the pager. 
-    ActiveLinkNum: 1,    // The default active page number.
-    PagerSelector: null, 
-    TargetSelectorChild: null, 
-    NumOfPages: null,    // Contains the number of pages/containers once counted.
-    init : function(PagerSelector, TargetSelectorChild){  // This "constructor" initiates the pager functionality.
+    Range: 5, // The default number visible buttons on the pager. 
+    ActiveLinkNum: 1, // The default active page number.
+    PagerSelector: null,
+    TargetSelectorChild: null,
+    NumOfPages: null, // Contains the number of pages/containers once counted.
+    init: function(PagerSelector, TargetSelectorChild) { // This "constructor" initiates the pager functionality.
         this.PagerSelector = PagerSelector;
         this.TargetSelectorChild = TargetSelectorChild;
 
-        this.pager();       // Call the pager.
+        this.pager(); // Call the pager.
         this.pagerEvents(); // Set event-listners.
     },
-    pager : function(){
-        
+    pager: function() {
+
         var Xthis = this;
 
-        if (Xthis.NumOfPages === null){  // Count the number of pages the pager has to handle - and only do it once.
+        if (Xthis.NumOfPages === null) { // Count the number of pages the pager has to handle - and only do it once.
             Xthis.NumOfPages = 0;
             $(Xthis.TargetSelectorChild).each(function(index, element) {
                 ++Xthis.NumOfPages;
             });
         }
-        
+
         var HTML = '<ul class="PagerClass">';
         // HTML += '<li><span class="PagerButtonLeft">&lt;</span></li>'; 
-        HTML += '<li><span class="PagerButtonLeft glyphicon glyphicon-chevron-left"></span></li>'; 
-        
+        HTML += '<li><span class="PagerButtonLeft glyphicon glyphicon-chevron-left"></span></li>';
+
         for (var j = 1; j <= this.NumOfPages; j++) {
             HTML += '<li><a href="#" class="PagerButton btn btn-sm btn-info">' + j + '</a></li>';
         }
-            
+
         // HTML += '<li> <span class="PagerButtonRight">&gt;</span> </li>';
-        HTML += '<li> <span class="PagerButtonRight glyphicon glyphicon-chevron-right"></span> </li>'; 
+        HTML += '<li> <span class="PagerButtonRight glyphicon glyphicon-chevron-right"></span> </li>';
         HTML += '</ul>';
 
         // Generate the pager:
@@ -529,12 +535,12 @@ var pagerClass = {
 
         console.log("ActiveLinkNum 1: " + this.ActiveLinkNum + ", NumOfPages: " + this.NumOfPages);
     },
-    pagerEvents : function(){ // Set event-listeners.
-        
+    pagerEvents: function() { // Set event-listeners.
+
         var Xthis = this;
 
-        $(Xthis.PagerSelector + " .PagerButtonLeft").click(function(e) { 
-            if (1 < Xthis.ActiveLinkNum) {  // Only perform pager functionality if the "active" page is larger than one.
+        $(Xthis.PagerSelector + " .PagerButtonLeft").click(function(e) {
+            if (1 < Xthis.ActiveLinkNum) { // Only perform pager functionality if the "active" page is larger than one.
                 Xthis.ActiveLinkNum -= 1;
                 console.log("PagerButtonLeft - ActiveLinkNum 1: " + Xthis.ActiveLinkNum);
 
@@ -545,7 +551,7 @@ var pagerClass = {
             }
         });
 
-        $(Xthis.PagerSelector + " .PagerButtonRight").click(function(e) { 
+        $(Xthis.PagerSelector + " .PagerButtonRight").click(function(e) {
             if (Xthis.ActiveLinkNum < Xthis.NumOfPages) { // Only perform pager functionality if the "active" page is smaller than the number of pages.
                 Xthis.ActiveLinkNum += 1;
                 console.log("PagerButtonRight - ActiveLinkNum 2: " + Xthis.ActiveLinkNum);
@@ -555,12 +561,12 @@ var pagerClass = {
 
                 Xthis.showHide(); // Show the active page and hide other pages. Show the "range" of pagerButtons and hide other pagerButtons.
             }
-            
+
         });
 
         $(Xthis.PagerSelector + " .PagerButton").click(function(e) { // If a ".PagerButton" is pressed, then...
             e.preventDefault(); // Prevent the link-nature of the anchor-tag.
-            
+
             Xthis.ActiveLinkNum = parseInt($(this).text()); // Get the number of the pressed ".PagerButton".
             console.log("PagerButton - ActiveLinkNum 3: " + Xthis.ActiveLinkNum);
 
@@ -578,32 +584,33 @@ var pagerClass = {
                 }
             });
             console.log("ON CLICK .PagerButton - parentIndexNum: " + parentIndexNum);
-         
-            var i = parseInt(Xthis.ActiveLinkNum)-1;
-            i = (i >= Xthis.NumOfPages)?(parentIndexNum+1)*parseInt(Xthis.NumOfPages)-i-1:i; 
+
+            var i = parseInt(Xthis.ActiveLinkNum) - 1;
+            i = (i >= Xthis.NumOfPages) ? (parentIndexNum + 1) * parseInt(Xthis.NumOfPages) - i - 1 : i;
             $(Xthis.PagerSelector).each(function(index, element) {
-                $(".PagerButton:eq("+i+")", element).toggleClass("btn-info btn-primary");
+                $(".PagerButton:eq(" + i + ")", element).toggleClass("btn-info btn-primary");
             });
         });
-    }, showHide: function(){
+    },
+    showHide: function() {
 
         var Xthis = this;
 
         // NOTE: the StartIndex is a startingpoint for a range of number that ensures an "interval" of shown ".PagerButton"'s at the boundaries for the range [1, 2, 3, ... , NumOfPages]
         var StartIndex = Xthis.ActiveLinkNum - Math.round((Xthis.Range - 1) / 2); // Find the startindex based on ActiveLinkNum.
         if (StartIndex < 1) StartIndex = 1; // Ajust startindex for low ActiveLinkNum
-        if (Xthis.Range + StartIndex > Xthis.NumOfPages) StartIndex = Xthis.NumOfPages - Xthis.Range +1; // Ajust startindex for high ActiveLinkNum
-    
-        $(Xthis.PagerSelector + " .PagerButton").hide();  // Hide all ".PagerButton"'s.
-        $(Xthis.TargetSelectorChild).hide();   // Hide all pages.
+        if (Xthis.Range + StartIndex > Xthis.NumOfPages) StartIndex = Xthis.NumOfPages - Xthis.Range + 1; // Ajust startindex for high ActiveLinkNum
 
-        $(Xthis.PagerSelector).each(function(index1, element1) {  // For each ".PagerButton" do...
-            $(" .PagerButton", element1).each(function(index2, element2) {  // For each ".PagerButton" do...
-                if ((StartIndex <= index2+1) && (index2+1 < Xthis.Range + StartIndex)){  // If ".PagerButton" (and therfore also the "page") is in the range [StartIndex, StartIndex + Range], then...
-                    $(element2).show();   // Show the ".PagerButton"'s in the range [StartIndex, StartIndex + Range].
+        $(Xthis.PagerSelector + " .PagerButton").hide(); // Hide all ".PagerButton"'s.
+        $(Xthis.TargetSelectorChild).hide(); // Hide all pages.
+
+        $(Xthis.PagerSelector).each(function(index1, element1) { // For each ".PagerButton" do...
+            $(" .PagerButton", element1).each(function(index2, element2) { // For each ".PagerButton" do...
+                if ((StartIndex <= index2 + 1) && (index2 + 1 < Xthis.Range + StartIndex)) { // If ".PagerButton" (and therfore also the "page") is in the range [StartIndex, StartIndex + Range], then...
+                    $(element2).show(); // Show the ".PagerButton"'s in the range [StartIndex, StartIndex + Range].
                     if (parseInt($(element2).text()) == Xthis.ActiveLinkNum) {
-                        $(element2).toggleClass("btn-info btn-primary");  // Set the pressed ".PagerButton" as btn-primary.
-                        $(Xthis.TargetSelectorChild+':eq('+String(parseInt(Xthis.ActiveLinkNum)-1)+')').show(); // Show the page.
+                        $(element2).toggleClass("btn-info btn-primary"); // Set the pressed ".PagerButton" as btn-primary.
+                        $(Xthis.TargetSelectorChild + ':eq(' + String(parseInt(Xthis.ActiveLinkNum) - 1) + ')').show(); // Show the page.
                     }
                 }
             });
@@ -693,21 +700,21 @@ var pagerClass = {
 
 var objectStorageClass = {
     // defaultMsg : 'Du har lavet denne øvelse før.',
-    localStorageObjName : null, // The name of the storage object.
-    localStorageObjData : {timeStamp: null},  // The default storage object.
-    init : function(localStorageObjName){
-        if(typeof(Storage) !== "undefined"){
+    localStorageObjName: null, // The name of the storage object.
+    localStorageObjData: { timeStamp: null }, // The default storage object.
+    init: function(localStorageObjName) {
+        if (typeof(Storage) !== "undefined") {
             console.log("objectStorageClass.init - LocalStorage supported!");
             this.localStorageObjName = localStorageObjName;
             this.localStorageObjData.timeStamp = this.setTimeStamp();
-            var localStorageObjData =  JSON.parse(localStorage.getItem(this.localStorageObjName));
+            var localStorageObjData = JSON.parse(localStorage.getItem(this.localStorageObjName));
             console.log("objectStorageClass.init - localStorageObjName: " + this.localStorageObjName + ", localStorageObjData: " + JSON.stringify(localStorageObjData));
         } else {
             console.log("objectStorageClass.init - LocalStorage NOT supported!");
-        } 
+        }
     },
-    save : function(varName, varData) {
-        if(typeof(Storage) !== "undefined"){
+    save: function(varName, varData) {
+        if (typeof(Storage) !== "undefined") {
             console.log("objectStorageClass.save - LocalStorage supported!");
 
             this.localStorageObjData.timeStamp = this.setTimeStamp();
@@ -716,9 +723,9 @@ var objectStorageClass = {
             if (!this.localStorageObjData.hasOwnProperty(varName)) {
                 console.log("objectStorageClass.save - 0");
                 this.localStorageObjData[varName] = '';
-            } 
+            }
 
-            console.log('objectStorageClass.save - varData: '+JSON.stringify(varData));
+            console.log('objectStorageClass.save - varData: ' + JSON.stringify(varData));
 
             console.log("objectStorageClass.save - this.localStorageObjData 1 : " + JSON.stringify(this.localStorageObjData));
             this.localStorageObjData[varName] = varData;
@@ -728,36 +735,34 @@ var objectStorageClass = {
 
             try {
                 localStorage.setItem(this.localStorageObjName, JSON.stringify(this.localStorageObjData));
-            }
-
-            catch(error) {
+            } catch (error) {
                 console.log("objectStorageClass.save - LocalStorage error: " + error.message);
             }
-            
+
         } else {
             console.log("objectStorageClass.save - LocalStorage NOT supported!");
         }
     },
-    load : function(varName) {
-        if(typeof(Storage) !== "undefined"){
+    load: function(varName) {
+        if (typeof(Storage) !== "undefined") {
             console.log("objectStorageClass.load - 0");
             var localStorageObjData = JSON.parse(localStorage.getItem(this.localStorageObjName));
             console.log("objectStorageClass.load - localStorageObjName: " + this.localStorageObjName + ", localStorageObjData: " + JSON.stringify(localStorageObjData));
-            if (localStorageObjData !== null) {  // If the variable exists, then return it:
+            if (localStorageObjData !== null) { // If the variable exists, then return it:
                 console.log("objectStorageClass.load - A1");
-                console.log("objectStorageClass.load - typeof(localStorageObjData):" + typeof(localStorageObjData) + 
+                console.log("objectStorageClass.load - typeof(localStorageObjData):" + typeof(localStorageObjData) +
                     ", localStorageObjData.length: " + localStorageObjData.length +
-                    ", localStorageObjData: " + JSON.stringify(localStorageObjData) + 
+                    ", localStorageObjData: " + JSON.stringify(localStorageObjData) +
                     ", localStorageObjData: " + localStorageObjData);
 
                 // this.localStorageObjData = localStorageObjData;  // only needs overwriting when saving.
-                if (localStorageObjData.hasOwnProperty(varName)){
+                if (localStorageObjData.hasOwnProperty(varName)) {
                     console.log("objectStorageClass.load - A2");
-                    return localStorageObjData[varName];       
+                    return localStorageObjData[varName];
                 } else {
                     console.log("objectStorageClass.load - A3");
                     return null;
-                }   
+                }
             } else {
                 console.log("objectStorageClass.load - A4");
                 return null;
@@ -765,27 +770,27 @@ var objectStorageClass = {
         } else {
             console.log("objectStorageClass.load - LocalStorage NOT supported!");
             return null;
-        } 
+        }
     },
-    delete : function(localStorageVarName) {
-        if(typeof(Storage) !== "undefined"){
+    delete: function(localStorageVarName) {
+        if (typeof(Storage) !== "undefined") {
             console.log("objectStorageClass.delete - LocalStorage supported!");
             localStorage.removeItem(localStorageVarName);
         } else {
             console.log("objectStorageClass.delete - LocalStorage NOT supported!");
         }
     },
-    exist : function(varName){
-        if(typeof(Storage) !== "undefined"){
+    exist: function(varName) {
+        if (typeof(Storage) !== "undefined") {
             console.log("objectStorageClass.exist - LocalStorage supported!");
             var localStorageObjData = JSON.parse(localStorage.getItem(this.localStorageObjName));
             if (localStorageObjData !== null) {
                 console.log("objectStorageClass.exist - this.localStorageObjName exist!!!");
-                console.log('objectStorageClass.exist - typeof(localStorageObjData): '+typeof(localStorageObjData)+', localStorageObjData: '+JSON.stringify(localStorageObjData));
+                console.log('objectStorageClass.exist - typeof(localStorageObjData): ' + typeof(localStorageObjData) + ', localStorageObjData: ' + JSON.stringify(localStorageObjData));
                 if (localStorageObjData.hasOwnProperty(varName)) {
-                    console.log("objectStorageClass.exist."+varName+" - TRUE ");
+                    console.log("objectStorageClass.exist." + varName + " - TRUE ");
                 } else {
-                    console.log("objectStorageClass.exist."+varName+" - FALSE ");
+                    console.log("objectStorageClass.exist." + varName + " - FALSE ");
                 }
             } else {
                 console.log("objectStorageClass.exist - this.localStorageObjName does NOT exist!!!");
@@ -794,49 +799,49 @@ var objectStorageClass = {
             console.log("objectStorageClass.exist - LocalStorage NOT supported!");
         }
     },
-    setTimeStamp : function(){
-        return new Date().getTime(); 
+    setTimeStamp: function() {
+        return new Date().getTime();
     },
-    getTimeStamp : function(){
+    getTimeStamp: function() {
         return this.localStorageObjData.timeStamp;
     },
-    startAutoSave : function(varName, varData, timeInMilliSec){  // Starts "auto save" of a variable "varName".
+    startAutoSave: function(varName, varData, timeInMilliSec) { // Starts "auto save" of a variable "varName".
         console.log("objectStorageClass.startAutoSave - localStorageObjData 1: " + JSON.stringify(this.localStorageObjData));
         if (!this.localStorageObjData.hasOwnProperty('autoSaveTimeIdObj')) {
             console.log("objectStorageClass.startAutoSave - autoSaveTimeIdObj - OK!!");
             this.localStorageObjData.autoSaveTimeIdObj = {};
-        } 
+        }
         if (!this.localStorageObjData.autoSaveTimeIdObj.hasOwnProperty(varName)) {
-            console.log("objectStorageClass.startAutoSave - autoSaveTimeIdObj."+varName+" - OK!");
-            this.localStorageObjData.autoSaveTimeIdObj[varName] = {id: 0, saveCount: 0, maxSaveCount : null};  // "maxSaveCount = null" makes it save indefinitely.
-        } 
+            console.log("objectStorageClass.startAutoSave - autoSaveTimeIdObj." + varName + " - OK!");
+            this.localStorageObjData.autoSaveTimeIdObj[varName] = { id: 0, saveCount: 0, maxSaveCount: null }; // "maxSaveCount = null" makes it save indefinitely.
+        }
         console.log("objectStorageClass.startAutoSave - jsonData 2: " + JSON.stringify(this.localStorageObjData));
-        console.log("objectStorageClass.startAutoSave - autoSaveTimeIdObj."+varName+" - START");
+        console.log("objectStorageClass.startAutoSave - autoSaveTimeIdObj." + varName + " - START");
         var xthis = this;
         var LSA = this.localStorageObjData.autoSaveTimeIdObj[varName];
-        LSA.id = setInterval(function(){ 
-            xthis.save(varName, varData); 
+        LSA.id = setInterval(function() {
+            xthis.save(varName, varData);
             ++LSA.saveCount;
-            console.log("objectStorageClass.startAutoSave - autoSaveTimeIdObj."+varName+" - SAVE "+ LSA.saveCount);
-            if ((LSA.maxSaveCount !== null) && (LSA.saveCount >= LSA.maxSaveCount)){
+            console.log("objectStorageClass.startAutoSave - autoSaveTimeIdObj." + varName + " - SAVE " + LSA.saveCount);
+            if ((LSA.maxSaveCount !== null) && (LSA.saveCount >= LSA.maxSaveCount)) {
                 xthis.stopAutoSave(varName);
             }
         }, timeInMilliSec);
-    }, 
-    stopAutoSave : function(varName){  // Stops "auto save" of a variable "varName".
+    },
+    stopAutoSave: function(varName) { // Stops "auto save" of a variable "varName".
         if (this.localStorageObjData.hasOwnProperty('autoSaveTimeIdObj')) {
             if (this.localStorageObjData.autoSaveTimeIdObj.hasOwnProperty(varName)) {
-                console.log("objectStorageClass.stopAutoSave - autoSaveTimeIdObj."+varName+" - STOP");
+                console.log("objectStorageClass.stopAutoSave - autoSaveTimeIdObj." + varName + " - STOP");
                 clearInterval(this.localStorageObjData.autoSaveTimeIdObj[varName].id);
-            } 
+            }
         }
     },
-    setAutoSaveMaxCount : function(varName, maxSaveCount){  // Sets the maximum number of times the function startAutoSave saves the variable varName. Set maxSaveCount to null for making it save indefinitely.
+    setAutoSaveMaxCount: function(varName, maxSaveCount) { // Sets the maximum number of times the function startAutoSave saves the variable varName. Set maxSaveCount to null for making it save indefinitely.
         if (this.localStorageObjData.hasOwnProperty('autoSaveTimeIdObj')) {
             if (this.localStorageObjData.autoSaveTimeIdObj.hasOwnProperty(varName)) {
-                console.log("objectStorageClass.setAutoSaveMaxCount - autoSaveTimeIdObj."+varName+".maxSaveCount - SET");
+                console.log("objectStorageClass.setAutoSaveMaxCount - autoSaveTimeIdObj." + varName + ".maxSaveCount - SET");
                 this.localStorageObjData.autoSaveTimeIdObj[varName].maxSaveCount = maxSaveCount;
-            } 
+            }
         }
     }
 }
@@ -845,9 +850,9 @@ var objectStorageClass = {
 
 
 function instruction(instructionText) {
-    HTML =  '<h4 class="instruktion">';
-    HTML +=     '<div class="left glyphicon glyphicon-arrow-right"></div>';
-    HTML +=     '<div class="left instructionText">'+instructionText+'</div>';
+    HTML = '<h4 class="instruktion">';
+    HTML += '<div class="left glyphicon glyphicon-arrow-right"></div>';
+    HTML += '<div class="left instructionText">' + instructionText + '</div>';
     HTML += '</h4>';
     HTML += '<div class="Clear"></div>';
     return HTML;
@@ -855,10 +860,10 @@ function instruction(instructionText) {
 
 
 function explanation(explanationText) {
-    HTML =  '<div class="explanation">';
-    HTML +=     '<div class="left glyphicon glyphicon-bookmark"></div>';
-    HTML +=     '<div class="left explanationText">'+explanationText+'</div>';
-    HTML +=     '<div class="Clear"></div>';
+    HTML = '<div class="explanation">';
+    HTML += '<div class="left glyphicon glyphicon-bookmark"></div>';
+    HTML += '<div class="left explanationText">' + explanationText + '</div>';
+    HTML += '<div class="Clear"></div>';
     HTML += '</div>';
     return HTML;
 }
