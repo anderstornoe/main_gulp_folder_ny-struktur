@@ -919,7 +919,7 @@ var cookieClass = {
         document.cookie = cookieName+"=;expires=Wed; 01 Jan 1970";
     },
     existCookie : function(cookieName){  
-        return (this.getCookie(cookieName) !== null)? true : false;
+        return ((this.getCookie(cookieName) !== null) && (this.getCookie(cookieName) != ''))? true : false;
     }
 }
 
