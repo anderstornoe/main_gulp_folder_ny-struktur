@@ -20,22 +20,34 @@ function one_line_footer() {
     //Tjek om scriptet kører på vucdigital, hvis ja: kør google analytics: 
     if (window.location.href.indexOf("vucdigital.dk") > -1) {
 
-        //$(".container, .container-fluid").append("<div class='col-xs-12 vuc_footer'><h2>Digitale læringsmaterialer på voksenuddannelser</h2><h6 class='footerText'>Udviklet af et produktionsfællesskab mellem otte VUC’er til anvendelse på de deltagende skoler: <br/> Hf og VUC Nordsjælland, VUC Hvidovre-Amager, VUC Roskilde, VUC Vestegnen, VUF, VUC Storstrøm, VUC Aarhus og Københavns VUC (KVUC).</h6> <h6 class='footerCopywrite'> Copyright 2015 </h6></div >");
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        console.log('googleAnalyticsTest - 1');
 
-        ga('create', 'UA-62686407-1', 'auto');
-        ga('send', 'pageview');
-        console.log("GA COMPLETE");
+        // Hvis cookie'en "vucUdvikling" ikke eksistere, så er det ikke et medlem af udviklingsteamet der besøger siden: aktiver da google analytics:
+        if (!cookieClass.existCookie('vucUdvikling')){
+
+            console.log('googleAnalyticsTest - 2'); 
+
+            //$(".container, .container-fluid").append("<div class='col-xs-12 vuc_footer'><h2>Digitale læringsmaterialer på voksenuddannelser</h2><h6 class='footerText'>Udviklet af et produktionsfællesskab mellem otte VUC’er til anvendelse på de deltagende skoler: <br/> Hf og VUC Nordsjælland, VUC Hvidovre-Amager, VUC Roskilde, VUC Vestegnen, VUF, VUC Storstrøm, VUC Aarhus og Københavns VUC (KVUC).</h6> <h6 class='footerCopywrite'> Copyright 2015 </h6></div >");
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-62686407-1', 'auto');
+            ga('send', 'pageview');
+            console.log("GA COMPLETE");
+        } else {
+            console.log('googleAnalyticsTest - 3'); 
+        }
+    } else {
+        console.log('googleAnalyticsTest - 4'); 
     }
 }
 
@@ -847,6 +859,69 @@ var objectStorageClass = {
 }
 
 
+/*******************************************************
+ *      cookieClass documentation
+ *******************************************************
+ *
+ * BASIC USAGE:
+ * ============
+ *
+ *  1.  Initialize a local cookie object "cObj" by using the command:
+ *
+ *          var cObj = Object.create(cookieClass);
+ *
+ *      The object "cObj" only needs to be created once. Alternatively, you can substitute "cObj" with "cookieClass" 
+ *      in the following calls (eg: cookieClass.setCookie('myCookie', myCookieData, 30); ), since "cookieClass" does 
+ *      not contain internal variables.
+ *
+ *  2.  To set the cookie "myCookie" with the variable myCookieData with a expiration data of 30 days, you do:
+ *
+ *          cObj.setCookie('myCookie', myCookieData, 30);
+ *
+ *  3.  To get the content of the cookie "myCookie", you do:
+ *  
+ *          var myCookieData = cObj.getCookie('myCookie');
+ *
+ *      - "myCookieData" will contain the data of the cookie "myCookie" if the cookie exist, or it will contain the 
+ *      value "null" if the cookie does not exist.
+ *
+ *  4.  To delete the cookie "myCookie", you do:
+ *  
+ *          cObj.deleteCookie('myCookie');
+ *
+ *  4.  To check is the cookie "myCookie" exist, you do:
+ *  
+ *          var bool = cObj.existCookie('myCookie');
+ *
+ *      - bool will have the value "true" if the cookie exist or "false" if it does not exist. 
+ *
+ */
+var cookieClass = {
+    setCookie : function(cookieName, cookieValue, numOfDays){
+        var d = new Date();
+        d.setTime(d.getTime() + (numOfDays*24*60*60*1000));
+        var expires = "expires="+d.toUTCString();
+        document.cookie = cookieName + "=" + cookieValue + "; " + expires;
+    },
+    getCookie : function(cookieName){
+        var name = cookieName + "=";
+        var cookieArray = document.cookie.split(';');
+        for(var n in cookieArray) {
+            console.log('getCookie - cookieArray['+n+']: ' + cookieArray[n]);
+            var cArr = cookieArray[n].split('=');
+            if (cArr[0].trim() == cookieName) {
+                return cArr[1].trim();
+            }
+        }
+        return null;
+    },
+    deleteCookie : function(cookieName){ 
+        document.cookie = cookieName+"=;expires=Wed; 01 Jan 1970";
+    },
+    existCookie : function(cookieName){  
+        return (this.getCookie(cookieName) !== null)? true : false;
+    }
+}
 
 
 function instruction(instructionText) {

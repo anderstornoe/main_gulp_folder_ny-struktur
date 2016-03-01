@@ -83,7 +83,7 @@
      var objDistFolder = "";
      var objPath = process.argv[4]; // Get the argument "objekter/development/My_Object_Folder_Name" from the call.
 
-     gutil.log("copy_production - objPath 1: " + objPath );  //  TILFOEJET d. 29-02-2016
+     // gutil.log("copy_production - objPath 1: " + objPath );  //  TILFOEJET d. 29-02-2016
 
      if (typeof objPath !== "undefined") { // Only executed if an argument is given in the call to the gulp-task.
          objPath = String(objPath);
