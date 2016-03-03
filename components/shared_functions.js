@@ -14,7 +14,7 @@
 function one_line_footer() {
     //$('.container, .container-fluid').append('<div class="col-xs-12"><h6 class="footerCopywrite"> <a href="../../../kemiC_visningsite/builds/development/om_projektet.html">Digitale læringsmaterialer  Copyright 2015</a></h6></div>')
     var thisyear = new Date().getFullYear(); // $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='../pf_kem2015/om_projektet.html'>Digitale læringsmaterialer  Copyright 2015</a></h6></div>");
-    $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='https://www.vucdigital.dk'>© "+ thisyear +" vucdigital</a></h6></div>");
+    $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='https://www.vucdigital.dk'>© " + thisyear + " vucdigital</a></h6></div>");
 
 
     //Tjek om scriptet kører på vucdigital, hvis ja: kør google analytics: 
@@ -23,9 +23,9 @@ function one_line_footer() {
         console.log('googleAnalyticsTest - 1');
 
         // Hvis cookie'en "vucUdvikling" ikke eksistere, så er det ikke et medlem af udviklingsteamet der besøger siden: aktiver da google analytics:
-        if (!cookieClass.existCookie('vucUdvikling')){
+        if (!cookieClass.existCookie('vucUdvikling')) {
 
-            console.log('googleAnalyticsTest - 2'); 
+            console.log('googleAnalyticsTest - 2');
 
             //$(".container, .container-fluid").append("<div class='col-xs-12 vuc_footer'><h2>Digitale læringsmaterialer på voksenuddannelser</h2><h6 class='footerText'>Udviklet af et produktionsfællesskab mellem otte VUC’er til anvendelse på de deltagende skoler: <br/> Hf og VUC Nordsjælland, VUC Hvidovre-Amager, VUC Roskilde, VUC Vestegnen, VUF, VUC Storstrøm, VUC Aarhus og Københavns VUC (KVUC).</h6> <h6 class='footerCopywrite'> Copyright 2015 </h6></div >");
             (function(i, s, o, g, r, a, m) {
@@ -44,10 +44,12 @@ function one_line_footer() {
             ga('send', 'pageview');
             console.log("GA COMPLETE");
         } else {
-            console.log('googleAnalyticsTest - 3'); 
+            $("body").prepend("<div class='label label-success' style='position:absolute;right:0; opacity:0.2' >dev mode</div>");
+            console.log('googleAnalyticsTest - 3');
         }
     } else {
-        console.log('googleAnalyticsTest - 4'); 
+        console.log('googleAnalyticsTest - 4');
+        $("body").prepend("<div class='label label-success' style='position:absolute;right:0; opacity:0.2' >dev mode</div>");
     }
 }
 
@@ -897,17 +899,17 @@ var objectStorageClass = {
  *
  */
 var cookieClass = {
-    setCookie : function(cookieName, cookieValue, numOfDays){
+    setCookie: function(cookieName, cookieValue, numOfDays) {
         var d = new Date();
-        d.setTime(d.getTime() + (numOfDays*24*60*60*1000));
-        var expires = "expires="+d.toUTCString();
+        d.setTime(d.getTime() + (numOfDays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
         document.cookie = cookieName + "=" + cookieValue + "; " + expires;
     },
-    getCookie : function(cookieName){
+    getCookie: function(cookieName) {
         var name = cookieName + "=";
         var cookieArray = document.cookie.split(';');
-        for(var n in cookieArray) {
-            console.log('getCookie - cookieArray['+n+']: ' + cookieArray[n]);
+        for (var n in cookieArray) {
+            console.log('getCookie - cookieArray[' + n + ']: ' + cookieArray[n]);
             var cArr = cookieArray[n].split('=');
             if (cArr[0].trim() == cookieName) {
                 return cArr[1].trim();
@@ -915,11 +917,11 @@ var cookieClass = {
         }
         return null;
     },
-    deleteCookie : function(cookieName){ 
-        document.cookie = cookieName+"=;expires=Wed; 01 Jan 1970";
+    deleteCookie: function(cookieName) {
+        document.cookie = cookieName + "=;expires=Wed; 01 Jan 1970";
     },
-    existCookie : function(cookieName){  
-        return ((this.getCookie(cookieName) !== null) && (this.getCookie(cookieName) != ''))? true : false;
+    existCookie: function(cookieName) {
+        return ((this.getCookie(cookieName) !== null) && (this.getCookie(cookieName) != '')) ? true : false;
     }
 }
 
