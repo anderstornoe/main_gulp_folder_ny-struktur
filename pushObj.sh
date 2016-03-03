@@ -108,6 +108,8 @@ then
 	
 	# gulp pushObj --option ${pathArray[objNum]};   #  ACTIVATE!!!
 
+	# echo "pathArray: --option" ${pathArray[objNum]}
+
 	gulp copy_production --option ${pathArray[objNum]};
 	gulp trim_files --option ${pathArray[objNum]};
 	gulp deploy --option ${pathArray[objNum]}
