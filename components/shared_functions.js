@@ -903,7 +903,9 @@ var cookieClass = {
         var d = new Date();
         d.setTime(d.getTime() + (numOfDays * 24 * 60 * 60 * 1000));
         var expires = "expires=" + d.toUTCString();
-        document.cookie = cookieName + "=" + cookieValue + "; " + expires;
+        // document.cookie = cookieName + "=" + cookieValue + "; " + expires;                                     // WARNING: Does not work on on firefox and Chrome!!! Cookiestatus works on server AND localhost in firefox
+        document.cookie = cookieName + "=" + cookieValue + "; " + expires + "; path=/";                           // Cookiestatus does NOT work on server OR localhost in firefox. OK in ckrome on server AND localhost
+        // document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";domain=.vucdigital.dk;path=/";    // Cookiestatus does NOT work on server OR localhost in firefox. OK in ckrome on server AND localhost
     },
     getCookie: function(cookieName) {
         var name = cookieName + "=";
@@ -921,7 +923,12 @@ var cookieClass = {
         document.cookie = cookieName + "=;expires=Wed; 01 Jan 1970";
     },
     existCookie: function(cookieName) {
-        return ((this.getCookie(cookieName) !== null) && (this.getCookie(cookieName) != '')) ? true : false;
+        console.log("existCookie - getCookie(cookieName): _"+this.getCookie(cookieName)+"_ String(getCookie(cookieName)): _"+String(this.getCookie(cookieName))+"_");
+        console.log("existCookie - typeof(String(null)): "+typeof(String(null)));
+        var bool = ((this.getCookie(cookieName) !== null) && (String(this.getCookie(cookieName)) != 'null') && (String(this.getCookie(cookieName)) != '')) ? true : false;
+        console.log("existCookie - bool: " + bool);
+        return bool;
+
     }
 }
 

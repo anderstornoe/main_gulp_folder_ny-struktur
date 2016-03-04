@@ -94,11 +94,13 @@
 
      //gutil.log("Its time to production mode it!");
      //objekter/kemi_drag/builds/development/
-     gulp.src(['objekter/development/' + objSrcFolder + '/*'])
 
-     .pipe(gulp.dest('objekter/production/' + objDistFolder))
-         //.pipe(wait(1500))
-         //gulp.task('trim_files');
+     // gulp.src(['objekter/development/' + objSrcFolder + '/*'])  // UDKOMMENTERET d. 03-03-2016
+     // .pipe(gulp.dest('objekter/production/' + objDistFolder));
+         
+     gulp.src(['objekter/development/**/*'])   // TILFOEJET d. 03-03-2016: den gamle måde at kopiere på, idet alt skal med fra undermapper i src til dest. 
+     .pipe(gulp.dest('objekter/production'))
+
 
      if (typeof objPath === "undefined") { // Only executed if an argument is NOT given in the call to the gulp-task, eg. call: "gulp copy_production"
          gulp.src(['objekter/library/**/*'])
@@ -110,7 +112,7 @@
  });
 
 
- // POSSIBLE ARGUMENT-CALL FROM TERMINAL: "gulp deploy --option objekter/development/My_Object_Folder_Name"
+ // POSSIBLE ARGUMENT-CALL FROM TERMINAL: "gulp deploy --option objekter/development/My_Object_Folder_Name" 
  gulp.task('trim_files', function() {
 
      var objSrcFolder = "**";
