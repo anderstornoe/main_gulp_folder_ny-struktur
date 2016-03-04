@@ -96,6 +96,9 @@
     max-width: 300px;*/
     border-radius: 6px;
     display: inline;
+    height:45px;
+    
+    
     position: absolute;
 }
 
