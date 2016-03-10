@@ -223,3 +223,25 @@
 .h4{
     font-size: 18px;
 }
+
+
+/* =======   Nedenstående er tilføjet d. 10/3-2016 af THAN, således at "slutsenarie" i UserMsgBox passer til MAMs design v22  ======= */ 
+
+
+#UserMsgBox .scoreWrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#UserMsgBox .scoreWrapper h4 {
+    display: inline;
+}
+
+#UserMsgBox h3 {
+    font-weight: 600;
+}
+
+#UserMsgBox h3 .label{
+    position: relative;
+    bottom: 3px;
+}
