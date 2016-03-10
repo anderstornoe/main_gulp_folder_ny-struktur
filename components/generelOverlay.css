@@ -225,4 +225,21 @@ a {
 }
 
 
+/* =======   Nedenstående er tilføjet d. 10/3-2016 af THAN, således at "slutsenarie" i UserMsgBox passer til MAMs design v22  ======= */
+
+
+#UserMsgBox .scoreWrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#UserMsgBox .scoreWrapper h4 {
+    display: inline;
+}
+
+#UserMsgBox h3 {
+    font-weight: 600;
+}
+
+
 /*==  RETTELSER MED MAM 17/12-2015  =*/
