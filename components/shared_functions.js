@@ -904,7 +904,7 @@ var cookieClass = {
         d.setTime(d.getTime() + (numOfDays * 24 * 60 * 60 * 1000));
         var expires = "expires=" + d.toUTCString();
         // document.cookie = cookieName + "=" + cookieValue + "; " + expires;                                     // WARNING: Does not work on on firefox and Chrome!!! Cookiestatus works on server AND localhost in firefox
-        document.cookie = cookieName + "=" + cookieValue + "; " + expires + "; path=/";                           // Cookiestatus does NOT work on server OR localhost in firefox. OK in ckrome on server AND localhost
+        document.cookie = cookieName + "=" + cookieValue + "; " + expires + "; path=/"; // Cookiestatus does NOT work on server OR localhost in firefox. OK in ckrome on server AND localhost
         // document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";domain=.vucdigital.dk;path=/";    // Cookiestatus does NOT work on server OR localhost in firefox. OK in ckrome on server AND localhost
     },
     getCookie: function(cookieName) {
@@ -923,8 +923,8 @@ var cookieClass = {
         document.cookie = cookieName + "=;expires=Wed; 01 Jan 1970";
     },
     existCookie: function(cookieName) {
-        console.log("existCookie - getCookie(cookieName): _"+this.getCookie(cookieName)+"_ String(getCookie(cookieName)): _"+String(this.getCookie(cookieName))+"_");
-        console.log("existCookie - typeof(String(null)): "+typeof(String(null)));
+        console.log("existCookie - getCookie(cookieName): _" + this.getCookie(cookieName) + "_ String(getCookie(cookieName)): _" + String(this.getCookie(cookieName)) + "_");
+        console.log("existCookie - typeof(String(null)): " + typeof(String(null)));
         var bool = ((this.getCookie(cookieName) !== null) && (String(this.getCookie(cookieName)) != 'null') && (String(this.getCookie(cookieName)) != '')) ? true : false;
         console.log("existCookie - bool: " + bool);
         return bool;
@@ -950,4 +950,43 @@ function explanation(explanationText) {
     HTML += '<div class="Clear"></div>';
     HTML += '</div>';
     return HTML;
+}
+
+function enable_audio() {
+
+    $("body").append("<audio id='audio_correct' ><source src='../library/sound_effects/correct_new.mp3' type='audio/mpeg'></audio>");
+    $("body").append("<audio id='audio_error' ><source src='../library/sound_effects/error_new.mp3' type='audio/mpeg'></audio>");
+    $(".container-fluid").prepend("<div class='btn_mute btn btn-default'>Sluk lyden</div>");
+    //$(".container-fluid").prepend("<div>OST</h1>");//Add html for error and correct
+    //Add sound_off icon 
+
+    console.log("audio enabled");
+
+    //document.getElementById('audio_correct').play();
+    $(".btn_mute").click(function() {
+        if (document.getElementById('audio_correct').muted == false) {
+            document.getElementById('audio_correct').muted = true;
+            document.getElementById('audio_error').muted = true;
+            $(".btn_mute").html("Tænd lyden");
+            console.log("off");
+        } else {
+            console.log("on");
+            document.getElementById('audio_correct').muted = false;
+            document.getElementById('audio_error').muted = false;
+            $(".btn_mute").html("Sluk lyden");
+        }
+
+    });
+    //$(".audio_correct").play();
+
+}
+
+function error_sound() {
+    document.getElementById('audio_error').play();
+
+}
+
+function correct_sound() {
+    //play correct_sound();
+    document.getElementById('audio_correct').play();
 }
