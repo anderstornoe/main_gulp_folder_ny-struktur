@@ -12,7 +12,7 @@ echo ""
 echo "Single objects:"
 # This processes the object-folders:
 # for d in objekter/production/*; do
-for d in objekter/development/*; do
+for d in objekter/development/*; do   # Added 15-03-2016
 	df=${d##*/}  # extracting the folder-names
 
 	# echo $d
