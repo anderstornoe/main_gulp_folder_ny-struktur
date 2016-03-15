@@ -11,7 +11,8 @@ declare -a nameArray	# Array containing the object-folder name, eg: "engB_search
 echo ""
 echo "Single objects:"
 # This processes the object-folders:
-for d in objekter/production/*; do
+# for d in objekter/production/*; do
+for d in objekter/development/*; do
 	df=${d##*/}  # extracting the folder-names
 
 	# echo $d
