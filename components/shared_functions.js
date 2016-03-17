@@ -956,7 +956,7 @@ function enable_audio() {
 
     $("body").append("<audio id='audio_correct' ><source src='../library/sound_effects/correct_new.mp3' type='audio/mpeg'></audio>");
     $("body").append("<audio id='audio_error' ><source src='../library/sound_effects/error_new.mp3' type='audio/mpeg'></audio>");
-    $(".container-fluid").prepend("<div class='btn_mute btn btn-default'>Sluk lyden</div>");
+    $(".container-fluid").prepend("<div class='btn_sound btn_mute btn btn-default'><span class='glyphicons glyphicons-volume-up'></span></div>");
     //$(".container-fluid").prepend("<div>OST</h1>");//Add html for error and correct
     //Add sound_off icon 
 
@@ -967,13 +967,13 @@ function enable_audio() {
         if (document.getElementById('audio_correct').muted == false) {
             document.getElementById('audio_correct').muted = true;
             document.getElementById('audio_error').muted = true;
-            $(".btn_mute").html("Tænd lyden");
+            $(".btn_mute").html("<span class='glyphicons glyphicons-mute'></span>");
             console.log("off");
         } else {
             console.log("on");
             document.getElementById('audio_correct').muted = false;
             document.getElementById('audio_error').muted = false;
-            $(".btn_mute").html("Sluk lyden");
+            $(".btn_mute").html("<span class='glyphicons glyphicons-volume-up'></span>");
         }
 
     });
@@ -982,11 +982,13 @@ function enable_audio() {
 }
 
 function error_sound() {
+       document.getElementById('audio_error').load();
     document.getElementById('audio_error').play();
 
 }
 
 function correct_sound() {
     //play correct_sound();
+    document.getElementById('audio_correct').load();
     document.getElementById('audio_correct').play();
 }

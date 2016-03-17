@@ -1,5 +1,3 @@
-
-
 .TaskNumberImg {
     width: 20px;
     margin-bottom: 3px;
@@ -16,18 +14,21 @@
     position: absolute;
     top: 6px;
     color: #0071BC;
-    line-height: 1,5;
+    line-height: 1, 5;
 }
+
 .new_window_link .btn-info {
-    color:black;
-    width:auto;
+    color: black;
+    width: auto;
     background-color: #E7E6E2;
     border-color: #E7E6E2;
 }
+
 .new_window_link .btn-info:hover {
     background-color: #D0CEC6;
     border-color: #D0CEC6;
 }
+
 .footerCopywrite {
     margin: 50px 0 20px 0;
     text-align: center;
@@ -49,8 +50,6 @@
 /* ===================================================================================================================================
       Nedenstående overført fra shared_functions_styles.css styles.css fra det gamle Engelsk B workflow, THAN d. 10-08-2015
 =================================================================================================================================== */
-
-
 
 
 /* ==========  Indlejring  ========== */
@@ -127,7 +126,7 @@
     margin-bottom: 0px;
 }
 
-.scoreText{
+.scoreText {
     color: #000;
     font-weight: 600;
 }
@@ -135,32 +134,54 @@
 
 /* ==========  pager  ========== */
 
-.PagerClass{display: inline-block; margin-bottom: 0px;}
-.PagerContainer{display: inline-block;}
-.PagerContainer ul {margin: 0px; padding: 0px}
-.PagerContainer ul li {display: inline; margin: 0px; padding: 0px;}
-.PagerButtonLeft{margin-right: 8px; position: relative;}
-.PagerButtonRight{position: relative; left: -8px;}
+.PagerClass {
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.PagerContainer {
+    display: inline-block;
+}
+
+.PagerContainer ul {
+    margin: 0px;
+    padding: 0px
+}
+
+.PagerContainer ul li {
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+}
+
+.PagerButtonLeft {
+    margin-right: 8px;
+    position: relative;
+}
+
+.PagerButtonRight {
+    position: relative;
+    left: -8px;
+}
 
 
 /*******************************************************************************************************************   
         Nedestaaende indsat af THAN d. 27-01-2016: CSS til JS-funktionerne "inctruction()" og "explanation()"   
 *******************************************************************************************************************/
 
-.Clear{
+.Clear {
     clear: both;
 }
-
 
 .explanation {
     margin-bottom: 20px;
 }
 
-.explanation div:nth-child(2){
+.explanation div:nth-child(2) {
     width: 80%;
 }
 
-.explanation > .glyphicon{
+.explanation > .glyphicon {
     color: #56bfc5;
     font-size: 16px;
     font-weight: 600;
@@ -170,7 +191,8 @@
     /*top: 2px;*/
 }
 
-.instruktion {  /* Flyttet fra kvuc_design.css */
+.instruktion {
+    /* Flyttet fra kvuc_design.css */
     border-bottom: 1px solid #ddd;
     border-top: 1px solid #ddd;
     font-weight: 600;
@@ -180,8 +202,9 @@
     float: left;
     position: relative;
 }
-    
-.instruktion:before {  /* Flyttet fra kvuc_design.css */
+
+.instruktion:before {
+    /* Flyttet fra kvuc_design.css */
     content: "";
     display: block;
     position: absolute;
@@ -193,8 +216,9 @@
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
 }
-    
-.instruktion > .glyphicon-arrow-right {  /* Flyttet fra kvuc_design.css */
+
+.instruktion > .glyphicon-arrow-right {
+    /* Flyttet fra kvuc_design.css */
     color: #56bfc5;
     font-size: 18px;
     margin-right: 15px;
@@ -203,30 +227,33 @@
     top: 2px;
 }
 
-
 .instruktion {
     width: 100%;
     padding-left: 10px;
 }
-.instruktion div:nth-child(2){
+
+.instruktion div:nth-child(2) {
     width: 90%;
 }
 
 @media (max-width: 750px) {
-    .instruktion > .glyphicon{
+    .instruktion > .glyphicon {
         font-size: 14px;
     }
 }
 
+
 /*Denne style anvendes i videquizzerne, er vist blevet slettet ved en fejl.. */
+
+
 /*ATO 4.marts 2016*/
-.h4{
+
+.h4 {
     font-size: 18px;
 }
 
 
-/* =======   Nedenstående er tilføjet d. 10/3-2016 af THAN, således at "slutsenarie" i UserMsgBox passer til MAMs design v22  ======= */ 
-
+/* =======   Nedenstående er tilføjet d. 10/3-2016 af THAN, således at "slutsenarie" i UserMsgBox passer til MAMs design v22  ======= */
 
 #UserMsgBox .scoreWrapper {
     padding-top: 10px;
@@ -241,7 +268,15 @@
     font-weight: 600;
 }
 
-#UserMsgBox h3 .label{
+#UserMsgBox h3 .label {
     position: relative;
     bottom: 3px;
+}
+
+
+/* LYDKNAPPER CSS  */
+
+.btn_sound {
+    position: absolute;
+    z-index: 100;
 }
