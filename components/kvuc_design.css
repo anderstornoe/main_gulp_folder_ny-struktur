@@ -149,3 +149,50 @@
     font-weight: 300;
 }
 
+
+/*********   Nedenstående er tilføjet d. 29/3-2016 af THAN fra 2016-01-15 Vucdigital_Overblik_v22_UDEN_GUIDES.pdf  **********/
+.vucLabel {font-size: 1.1em; font-weight: 700;}
+.vucColor{padding: 15px; margin: 5px;}
+.a1{background-color: #f9f206;}
+.a2{background-color: #ffff99;}
+.a3{background-color: #ffface;}
+.b1{background-color: #e56ec9;}
+.b2{background-color: #f2b9e1;}
+.b3{background-color: #fae3f4;}
+.c1{background-color: #73f9a9;}
+.c2{background-color: #b5f8d5;}
+.c3{background-color: #e2fdee;}
+.d1{background-color: #e5c180;}
+.d2{background-color: #f7e5cc;}
+.d3{background-color: #f6f0e6;}
+.e1{background-color: #9090d1;}
+.e2{background-color: #d2d4ec;}
+.e3{background-color: #eeeef8;}
+.f1{background-color: #e26060;}
+.f2{background-color: #f6c0c0;}
+.f3{background-color: #fde7e7;}
+.g1{background-color: #64e2dc;}
+.g2{background-color: #acefed;}
+.g3{background-color: #dff8f8;}
+
+
+
+/*********   Tilføjet d. 29/3-2016 af THAN fra 2016-01-15 Vucdigital_Overblik_v22_UDEN_GUIDES.pdf  **********/
+.vuc-primary{color: #fff; background-color: #56bfc5;}
+.vuc-primary-hover{color: #fff; background-color: #05a0a8;}
+.vuc-primary-active{color: #fff; background-color: #05a0a8;}
+
+.vuc-info{color: #000; background-color: #e7e6e2;}
+.vuc-info-hover{color: #000; background-color: #cececc;}
+.vuc-info-active{color: #fff; background-color: #717272;}
+
+.vuc-default{color: #000; background-color: #fff;}
+.vuc-default-hover{color: #000; background-color: #e7e6e2;}
+.vuc-default-active{color: #fff; background-color: #717272;}
+
+.vuc-correct{color: #fff; background-color: #2abb2a;}
+.vuc-wrong{color: #fff; background-color: #ed3e3a;}
+
+
+
+
