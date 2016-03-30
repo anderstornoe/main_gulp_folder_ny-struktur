@@ -956,7 +956,7 @@ function enable_audio() {
 
     $("body").append("<audio id='audio_correct' ><source src='../library/sound_effects/correct_new.mp3' type='audio/mpeg'></audio>");
     $("body").append("<audio id='audio_error' ><source src='../library/sound_effects/error_new.mp3' type='audio/mpeg'></audio>");
-    $(".container-fluid").prepend("<div class='btn_sound btn_mute btn btn-default'><span class='glyphicons glyphicons-volume-up'></span></div>");
+    //$(".container-fluid").prepend("<div class='btn_sound btn_mute btn btn-default'><span class='glyphicons glyphicons-volume-up'></span></div>");
     //$(".container-fluid").prepend("<div>OST</h1>");//Add html for error and correct
     //Add sound_off icon 
 
