@@ -1003,6 +1003,11 @@ function correct_sound() {
 // - where "path_to_my_json_file" is the path to the JSON-file that needs to be loaded, eg. "json/myJsonFile.json".
 // Just leave the call to the other perameters of the function ("Type", "Async", "DataType") as they are in the above
 // example.
+// 
+// IMPORTANT: 
+// ==========
+// The function call declares the global variable "jsonData" which will contain the JSON data contained in the file "path_to_my_json_file".
+// You should be able to just use the variable "jsonData" in your program.
 function getAjaxData(Type, Url, Async, DataType) {
     $.ajax({
         type: Type,
@@ -1011,8 +1016,7 @@ function getAjaxData(Type, Url, Async, DataType) {
         dataType: DataType,
         success: function(Data) {
             console.log("ReturnAjaxData: " + JSON.stringify(Data));
-            jsonData = JSON.parse(JSON.stringify(Data));
-            // JsonExternalData = JSON.parse(JSON.stringify(Data));
+            window.jsonData = JSON.parse(JSON.stringify(Data));  // NOTE: The call "window.jsonData" declares the variable "jsonData" as a global variable.
         }
     }).fail(function() {
         alert("Ajax failed to fetch data - the requested quizdata might not exist...");
