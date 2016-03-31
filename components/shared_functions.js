@@ -992,3 +992,29 @@ function correct_sound() {
     document.getElementById('audio_correct').load();
     document.getElementById('audio_correct').play();
 }
+
+
+// How to use this function:
+// =========================
+// Call the function from your html-file with the following parameters:
+//
+//      getAjaxData("GET", "path_to_my_json_file", false, "json");
+//
+// - where "path_to_my_json_file" is the path to the JSON-file that needs to be loaded, eg. "json/myJsonFile.json".
+// Just leave the call to the other perameters of the function ("Type", "Async", "DataType") as they are in the above
+// example.
+function getAjaxData(Type, Url, Async, DataType) {
+    $.ajax({
+        type: Type,
+        url: Url,
+        async: Async,
+        dataType: DataType,
+        success: function(Data) {
+            console.log("ReturnAjaxData: " + JSON.stringify(Data));
+            jsonData = JSON.parse(JSON.stringify(Data));
+            // JsonExternalData = JSON.parse(JSON.stringify(Data));
+        }
+    }).fail(function() {
+        alert("Ajax failed to fetch data - the requested quizdata might not exist...");
+    });
+}
