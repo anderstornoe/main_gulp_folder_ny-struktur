@@ -233,7 +233,7 @@
 }
 
 .instruktion div:nth-child(2) {
-    width: 90%;
+    width: 83%;  /* Udført af THAN d. 4/4-2016. Sat ned fra 90% til 83%, så "instruktion" i danA_markering ikke break'er */
 }
 
 @media (max-width: 750px) {
