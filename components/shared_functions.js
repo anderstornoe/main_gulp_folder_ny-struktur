@@ -1015,7 +1015,7 @@ function getAjaxData(Type, Url, Async, DataType) {
         async: Async,
         dataType: DataType,
         success: function(Data) {
-            console.log("ReturnAjaxData: " + JSON.stringify(Data));
+            //console.log("ReturnAjaxData: " + JSON.stringify(Data));
             window.jsonData = JSON.parse(JSON.stringify(Data));  // NOTE: The call "window.jsonData" declares the variable "jsonData" as a global variable.
         }
     }).fail(function() {
