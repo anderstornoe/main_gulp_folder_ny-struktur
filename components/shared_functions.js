@@ -250,15 +250,22 @@ function shuffle_Array(o) {
 $(document).ready(function() {
 
     AddFavicon();
+    isiniFrame();
 
+    
+});
+
+
+function isiniFrame(){
     var isInIFrame = (window.location != window.parent.location);
     console.log("Er i rammen? : " + isInIFrame);
     if (isInIFrame) {
         $("body").append("<div class='new_window_link'> Ser det mærkeligt ud? <a class='btn btn-info btn-xs embedlink' href='" + window.location.href + "' target='_blank'>  Åbn i nyt browservindue</a></div>");
         $(".container-fluid").css("padding-top", "30px");
+        return true;
     }
-});
-
+    return false;
+}
 
 
 // Her kan man se hvilke browsere der understøtter favicons:
