@@ -152,7 +152,7 @@ a {
     position: absolute;
 
     /*ato tilføjet max-height og overflow i haabet om det ikke giver grimme inline scrolls */
-    max-height: 90%;
+    max-height: 70%;  /* THAN 5/4-2016: ændret fra 90% til 70%, da det løser problem med visning af meget langt indhold. */
     overflow: auto;
     /* slut ato's tilføjelse*/
 
