@@ -118,7 +118,7 @@
     "@screen-xs": "480px",
     "@screen-xs-min": "@screen-xs",
     "@screen-phone": "@screen-xs-min",
-    "@screen-sm": "560px",
+    "@screen-sm": "768px",
     "@screen-sm-min": "@screen-sm",
     "@screen-tablet": "@screen-sm-min",
     "@screen-md": "992px",
@@ -431,5 +431,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=591a929883160e28ca7e8b4bee805092"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=13dfda939301db573080"
 }
