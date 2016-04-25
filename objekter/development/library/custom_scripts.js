@@ -219,9 +219,12 @@ function UserMsgBox(TargetSelector, UserMsg) {
 
 
 $.fn.shuffle_div_position = function() {
+
     var allElems = this.get(),
         getRandom = function(max) {
+            console.log("allElems" + allElems);
             return Math.floor(Math.random() * max);
+
         },
         shuffled = $.map(allElems, function() {
             var random = getRandom(allElems.length),
@@ -233,6 +236,7 @@ $.fn.shuffle_div_position = function() {
     this.each(function(i) {
         $(this).replaceWith($(shuffled[i]));
     });
+    console.log("shuffled");
     return $(shuffled);
 };
 
