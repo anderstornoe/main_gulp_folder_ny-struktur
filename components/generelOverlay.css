@@ -104,12 +104,12 @@ a {
     margin: 11px 0px 0px 0px;
 }
 
-.glyphicon-remove {
+#UserMsgBox >.glyphicon-remove {
     font-size: 1.6em;
     color: rgba(0, 0, 0, 0.5);
 }
 
-.glyphicon-remove:hover {
+#UserMsgBox >.glyphicon-remove:hover {
     color: rgba(0, 0, 0, 1);
 }
 
