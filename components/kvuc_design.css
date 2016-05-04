@@ -195,4 +195,91 @@
 
 
 
+/***************************  Carousel styling, added by THAN 2016-05-03  *******************************/
 
+.carousel-inner{
+    border-radius: 6px;
+    /*padding: 30px 30px 40px 15px;*/
+}
+
+.floatLeft{
+    float: left;
+}
+
+
+.explanation{
+    margin-left: 15px;
+}
+
+
+#questionCarousel{
+    background-color: #f8f8f6;
+}
+
+.carousel{
+    border-radius: 8px;
+    background-color: #FFF;
+}
+.carousel .carousel-indicators{
+    bottom: -10px;
+}
+.carousel .carousel-indicators li{
+    background-color: #cececc;
+    opacity: 0.7;
+    height:15px;
+    width: 15px;
+    margin-right: 5px;
+}
+.carousel .carousel-indicators li:hover {
+    opacity: 1;
+}
+.carousel .carousel-indicators .active{
+    background-color: #000;
+    opacity: 0.7;
+}
+.carousel .carousel-indicators .active:hover {
+    opacity: 1;
+}
+.carousel .left, .carousel .right{
+    background-image: none;
+    color: #000;
+}
+.carousel .carousel-control{
+    opacity: 0.7;
+    text-shadow:none;
+    left:15px;
+    width:40px;
+}
+.carousel .carousel-control.right{
+    left:auto;
+    right:15px;
+}
+.carousel .carousel-control:hover{
+    opacity: 1;
+}
+
+.carousel-control .glyphicon{
+    font-size: 20px;
+    top:50%;
+    color:white;
+    background-color: #111;
+    opacity: 0.7;
+    height:40px; 
+    width: 40px;
+    padding:5px;
+    line-height: 30px;
+    border-radius: 30px;
+    text-align: center;
+    display: block;
+    text-align: center;
+}
+
+.carouselOverlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 1);
+    height: 100%;
+    margin-left: 60%;
+    padding: 0 20px 10px;
+    position: absolute;
+    width: 40%;
+}
