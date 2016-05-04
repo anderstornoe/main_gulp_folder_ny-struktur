@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="library/css/styles.css" type="text/css">
     <link rel="stylesheet" href="library/css/visningssite.css" type="text/css" />
+    <link rel="stylesheet" href="library/css/extra_carousel_styling.css" type="text/css" />
 </head>
 
 <body>
@@ -163,11 +164,23 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <h2>Bliv inspireret - se flere materialer her</h2>
+            <div id="vucCarousel"></div>
+        </div>
     </div>
     <script src="library/vendor_scripts.js"></script>
     <script src="library/custom_scripts.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {});
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            getAjaxData("GET", "library/json/carouselData.json", false, "json");  
+
+            var cObj = Object.create(carouselClass);
+            $('#vucCarousel').html(cObj.init(jsonData));
+        });
     </script>
     <script type="text/javascript">
     $(document).ready(function() {

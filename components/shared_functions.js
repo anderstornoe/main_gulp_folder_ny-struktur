@@ -1033,3 +1033,164 @@ function getAjaxData(Type, Url, Async, DataType) {
         alert("Ajax failed to fetch data - the requested quizdata might not exist...");
     });
 }
+
+
+//==============================================================================
+//          Datatypes for text, images and video
+//==============================================================================
+// {
+//     "type": "img",
+//     "src": "img/06_Elna_Statistisk_aarbog_1920_side_27_js.jpg",
+//     "alt": "Lokalt billede..."
+// }, {
+//     "type": "text",
+//     "text": "Mødeindkaldelse ledsaget af artikel skrevet af Louis Pio..."
+// }, {
+//     "type": "video",
+//     "src": "https://player.vimeo.com/video/129639593"
+// }
+// {   
+//     "type" : "columnData",
+//     "columnData": [
+//         {"column":"<b>CASE 1</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"},
+//         {"column":"<b>CASE 2</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"}
+//     ]
+// }
+// {   
+//     "type" : "columnData",
+//     "columnData": [          <-----------------  It takes 1 to N columns: columns 1 to 3 gets their own columns, 4 columns and up stacks in one column.
+//         {"column":"<b>CASE 1</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"},
+//         {"column":"<b>CASE 2</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"},
+//         {"column":"<b>CASE 2</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"}
+//     ]
+// }
+carouselClass = {
+    randomSlides: false,
+    bsColum: "col-10-center", // OPTIONS: "col-XX-center", "col-XX". NOTE: XX has to an even number if "center" has to work properly.
+    init: function(jsonCarouselData){
+        if (this.randomSlides) {
+            jsonCarouselData.carouselData.slides =  this.shuffelArray(jsonCarouselData.carouselData.slides);
+        }
+        this.setEventListeners(jsonCarouselData);
+        return this.returnCarouselHtml(jsonCarouselData);;
+    },
+    returnCarouselHtml: function(jsonCarouselData){
+        
+        var HTML = '';
+
+        var center = (this.bsColum.indexOf('center') !== -1)? true : false;
+        var colMain = parseInt(this.bsColum.split('-')[1]);
+        var colSide = Math.round((12-colMain)/2);
+        console.log("returnCarouselHtml - , center: " + center +", colMain: "+ colMain + ",colSide: " + colSide);
+
+        HTML += (center)?'<div class="col-md-'+colSide+'"></div>':'';
+        HTML += '<div id="questionCarousel" class="carousel slide col-xs-12 col-md-'+colMain+'" data-ride="carousel" data-interval="false">' +
+                    '<ol class="carousel-indicators">' +
+                        this.returnCarouselIndicators(jsonCarouselData) + 
+                    '</ol>' +
+                    '<div class="carousel-inner" role="listbox">' +
+                        this.returnCarouselSlide(jsonCarouselData) + 
+                    '</div>' +
+                    '<a class="left carousel-control" href="#questionCarousel" role="button" data-slide="prev">' +
+                        '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>' +
+                        '<span class="sr-only">Previous</span>' +
+                    '</a>' +
+                    '<a class="right carousel-control" href="#questionCarousel" role="button" data-slide="next">' +
+                        '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>' +
+                        '<span class="sr-only">Next</span>' +
+                    '</a>' +
+                '</div>';
+        HTML += (center)?'<div class="col-md-'+colSide+'"></div>':'';
+        return HTML;
+    },
+
+
+    returnCarouselIndicators: function(jsonCarouselData){
+        var HTML = '';
+        for (var i in jsonCarouselData.carouselData.slides) {
+            HTML += '<li data-target="#questionCarousel" data-slide-to="'+i+'"'+((i==0)?' class="active"':'')+'></li>';
+        };
+        console.log("returnCarouselIndicators: " + HTML);
+
+        return HTML;
+    },
+    returnCarouselSlide: function(jsonCarouselData){
+        console.log("returnCarouselItem2 - jsonCarouselData: " + JSON.stringify(jsonCarouselData));
+        var slideData = jsonCarouselData.carouselData.slides;
+        console.log("returnCarouselItem2 - slideData: " + slideData.length);
+        var HTML = '';
+
+        for (var i = 0; i < slideData.length; i++) {
+            HTML += '<div id="slide_'+i+'" class="item'+((i==0)?' active':'')+'">';
+
+            HTML += (slideData[i].hasOwnProperty('header'))?'<h2 class="columnHeading">'+slideData[i].header+'</h2>' : '';
+
+            HTML += this.returnCarouselItem(i, slideData);
+            
+            HTML += '</div>';
+        }
+        
+        console.log("returnCarouselItem2: " + HTML);
+
+        return HTML;
+    },
+    returnCarouselItem: function(slideNum, slideData){
+
+        var HTML = '';
+
+        HTML += (slideData[slideNum].hasOwnProperty('overlay'))? '<div class="carouselOverlay">'+slideData[slideNum].overlay+'</div>' : ''; 
+    
+        HTML += '<div id="question_'+slideNum+'" class="question">';                                         // <------ ADDED 2/5-2016
+
+            switch(slideData[slideNum].type) {
+                case "img":
+                    HTML += '<img class="img-responsive" src="'+slideData[slideNum].src+'" alt="'+slideData[slideNum].alt+'"/>';
+                    break;
+                case "text":
+                    HTML += '<div class="TextHolder">'+slideData[slideNum].text+'</div>';
+                    break;
+                case "video":
+                    HTML += '<div class="embed-responsive embed-responsive-16by9 col-xs-12 col-md-12">' + 
+                                '<iframe class="embed-responsive-item" src="'+slideData[slideNum].src+'?rel=0&iv_load_policy=3" allowfullscreen="1"></iframe>' + 
+                            '</div>';
+                    break;
+                case "columnData":
+                    console.log("SLIDE TEST 1");
+                    for (var j in slideData[slideNum].columnData) {
+                        console.log("SLIDE TEST 2");
+                        var l = slideData[slideNum].columnData.length;
+                        var bsColNum = ((l==1)?'12':((l==2)?'6':((l==3)?'4':'12'))); 
+                        HTML += '<div class="analysis column col-xs-12 col-md-'+bsColNum+'">'+slideData[slideNum].columnData[j].column+'</div>';
+                    }
+                    break;
+                default:
+                    alert('Invalid "type"');
+            }
+
+        HTML += '</div>';
+        
+        console.log("returnCarouselItem: " + HTML);
+
+        return HTML;
+    },
+    shuffelArray: function(ItemArray){
+        var NumOfItems = ItemArray.length;
+        var NewArray = ItemArray.slice();  // Copy the array...
+        var Item2; var TempItem1; var TempItem2;
+        for (var Item1 = 0; Item1 < NumOfItems; Item1++) {
+            Item2 = Math.floor( Math.random() * NumOfItems);
+            TempItem1 = NewArray[Item1];
+            TempItem2 = NewArray[Item2];
+            NewArray[Item2] = TempItem1;
+            NewArray[Item1] = TempItem2;
+        }
+        return NewArray;
+    },
+    setEventListeners: function(jsonCarouselData){
+        $( document ).on('click', "#questionCarousel .item", function(event){
+            console.log('setEventListeners - CLICK - #questionCarousel .item - index: ' + $(this).prop('id'));
+            document.location.href = jsonCarouselData.carouselData.slides[$(this).index()].slideLink;
+        });
+    }
+}
+
