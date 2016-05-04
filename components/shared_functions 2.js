@@ -255,12 +255,11 @@ $(document).ready(function() {
 
     AddFavicon();
     isiniFrame();
-
-    
+    //rotateCheck();
 });
 
 
-function isiniFrame(){
+function isiniFrame() {
     var isInIFrame = (window.location != window.parent.location);
     console.log("Er i rammen? : " + isInIFrame);
     if (isInIFrame) {
@@ -965,8 +964,8 @@ function explanation(explanationText) {
 
 function enable_audio() {
 
-    $("body").append("<audio id='audio_correct' ><source src='../library/sound_effects/correct_new.mp3' type='audio/mpeg'></audio>");
-    $("body").append("<audio id='audio_error' ><source src='../library/sound_effects/error_new.mp3' type='audio/mpeg'></audio>");
+    $("body").append("<audio preload='auto' id='audio_correct' ><source src='../library/sound_effects/correct_new.mp3' type='audio/mpeg'></audio>");
+    $("body").append("<audio preload='auto' id='audio_error' ><source src='../library/sound_effects/error_new.mp3' type='audio/mpeg'></audio>");
     //$(".container-fluid").prepend("<div class='btn_sound btn_mute btn btn-default'><span class='glyphicons glyphicons-volume-up'></span></div>");
     //$(".container-fluid").prepend("<div>OST</h1>");//Add html for error and correct
     //Add sound_off icon 
@@ -994,14 +993,14 @@ function enable_audio() {
 
 function error_sound() {
     //document.getElementById('audio_error').load();
-    //console.log("error sound paused");
+    console.log("error sound paused");
     var correct_sound = document.getElementById('audio_correct');
     var error_sound = document.getElementById('audio_error');
     correct_sound.pause();
     correct_sound.currentTime = 0;
     error_sound.pause();
     error_sound.currentTime = 0;
-    //console.log("error sound played");
+    console.log("error sound played");
     error_sound.play();
 
 }
@@ -1013,13 +1012,12 @@ function correct_sound() {
     correct_sound.currentTime = 0;
     error_sound.pause();
     error_sound.currentTime = 0;
-    //console.log("correct_sound sound paused");
+    console.log("correct_sound sound paused");
     //play correct_sound();
     //document.getElementById('audio_correct').load();
     correct_sound.play();
-    //console.log("correct_sound sound played");
+    console.log("correct_sound sound played");
 }
-
 
 
 // How to use this function:
@@ -1044,7 +1042,7 @@ function getAjaxData(Type, Url, Async, DataType) {
         dataType: DataType,
         success: function(Data) {
             //console.log("ReturnAjaxData: " + JSON.stringify(Data));
-            window.jsonData = JSON.parse(JSON.stringify(Data));  // NOTE: The call "window.jsonData" declares the variable "jsonData" as a global variable.
+            window.jsonData = JSON.parse(JSON.stringify(Data)); // NOTE: The call "window.jsonData" declares the variable "jsonData" as a global variable.
         }
     }).fail(function() {
         alert("Ajax failed to fetch data - the requested quizdata might not exist...");
@@ -1052,6 +1050,56 @@ function getAjaxData(Type, Url, Async, DataType) {
 }
 
 
+<<<<<<< HEAD
+////////////////////
+////////////////////////////////////////////////////////
+// detect browser size --> opfordr brugeren til at vende sin skærm: 
+
+function rotateCheck() {
+    var size = findBootstrapEnvironment();
+    var mobile_browser = detectmob();
+    //alert(size);
+    if (size == "ExtraSmall") {//} && mobile_browser) {
+        UserMsgBox("body", "<H3> Roter din skærm</h3><img class='img-responsive' src='../library/img/rotate_screen.png'>");
+    }
+
+    $(window).resize(function(){
+    $(".MsgBox_bgr").remove();
+});
+
+}
+
+function findBootstrapEnvironment() {
+    var envs = ["ExtraSmall", "Small", "Medium", "Large"];
+    var envValues = ["xs", "sm", "md", "lg"];
+
+    var $el = $('<div>');
+    $el.appendTo($('body'));
+
+    for (var i = envValues.length - 1; i >= 0; i--) {
+        var envVal = envValues[i];
+
+        $el.addClass('hidden-' + envVal);
+        if ($el.is(':hidden')) {
+            $el.remove();
+            return envs[i]
+        }
+    };
+}
+
+function detectmob() {
+    if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//
+//////////////////////////////////////////////////////////////////
+////////////////////////////////////////
+//////////////////
+=======
 //==============================================================================
 //          Datatypes for text, images and video
 //==============================================================================
@@ -1211,3 +1259,4 @@ carouselClass = {
     }
 }
 
+>>>>>>> 2ac4b9f763f9767b4164e3bb9d1903736eebfbbb

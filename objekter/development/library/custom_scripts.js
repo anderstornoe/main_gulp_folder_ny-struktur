@@ -993,16 +993,33 @@ function enable_audio() {
 }
 
 function error_sound() {
-       document.getElementById('audio_error').load();
-    document.getElementById('audio_error').play();
+    //document.getElementById('audio_error').load();
+    //console.log("error sound paused");
+    var correct_sound = document.getElementById('audio_correct');
+    var error_sound = document.getElementById('audio_error');
+    correct_sound.pause();
+    correct_sound.currentTime = 0;
+    error_sound.pause();
+    error_sound.currentTime = 0;
+    //console.log("error sound played");
+    error_sound.play();
 
 }
 
 function correct_sound() {
+    var correct_sound = document.getElementById('audio_correct');
+    var error_sound = document.getElementById('audio_error');
+    correct_sound.pause();
+    correct_sound.currentTime = 0;
+    error_sound.pause();
+    error_sound.currentTime = 0;
+    //console.log("correct_sound sound paused");
     //play correct_sound();
-    document.getElementById('audio_correct').load();
-    document.getElementById('audio_correct').play();
+    //document.getElementById('audio_correct').load();
+    correct_sound.play();
+    //console.log("correct_sound sound played");
 }
+
 
 
 // How to use this function:
