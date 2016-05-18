@@ -1206,7 +1206,11 @@ carouselClass = {
     setEventListeners: function(jsonCarouselData){
         $( document ).on('click', "#questionCarousel .item", function(event){
             console.log('setEventListeners - CLICK - #questionCarousel .item - index: ' + $(this).prop('id'));
-            document.location.href = jsonCarouselData.carouselData.slides[$(this).index()].slideLink;
+
+            // document.location.href = jsonCarouselData.carouselData.slides[$(this).index()].slideLink;        // Opens in the same window and tab
+            
+            var win = window.open(jsonCarouselData.carouselData.slides[$(this).index()].slideLink, '_blank');   // Opens in the same window, but a new tab
+            win.focus();
         });
     }
 }
