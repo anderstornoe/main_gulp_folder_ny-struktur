@@ -66,7 +66,7 @@ a {
 }
 
 .OverlayTextContainer {
-    background-color: rgba(248, 248, 246, 0.9);
+    background-color: white;
     border-radius: 5px;
     color: #000;
     left: 0;
@@ -74,7 +74,8 @@ a {
     padding: 40px 75px 40px 40px;
     position: absolute;
     right: 0;
-    width: 80%;
+    width: 70%;
+    max-width: 720px;
     z-index: 100001;
     cursor: pointer;
 }
@@ -165,9 +166,6 @@ a {
     clear: both;
 }
 
-.OverlayTextContainer {
-    max-width: 1164px;
-}
 
 #UserMsgBox p {
     margin: 0px;
