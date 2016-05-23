@@ -1021,7 +1021,49 @@ function correct_sound() {
 }
 
 
+////////////////////
+////////////////////////////////////////////////////////
+// detect browser size --> opfordr brugeren til at vende sin skærm: 
 
+function rotateCheck() {
+    var size = findBootstrapEnvironment();
+    var mobile_browser = detectmob();
+    //alert(size);
+    if (size == "ExtraSmall") {//} && mobile_browser) {
+        UserMsgBox("body", "<H3> Roter din skærm</h3><img class='img-responsive' src='../library/img/rotate_screen.png'>");
+    }
+
+    $(window).resize(function(){
+    $(".MsgBox_bgr").remove();
+});
+
+}
+
+function findBootstrapEnvironment() {
+    var envs = ["ExtraSmall", "Small", "Medium", "Large"];
+    var envValues = ["xs", "sm", "md", "lg"];
+
+    var $el = $('<div>');
+    $el.appendTo($('body'));
+
+    for (var i = envValues.length - 1; i >= 0; i--) {
+        var envVal = envValues[i];
+
+        $el.addClass('hidden-' + envVal);
+        if ($el.is(':hidden')) {
+            $el.remove();
+            return envs[i]
+        }
+    };
+}
+
+function detectmob() {
+    if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 // How to use this function:
 // =========================
 // Call the function from your html-file with the following parameters:
