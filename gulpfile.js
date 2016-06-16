@@ -31,7 +31,7 @@
 
 
  gulp.task('log', function() {
-     gutil.log("Hej fra loggen");
+     gutil.log("Log kører....");
  });
 
  gulp.task('js', function() {
@@ -98,9 +98,9 @@
 
      // gulp.src(['objekter/development/' + objSrcFolder + '/*'])  // UDKOMMENTERET d. 03-03-2016
      // .pipe(gulp.dest('objekter/production/' + objDistFolder));
-         
-     gulp.src(['objekter/development/**/*'])   // TILFOEJET d. 03-03-2016: den gamle måde at kopiere på, idet alt skal med fra undermapper i src til dest. 
-     .pipe(gulp.dest('objekter/production'))
+
+     gulp.src(['objekter/development/**/*']) // TILFOEJET d. 03-03-2016: den gamle måde at kopiere på, idet alt skal med fra undermapper i src til dest. 
+         .pipe(gulp.dest('objekter/production'))
 
 
      if (typeof objPath === "undefined") { // Only executed if an argument is NOT given in the call to the gulp-task, eg. call: "gulp copy_production"
@@ -142,7 +142,7 @@
 
      gulp.src("objekter/production/" + objSrcFolder + "/*.js")
          .pipe(uglify())
-         //.pipe(stripDebug())
+         .pipe(stripDebug())
          .pipe(gulp.dest('objekter/production/' + objDistFolder))
 
      gutil.log("all done");
@@ -160,9 +160,9 @@
          objPath = 'objekter/production';
      } else { // Only executed if an argument is given in the call to the gulp-task.
 
-        objPath = String(objPath);
-        objPath = objPath.replace('development', 'production'); //  TILFOEJET d. 29-02-2016
-        objFolder = String(objPath.split("/")[2]); // Get "My_Object_Folder_Name" from the objPath.
+         objPath = String(objPath);
+         objPath = objPath.replace('development', 'production'); //  TILFOEJET d. 29-02-2016
+         objFolder = String(objPath.split("/")[2]); // Get "My_Object_Folder_Name" from the objPath.
      }
      gutil.log("deploy - objPath : " + objPath + ", objFolder: " + objFolder);
 
@@ -219,7 +219,7 @@
          // root: 'objekter/production/',   // Added to test if "things" work when copied to production. 
          livereload: true
      });
-     gutil.log("Hej fra connect");
+     gutil.log("Server connected");
  });
 
  gulp.task('default', ['js', 'connect', 'watch', 'log']);
