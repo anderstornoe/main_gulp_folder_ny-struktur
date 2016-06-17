@@ -25827,7 +25827,7 @@ var tooltip = $.widget( "ui.tooltip", {
 
 }));
 /*!
- * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under the MIT license
  */
@@ -25839,13 +25839,13 @@ if (typeof jQuery === 'undefined') {
 +function ($) {
   'use strict';
   var version = $.fn.jquery.split(' ')[0].split('.')
-  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1)) {
-    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher')
+  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 2)) {
+    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 3')
   }
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: transition.js v3.3.5
+ * Bootstrap: transition.js v3.3.6
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -25905,7 +25905,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: alert.js v3.3.5
+ * Bootstrap: alert.js v3.3.6
  * http://getbootstrap.com/javascript/#alerts
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -25924,7 +25924,7 @@ if (typeof jQuery === 'undefined') {
     $(el).on('click', dismiss, this.close)
   }
 
-  Alert.VERSION = '3.3.5'
+  Alert.VERSION = '3.3.6'
 
   Alert.TRANSITION_DURATION = 150
 
@@ -26000,7 +26000,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: button.js v3.3.5
+ * Bootstrap: button.js v3.3.6
  * http://getbootstrap.com/javascript/#buttons
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -26020,7 +26020,7 @@ if (typeof jQuery === 'undefined') {
     this.isLoading = false
   }
 
-  Button.VERSION  = '3.3.5'
+  Button.VERSION  = '3.3.6'
 
   Button.DEFAULTS = {
     loadingText: 'loading...'
@@ -26121,7 +26121,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: carousel.js v3.3.5
+ * Bootstrap: carousel.js v3.3.6
  * http://getbootstrap.com/javascript/#carousel
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -26152,7 +26152,7 @@ if (typeof jQuery === 'undefined') {
       .on('mouseleave.bs.carousel', $.proxy(this.cycle, this))
   }
 
-  Carousel.VERSION  = '3.3.5'
+  Carousel.VERSION  = '3.3.6'
 
   Carousel.TRANSITION_DURATION = 600
 
@@ -26359,7 +26359,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: collapse.js v3.3.5
+ * Bootstrap: collapse.js v3.3.6
  * http://getbootstrap.com/javascript/#collapse
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -26389,7 +26389,7 @@ if (typeof jQuery === 'undefined') {
     if (this.options.toggle) this.toggle()
   }
 
-  Collapse.VERSION  = '3.3.5'
+  Collapse.VERSION  = '3.3.6'
 
   Collapse.TRANSITION_DURATION = 350
 
@@ -26571,7 +26571,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: dropdown.js v3.3.5
+ * Bootstrap: dropdown.js v3.3.6
  * http://getbootstrap.com/javascript/#dropdowns
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -26591,7 +26591,7 @@ if (typeof jQuery === 'undefined') {
     $(element).on('click.bs.dropdown', this.toggle)
   }
 
-  Dropdown.VERSION = '3.3.5'
+  Dropdown.VERSION = '3.3.6'
 
   function getParent($this) {
     var selector = $this.attr('data-target')
@@ -26623,7 +26623,7 @@ if (typeof jQuery === 'undefined') {
       if (e.isDefaultPrevented()) return
 
       $this.attr('aria-expanded', 'false')
-      $parent.removeClass('open').trigger('hidden.bs.dropdown', relatedTarget)
+      $parent.removeClass('open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
     })
   }
 
@@ -26657,7 +26657,7 @@ if (typeof jQuery === 'undefined') {
 
       $parent
         .toggleClass('open')
-        .trigger('shown.bs.dropdown', relatedTarget)
+        .trigger($.Event('shown.bs.dropdown', relatedTarget))
     }
 
     return false
@@ -26737,7 +26737,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: modal.js v3.3.5
+ * Bootstrap: modal.js v3.3.6
  * http://getbootstrap.com/javascript/#modals
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -26771,7 +26771,7 @@ if (typeof jQuery === 'undefined') {
     }
   }
 
-  Modal.VERSION  = '3.3.5'
+  Modal.VERSION  = '3.3.6'
 
   Modal.TRANSITION_DURATION = 300
   Modal.BACKDROP_TRANSITION_DURATION = 150
@@ -27075,7 +27075,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: tooltip.js v3.3.5
+ * Bootstrap: tooltip.js v3.3.6
  * http://getbootstrap.com/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ========================================================================
@@ -27102,7 +27102,7 @@ if (typeof jQuery === 'undefined') {
     this.init('tooltip', element, options)
   }
 
-  Tooltip.VERSION  = '3.3.5'
+  Tooltip.VERSION  = '3.3.6'
 
   Tooltip.TRANSITION_DURATION = 150
 
@@ -27590,7 +27590,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: popover.js v3.3.5
+ * Bootstrap: popover.js v3.3.6
  * http://getbootstrap.com/javascript/#popovers
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -27610,7 +27610,7 @@ if (typeof jQuery === 'undefined') {
 
   if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
 
-  Popover.VERSION  = '3.3.5'
+  Popover.VERSION  = '3.3.6'
 
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
     placement: 'right',
@@ -27699,7 +27699,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: scrollspy.js v3.3.5
+ * Bootstrap: scrollspy.js v3.3.6
  * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -27728,7 +27728,7 @@ if (typeof jQuery === 'undefined') {
     this.process()
   }
 
-  ScrollSpy.VERSION  = '3.3.5'
+  ScrollSpy.VERSION  = '3.3.6'
 
   ScrollSpy.DEFAULTS = {
     offset: 10
@@ -27872,7 +27872,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: tab.js v3.3.5
+ * Bootstrap: tab.js v3.3.6
  * http://getbootstrap.com/javascript/#tabs
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -27892,7 +27892,7 @@ if (typeof jQuery === 'undefined') {
     // jscs:enable requireDollarBeforejQueryAssignment
   }
 
-  Tab.VERSION = '3.3.5'
+  Tab.VERSION = '3.3.6'
 
   Tab.TRANSITION_DURATION = 150
 
@@ -28028,7 +28028,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: affix.js v3.3.5
+ * Bootstrap: affix.js v3.3.6
  * http://getbootstrap.com/javascript/#affix
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -28057,7 +28057,7 @@ if (typeof jQuery === 'undefined') {
     this.checkPosition()
   }
 
-  Affix.VERSION  = '3.3.5'
+  Affix.VERSION  = '3.3.6'
 
   Affix.RESET    = 'affix affix-top affix-bottom'
 
@@ -28359,38 +28359,28 @@ if (typeof jQuery === 'undefined') {
  * Depends:
  *  jquery.ui.sortable.js
  */
- 
-(function( factory ) {
-	if ( typeof define === "function" && define.amd ) {
-
-		// AMD. Register as an anonymous module.
-		define([ "jquery", "jquery-ui" ], factory );
-	} else {
-
-		// Browser globals
-		factory( jQuery );
-	}
-}(function( $ ) {
-  
-(function (window, $) {
+(function(factory) {
+  if (typeof define === "function" && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(["jquery", "jquery-ui"], factory);
+  } else {
+    // Browser globals
+    factory(jQuery);
+  }
+}(function($) {
   var supports = {},
       testProp = function (prefixes) {
-        var testEl = document.createElement('div'), i, l;
+        var test_el = document.createElement('div'), i, l;
 
-        for (i = 0; l = prefixes.length, i < l; i += 1) {
-          if (document.createElement('div').style[prefixes[i]] != undefined) {
+        for (i = 0; l = prefixes.length, i < l; i++) {
+          if (test_el.style[prefixes[i]] != undefined) {
             return prefixes[i];
           }
         }
 
         return '';
       },
-      prepareTransition = function ($el) {
-        $el.offset();
-        return $el;
-      },
-      last_top,
-      css_animation = false;
+      use_css_animation = false;
 
   // check for css-transforms support
   supports['transform'] = testProp([
@@ -28406,86 +28396,80 @@ if (typeof jQuery === 'undefined') {
     'msTransition'
   ]);
 
-  // check for transitionEnd event
-  supports['transitionend'] = function () {
-    var prefixes = ['webkit', 'o', ''],
-        i, l = prefixes.length;
+  use_css_animation = supports['transform'] && supports['transition'];
 
-    for (i = 0; l = prefixes.length, i < l; i += 1) {
-      if (("on" + prefixes[i] + "transitionend") in window) {
-        return  (prefixes[i] ? prefixes[i] + "T" : "t") + "ransitionEnd";
-      }
-    }
-
-    return '';
-  }();
-
-  css_animation = supports['transform'] && supports['transition'] && supports['transitionend'];
-
-  $.widget("app.sortable", $.ui.sortable, {
+  $.widget("ui.sortable", $.ui.sortable, {
     options: {
-      // adds the new `sortAnimate` option, turned off by default.
-      sortAnimate: false,
-      sortAnimateDuration: 150
+      // adds the new `animation` option, turned off by default.
+      animation: 0,
     },
 
     // called internally by sortable when sortable
     // items are rearranged.
-    _rearrange: function ( e, item ) {
+    _rearrange: function (e, item) {
       var $item,
           props = {},
-          offset;
+          reset_props = {},
+          offset,
+          axis = $.trim(this.options.axis);
 
       // just call the original implementation of _rearrange()
-      // if option `sortAnimate` is turned off
+      // if option `animation` is turned off
       // `currentContainer` used for animating received items
       // from another sortable container (`connectWith` option)
-      if (!this.currentContainer.options.sortAnimate) {
+      if (!parseInt(this.currentContainer.options.animation) ||
+          !axis
+      ) {
         return this._superApply(arguments);
       }
 
       $item = $(item.item[0]);
       // if moved up, then move item up to its height,
       // if moved down, then move item down
-      offset = (this.direction == 'up' ? '' : '-') + ($item.height()) + 'px';
+      offset = (this.direction == 'up' ? '' : '-') + ($item[axis == 'x' ? 'width' : 'height']()) + 'px';
 
       // call original _rearrange() at first
       this._superApply(arguments);
 
       // prepare starting css props
-      if (css_animation) {
-        props[supports['transform']] = 'translateY(' + offset + ')';
+      if (use_css_animation) {
+        props[supports['transform']] = (axis == 'x' ? 'translateX' : 'translateY') + '(' + offset + ')';
       } else {
         props = {
           position: 'relative',
-          top: offset
         };
+        props[axis == 'x' ? 'left' : 'top'] = offset;
       }
 
       // set starting css props on item
       $item.css(props);
 
-      // if css animations do not supported
+      // if css animations are not supported
       // use jQuery animations
-      if (css_animation) {
-        props[supports['transition']] = supports['transform'] + ' ' + this.options.sortAnimateDuration + 'ms';
+      if (use_css_animation) {
+        props[supports['transition']] = supports['transform'] + ' ' + this.options.animation + 'ms';
         props[supports['transform']] = '';
+        reset_props[supports['transform']] = '';
+        reset_props[supports['transition']] = '';
 
-        prepareTransition($item)
-          .css(props)
-          .one(supports['transitionend'], function () {
-            $item
-              .css(supports['transform'], '')
-              .css(supports['transition'], '');
-          });
+        setTimeout(function () {
+          $item.css(props);
+        }, 0);
       } else {
+        reset_props.top = '';
+        reset_props.position = '';
+
         $item.animate({
           top: '',
           position: ''
-        }, this.options.sortAnimateDuration);
+        }, this.options.animation);
       }
-    }
-  });   
-})(window, jQuery);
 
+      // after animation ends
+      // clear changed for animation props
+      setTimeout(function () {
+        $item.css(reset_props);
+      }, this.options.animation);
+    }
+  });
 }));
