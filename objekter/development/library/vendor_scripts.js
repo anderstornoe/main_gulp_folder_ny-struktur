@@ -28359,38 +28359,28 @@ if (typeof jQuery === 'undefined') {
  * Depends:
  *  jquery.ui.sortable.js
  */
- 
-(function( factory ) {
-	if ( typeof define === "function" && define.amd ) {
-
-		// AMD. Register as an anonymous module.
-		define([ "jquery", "jquery-ui" ], factory );
-	} else {
-
-		// Browser globals
-		factory( jQuery );
-	}
-}(function( $ ) {
-  
-(function (window, $) {
+(function(factory) {
+  if (typeof define === "function" && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(["jquery", "jquery-ui"], factory);
+  } else {
+    // Browser globals
+    factory(jQuery);
+  }
+}(function($) {
   var supports = {},
       testProp = function (prefixes) {
-        var testEl = document.createElement('div'), i, l;
+        var test_el = document.createElement('div'), i, l;
 
-        for (i = 0; l = prefixes.length, i < l; i += 1) {
-          if (document.createElement('div').style[prefixes[i]] != undefined) {
+        for (i = 0; l = prefixes.length, i < l; i++) {
+          if (test_el.style[prefixes[i]] != undefined) {
             return prefixes[i];
           }
         }
 
         return '';
       },
-      prepareTransition = function ($el) {
-        $el.offset();
-        return $el;
-      },
-      last_top,
-      css_animation = false;
+      use_css_animation = false;
 
   // check for css-transforms support
   supports['transform'] = testProp([
@@ -28406,86 +28396,80 @@ if (typeof jQuery === 'undefined') {
     'msTransition'
   ]);
 
-  // check for transitionEnd event
-  supports['transitionend'] = function () {
-    var prefixes = ['webkit', 'o', ''],
-        i, l = prefixes.length;
+  use_css_animation = supports['transform'] && supports['transition'];
 
-    for (i = 0; l = prefixes.length, i < l; i += 1) {
-      if (("on" + prefixes[i] + "transitionend") in window) {
-        return  (prefixes[i] ? prefixes[i] + "T" : "t") + "ransitionEnd";
-      }
-    }
-
-    return '';
-  }();
-
-  css_animation = supports['transform'] && supports['transition'] && supports['transitionend'];
-
-  $.widget("app.sortable", $.ui.sortable, {
+  $.widget("ui.sortable", $.ui.sortable, {
     options: {
-      // adds the new `sortAnimate` option, turned off by default.
-      sortAnimate: false,
-      sortAnimateDuration: 150
+      // adds the new `animation` option, turned off by default.
+      animation: 0,
     },
 
     // called internally by sortable when sortable
     // items are rearranged.
-    _rearrange: function ( e, item ) {
+    _rearrange: function (e, item) {
       var $item,
           props = {},
-          offset;
+          reset_props = {},
+          offset,
+          axis = $.trim(this.options.axis);
 
       // just call the original implementation of _rearrange()
-      // if option `sortAnimate` is turned off
+      // if option `animation` is turned off
       // `currentContainer` used for animating received items
       // from another sortable container (`connectWith` option)
-      if (!this.currentContainer.options.sortAnimate) {
+      if (!parseInt(this.currentContainer.options.animation) ||
+          !axis
+      ) {
         return this._superApply(arguments);
       }
 
       $item = $(item.item[0]);
       // if moved up, then move item up to its height,
       // if moved down, then move item down
-      offset = (this.direction == 'up' ? '' : '-') + ($item.height()) + 'px';
+      offset = (this.direction == 'up' ? '' : '-') + ($item[axis == 'x' ? 'width' : 'height']()) + 'px';
 
       // call original _rearrange() at first
       this._superApply(arguments);
 
       // prepare starting css props
-      if (css_animation) {
-        props[supports['transform']] = 'translateY(' + offset + ')';
+      if (use_css_animation) {
+        props[supports['transform']] = (axis == 'x' ? 'translateX' : 'translateY') + '(' + offset + ')';
       } else {
         props = {
           position: 'relative',
-          top: offset
         };
+        props[axis == 'x' ? 'left' : 'top'] = offset;
       }
 
       // set starting css props on item
       $item.css(props);
 
-      // if css animations do not supported
+      // if css animations are not supported
       // use jQuery animations
-      if (css_animation) {
-        props[supports['transition']] = supports['transform'] + ' ' + this.options.sortAnimateDuration + 'ms';
+      if (use_css_animation) {
+        props[supports['transition']] = supports['transform'] + ' ' + this.options.animation + 'ms';
         props[supports['transform']] = '';
+        reset_props[supports['transform']] = '';
+        reset_props[supports['transition']] = '';
 
-        prepareTransition($item)
-          .css(props)
-          .one(supports['transitionend'], function () {
-            $item
-              .css(supports['transform'], '')
-              .css(supports['transition'], '');
-          });
+        setTimeout(function () {
+          $item.css(props);
+        }, 0);
       } else {
+        reset_props.top = '';
+        reset_props.position = '';
+
         $item.animate({
           top: '',
           position: ''
-        }, this.options.sortAnimateDuration);
+        }, this.options.animation);
       }
-    }
-  });   
-})(window, jQuery);
 
+      // after animation ends
+      // clear changed for animation props
+      setTimeout(function () {
+        $item.css(reset_props);
+      }, this.options.animation);
+    }
+  });
 }));
