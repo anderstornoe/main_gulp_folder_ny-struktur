@@ -119,7 +119,8 @@ a {
     height: 100%;
     position: fixed;
     width: 100%;
-    z-index: 10;
+    /*z-index: 10;*/  /* THAN: commented out 27/6-2016 */
+    z-index: 100;     /* THAN: added 27/6-2016 */
 }
 
 .CloseClass {
