@@ -1035,7 +1035,7 @@ function rotateCheck() {
 
     $(window).resize(function() {
         $(".MsgBox_bgr").remove();
-        location.reload();
+        //location.reload();
     });
 
 }
