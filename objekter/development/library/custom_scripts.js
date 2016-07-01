@@ -262,9 +262,9 @@ $(document).ready(function() {
 
 function isiniFrame() {
     var isInIFrame = (window.location != window.parent.location);
-    console.log("Er i rammen? : " + isInIFrame);
+    //console.log("Er i rammen? : " + isInIFrame);
     if (isInIFrame) {
-        $("body").append("<div class='new_window_link'> Ser det mærkeligt ud? <a class='btn btn-info btn-xs embedlink' href='" + window.location.href + "' target='_blank'>  Åbn i nyt browservindue</a></div>");
+        $("body").append("<div class='new_window_link'> <a class='btn btn-info btn-xs embedlink' href='" + window.location.href + "' target='_blank'>Vil du se øvelsen i fuld skærm?</a></div>");
         $(".container-fluid").css("padding-top", "30px");
         return true;
     }
