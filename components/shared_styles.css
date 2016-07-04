@@ -280,3 +280,9 @@
     position: absolute;
     z-index: 100;
 }
+
+.glyphicon-fullscreen:before {
+ margin-left: 10px;
+}
+
+
