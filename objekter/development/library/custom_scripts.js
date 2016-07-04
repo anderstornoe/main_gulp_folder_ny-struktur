@@ -266,7 +266,7 @@ function isiniFrame() {
     if (isInIFrame) {
         //$("body").append("<div class='new_window_link'> Ser det mærkeligt ud? <a class='btn btn-info btn-xs embedlink' href='" + window.location.href + "' target='_blank'>  Åbn i nyt browservindue</a></div>");
         $("body").append("<div class='new_window_link'> <a class='btn btn-info btn-sm' href='" + window.location.href + "' target='_blank'>Se i fuld skærm <span class='glyphicon glyphicon-fullscreen'></span> </a></div>");
-        
+
         $(".container-fluid").css("padding-top", "30px");
         return true;
     }
@@ -958,13 +958,13 @@ function instruction(instructionText) {
 
 function instruction_8col(instructionText) {
     var HTML = '<div class="col-xs-12 col-md-8">';
-    HTML +=         '<h4 class="instruktion">';
-    HTML +=             '<div class="left glyphicon glyphicon-arrow-right"></div>';
-    HTML +=             '<div class="left instructionText">' + instructionText + '</div>';
-    HTML +=         '</h4>';
-    HTML +=         '<div class="Clear"></div>';
-    HTML +=     '</div>';
-    HTML +=     '<div class="Clear"></div>';
+    HTML += '<h4 class="instruktion">';
+    HTML += '<div class="left glyphicon glyphicon-arrow-right"></div>';
+    HTML += '<div class="left instructionText">' + instructionText + '</div>';
+    HTML += '</h4>';
+    HTML += '<div class="Clear"></div>';
+    HTML += '</div>';
+    HTML += '<div class="Clear"></div>';
     return HTML;
 }
 
@@ -1046,12 +1046,14 @@ function rotateCheck() {
     //alert(size);
     if (size == "ExtraSmall") { //} && mobile_browser) {
         UserMsgBox("body", "<H3> Roter din skærm</h3><img class='img-responsive' src='../library/img/rotate_screen.png'>");
-    }
 
-    $(window).resize(function() {
-        $(".MsgBox_bgr").remove();
-        location.reload();
-    });
+
+        $(window).resize(function() {
+            $(".MsgBox_bgr").remove();
+            location.reload();
+        });
+
+    }
 
 }
 
@@ -1295,7 +1297,7 @@ function safariWarning() {
     // https://jsfiddle.net/9atsffau/
 
     if (Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0) {
-  UserMsgBox("body", '<h4>ADVARSEL</h4> <p>Du arbejder på en Mac og bruger browseren Safari. <br> Denne øvelse virker desværre ikke optimalt på Safari-platformen. Du vil ikke kunne downloade wordfilen til sidst i øvelsen.</p><br> <p>Brug i stedet <b>Chrome</b> (<a href="https://www.google.dk/chrome/browser/desktop/">Hent den her</a>) eller <b>Firefox</b>  (<a href="https://www.mozilla.org/da/firefox/new/">Hent den her</a>).</p><br> <p>Mvh <a href="https://www.vucdigital.dk">vucdigital.dk</a> </p>');
+        UserMsgBox("body", '<h4>ADVARSEL</h4> <p>Du arbejder på en Mac og bruger browseren Safari. <br> Denne øvelse virker desværre ikke optimalt på Safari-platformen. Du vil ikke kunne downloade wordfilen til sidst i øvelsen.</p><br> <p>Brug i stedet <b>Chrome</b> (<a href="https://www.google.dk/chrome/browser/desktop/">Hent den her</a>) eller <b>Firefox</b>  (<a href="https://www.mozilla.org/da/firefox/new/">Hent den her</a>).</p><br> <p>Mvh <a href="https://www.vucdigital.dk">vucdigital.dk</a> </p>');
     }
     // SEE:  https://jsfiddle.net/9atsffau/
 }

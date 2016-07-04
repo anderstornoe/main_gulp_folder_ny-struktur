@@ -3,6 +3,7 @@
 *    Added by THAN 2016-05-03
 ***********************************************************************************/
 
+
 /*
     #questionCarousel{
         background-color: inherit;
@@ -41,10 +42,28 @@
     }
 */
 
+body {
+    /* THAN 29-06-2016: This has been place here so it mimics the white background of vucdigital.dk/index.html */
+    background-color: white;
+}
+
 .active {
     cursor: pointer;
 }
 
 #questionCarousel {
     background-color: inherit;
+}
+
+@media screen and (max-width: 680px) {
+    .carousel .carousel-indicators {
+        bottom: -38px;
+    }
+    .carouselOverlay > h3 {
+        font-size: 12px
+    }
+    .carouselOverlay > p {
+        margin-top:-10px;
+        font-size: 8px
+    }
 }
