@@ -1160,7 +1160,7 @@ carouselClass = {
 
         HTML += (center) ? '<div class="col-md-' + colSide + '"></div>' : '';
         HTML += '<div id="questionCarousel" class="carousel slide col-xs-12 col-md-' + colMain + '" data-ride="carousel" data-interval="false">' +
-            '<ol class="carousel-indicators">' +
+            '<ol class="carousel-indicators hidden-xs">' +
             this.returnCarouselIndicators(jsonCarouselData) +
             '</ol>' +
             '<div class="carousel-inner" role="listbox">' +
