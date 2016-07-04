@@ -945,7 +945,7 @@ var cookieClass = {
 
 
 function instruction(instructionText) {
-    HTML = '<h4 class="instruktion">';
+    var HTML = '<h4 class="instruktion">';
     HTML += '<div class="left glyphicon glyphicon-arrow-right"></div>';
     HTML += '<div class="left instructionText">' + instructionText + '</div>';
     HTML += '</h4>';
@@ -954,8 +954,21 @@ function instruction(instructionText) {
 }
 
 
+function instruction_8col(instructionText) {
+    var HTML = '<div class="col-xs-12 col-md-8">';
+    HTML +=         '<h4 class="instruktion">';
+    HTML +=             '<div class="left glyphicon glyphicon-arrow-right"></div>';
+    HTML +=             '<div class="left instructionText">' + instructionText + '</div>';
+    HTML +=         '</h4>';
+    HTML +=         '<div class="Clear"></div>';
+    HTML +=     '</div>';
+    HTML +=     '<div class="Clear"></div>';
+    return HTML;
+}
+
+
 function explanation(explanationText) {
-    HTML = '<div class="explanation">';
+    var HTML = '<div class="explanation">';
     HTML += '<div class="left glyphicon glyphicon-bookmark"></div>';
     HTML += '<div class="left explanationText">' + explanationText + '</div>';
     HTML += '<div class="Clear"></div>';
