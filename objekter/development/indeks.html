@@ -201,7 +201,7 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function() {
-            getAjaxData("GET", "library/json/carouselData.json", false, "json");  
+            getAjaxData("GET", "promotion/json/carouselData.json", false, "json");  
 
             var cObj = Object.create(carouselClass);
             $('#vucCarousel').html(cObj.init(jsonData));
