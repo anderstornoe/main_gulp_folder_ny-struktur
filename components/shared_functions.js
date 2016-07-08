@@ -13,7 +13,7 @@
 
 function one_line_footer() {
     console.log("hej")
-    //$('.container, .container-fluid').append('<div class="col-xs-12"><h6 class="footerCopywrite"> <a href="../../../kemiC_visningsite/builds/development/om_projektet.html">Digitale læringsmaterialer  Copyright 2015</a></h6></div>')
+        //$('.container, .container-fluid').append('<div class="col-xs-12"><h6 class="footerCopywrite"> <a href="../../../kemiC_visningsite/builds/development/om_projektet.html">Digitale læringsmaterialer  Copyright 2015</a></h6></div>')
     var thisyear = new Date().getFullYear(); // $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='../pf_kem2015/om_projektet.html'>Digitale læringsmaterialer  Copyright 2015</a></h6></div>");
     $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='https://www.vucdigital.dk'>© " + thisyear + " vucdigital</a></h6></div>");
 
@@ -256,12 +256,21 @@ $(document).ready(function() {
 
     AddFavicon();
     isiniFrame();
+    //getURLiFramed();
 
 
 });
 
+function getURLiFramed() {
+    var url = (window.location != window.parent.location) ? document.referrer : document.location;
+
+    return url;
+
+}
+
 
 function isiniFrame() {
+
     var isInIFrame = (window.location != window.parent.location);
     console.log("Er i rammen? : " + isInIFrame);
     if (isInIFrame) {
