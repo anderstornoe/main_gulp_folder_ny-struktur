@@ -12,7 +12,8 @@
 
 
 function one_line_footer() {
-    //$('.container, .container-fluid').append('<div class="col-xs-12"><h6 class="footerCopywrite"> <a href="../../../kemiC_visningsite/builds/development/om_projektet.html">Digitale læringsmaterialer  Copyright 2015</a></h6></div>')
+    console.log("hej")
+        //$('.container, .container-fluid').append('<div class="col-xs-12"><h6 class="footerCopywrite"> <a href="../../../kemiC_visningsite/builds/development/om_projektet.html">Digitale læringsmaterialer  Copyright 2015</a></h6></div>')
     var thisyear = new Date().getFullYear(); // $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='../pf_kem2015/om_projektet.html'>Digitale læringsmaterialer  Copyright 2015</a></h6></div>");
     $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='https://www.vucdigital.dk'>© " + thisyear + " vucdigital</a></h6></div>");
 
@@ -255,18 +256,27 @@ $(document).ready(function() {
 
     AddFavicon();
     isiniFrame();
+    //getURLiFramed();
 
 
 });
 
+function getURLiFramed() {
+    var url = (window.location != window.parent.location) ? document.referrer : document.location;
+
+    return url;
+
+}
+
 
 function isiniFrame() {
+
     var isInIFrame = (window.location != window.parent.location);
     console.log("Er i rammen? : " + isInIFrame);
     if (isInIFrame) {
-        $("body").append("<div class='new_window_link'> Ser det mærkeligt ud? <a class='btn btn-info btn-xs embedlink' href='" + window.location.href + "' target='_blank'>  Åbn i nyt browservindue</a></div>");
-        //$("body").append("<div class='new_window_link'> <a class='btn btn-info btn-xs embedlink' href='" + window.location.href + "' target='_blank'>Vil du se øvelsen i fuld skærm?</a></div>");
-        
+        //$("body").append("<div class='new_window_link'> Ser det mærkeligt ud? <a class='btn btn-info btn-xs embedlink' href='" + window.location.href + "' target='_blank'>  Åbn i nyt browservindue</a></div>");
+        $("body").append("<div class='new_window_link'> <a class='btn btn-info btn-sm' href='" + window.location.href + "' target='_blank'>Se i fuld skærm <span class='glyphicon glyphicon-fullscreen'></span> </a></div>");
+
         $(".container-fluid").css("padding-top", "30px");
         return true;
     }
@@ -947,7 +957,7 @@ var cookieClass = {
 
 
 function instruction(instructionText) {
-    HTML = '<h4 class="instruktion">';
+    var HTML = '<h4 class="instruktion">';
     HTML += '<div class="left glyphicon glyphicon-arrow-right"></div>';
     HTML += '<div class="left instructionText">' + instructionText + '</div>';
     HTML += '</h4>';
@@ -956,8 +966,21 @@ function instruction(instructionText) {
 }
 
 
+function instruction_8col(instructionText) {
+    var HTML = '<div class="col-xs-12 col-md-8">';
+    HTML += '<h4 class="instruktion">';
+    HTML += '<div class="left glyphicon glyphicon-arrow-right"></div>';
+    HTML += '<div class="left instructionText">' + instructionText + '</div>';
+    HTML += '</h4>';
+    HTML += '<div class="Clear"></div>';
+    HTML += '</div>';
+    HTML += '<div class="Clear"></div>';
+    return HTML;
+}
+
+
 function explanation(explanationText) {
-    HTML = '<div class="explanation">';
+    var HTML = '<div class="explanation">';
     HTML += '<div class="left glyphicon glyphicon-bookmark"></div>';
     HTML += '<div class="left explanationText">' + explanationText + '</div>';
     HTML += '<div class="Clear"></div>';
@@ -1033,12 +1056,14 @@ function rotateCheck() {
     //alert(size);
     if (size == "ExtraSmall") { //} && mobile_browser) {
         UserMsgBox("body", "<H3> Roter din skærm</h3><img class='img-responsive' src='../library/img/rotate_screen.png'>");
-    }
 
-    $(window).resize(function() {
-        $(".MsgBox_bgr").remove();
-        //location.reload();
-    });
+
+        $(window).resize(function() {
+            $(".MsgBox_bgr").remove();
+            location.reload();
+        });
+
+    }
 
 }
 
@@ -1147,7 +1172,7 @@ carouselClass = {
 
         HTML += (center) ? '<div class="col-md-' + colSide + '"></div>' : '';
         HTML += '<div id="questionCarousel" class="carousel slide col-xs-12 col-md-' + colMain + '" data-ride="carousel" data-interval="false">' +
-            '<ol class="carousel-indicators">' +
+            '<ol class="carousel-indicators hidden-xs">' +
             this.returnCarouselIndicators(jsonCarouselData) +
             '</ol>' +
             '<div class="carousel-inner" role="listbox">' +
@@ -1282,9 +1307,7 @@ function safariWarning() {
     // https://jsfiddle.net/9atsffau/
 
     if (Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0) {
-  //UserMsgBox("body", '<h4>ADVARSEL</h4> <p>Du/i arbejder på en Mac og bruger browseren Safari. <br> Denne øvelse virker desværre ikke optimalt på Safari-platformen. Du vil ikke kunne downloade wordfilen til sidst i øvelsen.</p><br> <p>Brug i stedet <b>Chrome</b> (<a href="https://www.google.dk/chrome/browser/desktop/">Hent den her</a>) eller <b>Firefox</b>  (<a href="https://www.mozilla.org/da/firefox/new/">Hent den her</a>).</p><br> <p>Mvh <a href="https://www.vucdigital.dk">vucdigital.dk</a> </p>');
-  UserMsgBox("body", '<h4>ADVARSEL</h4> <p>Denne øvelse virker desværre ikke optimalt på dit styresystem og browser. Du vil ikke kunne downloade wordfilen til sidst i øvelsen.</p><br> <p>Hvis du er på en Mac, så brug fx <b>Chrome</b> (<a href="https://www.google.dk/chrome/browser/desktop/">Hent den her</a>) eller <b>Firefox</b>  (<a href="https://www.mozilla.org/da/firefox/new/">Hent den her</a>).</p><br> <p>Mvh <a href="https://www.vucdigital.dk">vucdigital.dk</a> </p>');
-  
+        UserMsgBox("body", '<h4>ADVARSEL</h4> <p>Du arbejder på en Mac og bruger browseren Safari. <br> Denne øvelse virker desværre ikke optimalt på Safari-platformen. Du vil ikke kunne downloade wordfilen til sidst i øvelsen.</p><br> <p>Brug i stedet <b>Chrome</b> (<a href="https://www.google.dk/chrome/browser/desktop/">Hent den her</a>) eller <b>Firefox</b>  (<a href="https://www.mozilla.org/da/firefox/new/">Hent den her</a>).</p><br> <p>Mvh <a href="https://www.vucdigital.dk">vucdigital.dk</a> </p>');
     }
     // SEE:  https://jsfiddle.net/9atsffau/
 }

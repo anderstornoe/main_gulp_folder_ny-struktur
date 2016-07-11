@@ -1,7 +1,8 @@
 bower_components
 node_modules
 Iconr
+!/objekter
 /objekter/production/*
 /objekter/development/*
 !objekter/development/library
-/objekter/development/library/*.js
+objekter/development/indeks.html
