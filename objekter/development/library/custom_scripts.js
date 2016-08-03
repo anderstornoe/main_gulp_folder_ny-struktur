@@ -957,10 +957,13 @@ var cookieClass = {
 
 
 function instruction(instructionText) {
-    var HTML = '<h4 class="instruktion">';
+    var HTML = '<div class="col-xs-12 col-md-8">';
+    HTML += '<h4 class="instruktion">';
     HTML += '<div class="left glyphicon glyphicon-arrow-right"></div>';
     HTML += '<div class="left instructionText">' + instructionText + '</div>';
     HTML += '</h4>';
+    HTML += '<div class="Clear"></div>';
+    HTML += '</div>';
     HTML += '<div class="Clear"></div>';
     return HTML;
 }
@@ -980,7 +983,7 @@ function instruction_8col(instructionText) {
 
 
 function explanation(explanationText) {
-    var HTML = '<div class="explanation">';
+    var HTML = '<div class="explanation col-xs-12 col-md-8">';
     HTML += '<div class="left glyphicon glyphicon-bookmark"></div>';
     HTML += '<div class="left explanationText">' + explanationText + '</div>';
     HTML += '<div class="Clear"></div>';
@@ -1307,7 +1310,8 @@ function safariWarning() {
     // https://jsfiddle.net/9atsffau/
 
     if (Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0) {
-        UserMsgBox("body", '<h4>ADVARSEL</h4> <p>Du arbejder på en Mac og bruger browseren Safari. <br> Denne øvelse virker desværre ikke optimalt på Safari-platformen. Du vil ikke kunne downloade wordfilen til sidst i øvelsen.</p><br> <p>Brug i stedet <b>Chrome</b> (<a href="https://www.google.dk/chrome/browser/desktop/">Hent den her</a>) eller <b>Firefox</b>  (<a href="https://www.mozilla.org/da/firefox/new/">Hent den her</a>).</p><br> <p>Mvh <a href="https://www.vucdigital.dk">vucdigital.dk</a> </p>');
+        //UserMsgBox("body", '<h4>ADVARSEL</h4> <p>Du/i arbejder på en Mac og bruger browseren Safari. <br> Denne øvelse virker desværre ikke optimalt på Safari-platformen. Du vil ikke kunne downloade wordfilen til sidst i øvelsen.</p><br> <p>Brug i stedet <b>Chrome</b> (<a href="https://www.google.dk/chrome/browser/desktop/">Hent den her</a>) eller <b>Firefox</b>  (<a href="https://www.mozilla.org/da/firefox/new/">Hent den her</a>).</p><br> <p>Mvh <a href="https://www.vucdigital.dk">vucdigital.dk</a> </p>');
+        UserMsgBox("body", '<h4>ADVARSEL</h4> <p>Denne øvelse virker desværre ikke optimalt på dit styresystem og browser. Du vil ikke kunne downloade wordfilen til sidst i øvelsen.</p><br> <p>Hvis du er på en Mac, så brug fx <b>Chrome</b> (<a href="https://www.google.dk/chrome/browser/desktop/">Hent den her</a>) eller <b>Firefox</b>  (<a href="https://www.mozilla.org/da/firefox/new/">Hent den her</a>).</p><br> <p>Mvh <a href="https://www.vucdigital.dk">vucdigital.dk</a> </p>');
     }
     // SEE:  https://jsfiddle.net/9atsffau/
 }
