@@ -144,7 +144,7 @@ textarea {
 }
 
 .thumbnail{
-    border:none;
+    border:1px solid #ddd;
 }
 
 
@@ -163,4 +163,8 @@ textarea {
 }
 .btnSubText{
     padding-left: 10px;
+}
+
+.post-box{
+    margin-bottom:10px;
 }
