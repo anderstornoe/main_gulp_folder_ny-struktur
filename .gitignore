@@ -4,13 +4,4 @@ Iconr
 objekter/production/*
 objekter/development/*
 !objekter/development/library
-objekter/development/library/*
-!objekter/development/library/fonts
-!objekter/development/library/img
-!objekter/development/library/img_carousel
-!objekter/development/library/css/img_frontpage
-!objekter/development/library/js
-!objekter/development/library/json
-!objekter/development/library/shared_files
-!objekter/development/library/sound_effects
-objekter/development/library/vendor_scripts.js
+objekter/development/library/*.js
