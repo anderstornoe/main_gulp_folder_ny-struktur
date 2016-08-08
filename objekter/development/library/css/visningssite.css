@@ -130,6 +130,7 @@ textarea {
 .glyphicon, .glyphicons {
     margin-left: 0px;
     margin-right: 10px;
+    /*color:green;*/
 }
 
 .btn-lg {padding: 10px 20px;}

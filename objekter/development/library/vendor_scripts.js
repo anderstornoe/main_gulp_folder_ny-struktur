@@ -1,6 +1,6 @@
 /*!
  * jQuery JavaScript Library v2.1.4
- * http://jquery.com/
+ * http://jquery.com/ hejsa
  *
  * Includes Sizzle.js
  * http://sizzlejs.com/
