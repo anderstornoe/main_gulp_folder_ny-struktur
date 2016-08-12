@@ -957,10 +957,13 @@ var cookieClass = {
 
 
 function instruction(instructionText) {
-    var HTML = '<h4 class="instruktion">';
+    var HTML = '<div class="col-xs-12 col-md-8">';
+    HTML += '<h4 class="instruktion">';
     HTML += '<div class="left glyphicon glyphicon-arrow-right"></div>';
     HTML += '<div class="left instructionText">' + instructionText + '</div>';
     HTML += '</h4>';
+    HTML += '<div class="Clear"></div>';
+    HTML += '</div>';
     HTML += '<div class="Clear"></div>';
     return HTML;
 }
@@ -980,7 +983,7 @@ function instruction_8col(instructionText) {
 
 
 function explanation(explanationText) {
-    var HTML = '<div class="explanation">';
+    var HTML = '<div class="explanation col-xs-12 col-md-8">';
     HTML += '<div class="left glyphicon glyphicon-bookmark"></div>';
     HTML += '<div class="left explanationText">' + explanationText + '</div>';
     HTML += '<div class="Clear"></div>';
