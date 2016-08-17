@@ -4,4 +4,4 @@ Iconr
 /objekter/production/*
 /objekter/development/*
 !objekter/development/library
-/objekter/development/library/*.js
+!objekter/development/indeks.html

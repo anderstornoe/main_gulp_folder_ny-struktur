@@ -14,23 +14,18 @@
 
 <body>
     <div class="container-fluid">
-        
         <div class="col-sm-9">
-        <h1>Velkommen til vucdigital.dk</h1>
-
+            <h1>Velkommen til vucdigital.dk</h1>
         </div>
-
         <div class="row">
             <div class="col-sm-12 col-md-7">
                 <!-- 1 -->
                 <div class="XXX_thumbnail">
-
                     <p>
-                        Vucdigital er et produktionsfællesskab mellem otte VUC’er: Hf og VUC Nordsjælland, VUC Hvidovre-Amager, VUC Roskilde, Vestegnen HF & VUC, VUF, VUC Storstrøm, VUC Aarhus og Københavns VUC (KVUC). 
+                        Vucdigital er et produktionsfællesskab mellem otte VUC’er: Hf og VUC Nordsjælland, VUC Hvidovre-Amager, VUC Roskilde, Vestegnen HF & VUC, VUF, VUC Storstrøm, VUC Aarhus og Københavns VUC (KVUC).
                     </p>
                     <p>
                         Disse digitale læringsmaterialer er til brug på de deltagende voksenuddannelsescentre, og målsætningen er:
-                      
                     </p>
                     <ul>
                         <li>at understøtte individualisering & differentiering af undervisningen. Det vil sige læring efter den enkeltes tempo og niveau, uafhængigt af tid og rum. </li>
@@ -49,10 +44,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-12"> <h2>Vælg et fag</h2></div>
-       
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
+        <div class="col-sm-12">
+            <h2>Vælg et fag</h2></div>
+        <div class="tn_container">
+            <div class="col-xs-12 col-sm-6 post-box">
                 <!-- 3 -->
                 <div class="thumbnail">
                     <div class="thumb_img_container">
@@ -73,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6">
+            <div class="col-xs-12 col-sm-6 post-box">
                 <!-- 4 -->
                 <div class="thumbnail">
                     <div class="thumb_img_container">
@@ -94,9 +89,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
+            <div class="col-xs-12 col-sm-6 post-box">
                 <!-- 5 -->
                 <div class="thumbnail">
                     <div class="thumb_img_container">
@@ -117,8 +110,7 @@
                     </div>
                 </div>
             </div>
-        
-            <div class="col-xs-12 col-sm-6">
+            <div class="col-xs-12 col-sm-6 post-box">
                 <!-- 6 -->
                 <div class="thumbnail">
                     <div class="thumb_img_container">
@@ -139,9 +131,7 @@
                     <a target="_blank" href="kemi/" class="btn btn-default btn-lg" role="button">Se materialet</a>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
+            <div class="col-xs-12 col-sm-6 post-box">
                 <!-- 7 -->
                 <div class="thumbnail">
                     <div class="thumb_img_container">
@@ -162,7 +152,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6">
+            <div class="col-xs-12 col-sm-6 post-box">
                 <!-- 8 -->
                 <div class="thumbnail">
                     <div class="thumb_img_container">
@@ -187,26 +177,27 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-12">
-                <!-- 9 -->
-                <center><h2>Se udvalgte materialer her</h2></center>
-                <div id="vucCarousel"></div>
-            </div>
+        <div class="col-sm-12 col-md-12">
+            <!-- 9 -->
+            <center>
+                <h2>Se udvalgte materialer her</h2></center>
+            <div id="vucCarousel"></div>
         </div>
     </div>
     <script src="library/vendor_scripts.js"></script>
     <script src="library/custom_scripts.js"></script>
+    <script src="../library/js/masonry_min.js"></script>
+    <script src="../library/js/visningssite.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {});
     </script>
     <script type="text/javascript">
-        $(document).ready(function() {
-            getAjaxData("GET", "promotion/json/carouselData.json", false, "json");  
+    $(document).ready(function() {
+        getAjaxData("GET", "promotion/json/carouselData.json", false, "json");
 
-            var cObj = Object.create(carouselClass);
-            $('#vucCarousel').html(cObj.init(jsonData));
-        });
+        var cObj = Object.create(carouselClass);
+        $('#vucCarousel').html(cObj.init(jsonData));
+    });
     </script>
     <script type="text/javascript">
     $(document).ready(function() {
