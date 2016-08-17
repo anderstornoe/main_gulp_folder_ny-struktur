@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /pf_eng2015/
+Disallow: /
