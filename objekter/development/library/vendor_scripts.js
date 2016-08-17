@@ -28464,7 +28464,6 @@ if (typeof jQuery === 'undefined') {
           position: ''
         }, this.options.animation);
       }
-<<<<<<< HEAD
 
       // after animation ends
       // clear changed for animation props
@@ -28474,10 +28473,3 @@ if (typeof jQuery === 'undefined') {
     }
   });
 }));
-=======
-    }
-  });   
-})(window, jQuery);
-
-}));
->>>>>>> 4f4e33654f80b060c09be48f0c69ba49289c656b
