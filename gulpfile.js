@@ -8,7 +8,8 @@
      concat = require('gulp-concat'),
      jshint = require('gulp-jshint'),
      ftp = require('vinyl-ftp'),
-     stripDebug = require('gulp-strip-debug');
+     stripDebug = require('gulp-strip-debug'),
+     rename = require('gulp-rename');
 
  var jsSources,
      cssSources,
@@ -19,7 +20,8 @@
          'bower_components/bootstrap/dist/js/bootstrap.js',
          'bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.js',
          'bower_components/jquery-ui-sortable-animation/jquery.ui.sortable-animation.js',
-         'bower_components/jquery.boxfit/dist/jquery.boxfit.js'
+         'bower_components/jquery.boxfit/dist/jquery.boxfit.js',
+         'bower_components/jquery-svg-pan-zoom/compiled/jquery.svg.pan.zoom.js'
 
      ],
 
@@ -155,6 +157,8 @@
      var objFolder = "";
      var objPath = process.argv[4]; // Get the argument "objekter/development/My_Object_Folder_Name" from the call.
 
+
+
      // gutil.log("deploy - objPath 1: " + objPath + ", objFolder: " + objFolder);  //  TILFOEJET d. 29-02-2016
      if (typeof objPath === "undefined") {
          objPath = 'objekter/production';
@@ -165,6 +169,8 @@
          objFolder = String(objPath.split("/")[2]); // Get "My_Object_Folder_Name" from the objPath.
      }
      gutil.log("deploy - objPath : " + objPath + ", objFolder: " + objFolder);
+
+
 
      var conn = ftp.create({
          host: 'u13dfs6.nixweb09.dandomain.dk',
@@ -184,6 +190,17 @@
          objPath + '/**',
          '*.*'
      ];
+
+     if (objPath == "objekter/production/indeks.html") {
+         gutil.log(objPath);
+
+         gulp.src("objekter/production/indeks.html")
+             .pipe(rename("objekter/production/index.html"))
+             .pipe(gulp.dest("./"));
+         objPath = "objekter/production/index.html";
+         gutil.log("objPath: " + objPath);
+         
+     }
 
      gutil.log();
      // using base = '.' will transfer everything to /public_html correctly 

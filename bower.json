@@ -19,6 +19,7 @@
     "bootstrap": "~3.3.4",
     "jquery-ui-touch-punch": "*",
     "roboto-fontface": "~0.4.2",
-    "jquery-ui-sortable-animation": "*"
+    "jquery-ui-sortable-animation": "*",
+    "jquery-svg-pan-zoom": "~1.0.3"
   }
 }
