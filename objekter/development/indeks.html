@@ -205,6 +205,7 @@
             getAjaxData("GET", "promotion/json/carouselData.json", false, "json");  
 
             var cObj = Object.create(carouselClass);
+            cObj.randomSlides = true;
             $('#vucCarousel').html(cObj.init(jsonData));
         });
     </script>
