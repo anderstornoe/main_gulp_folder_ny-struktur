@@ -20,6 +20,7 @@
     "jquery-ui-touch-punch": "*",
     "roboto-fontface": "~0.4.2",
     "jquery-ui-sortable-animation": "*",
-    "jquery-svg-pan-zoom": "~1.0.3"
+    "jquery-svg-pan-zoom": "~1.0.3",
+    "paper": "~0.10.2"
   }
 }
