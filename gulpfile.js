@@ -21,7 +21,7 @@
          'bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.js',
          'bower_components/jquery-ui-sortable-animation/jquery.ui.sortable-animation.js',
          'bower_components/jquery.boxfit/dist/jquery.boxfit.js',
-         'bower_components/jquery-svg-pan-zoom/compiled/jquery.svg.pan.zoom.js', 
+         'bower_components/jquery-svg-pan-zoom/compiled/jquery.svg.pan.zoom.js',
          'bower_components/paper/dist/paper-full.js'
 
      ],
@@ -227,6 +227,7 @@
      gulp.watch(['objekter/development/**/*.js', 'objekter/development/**/*.html', 'objekter/development/**/*.css', 'objekter/development/**/json/*.json'], ['reload']);
      gulp.watch(['components/*.css'], ['reload', 'css']);
      gulp.watch(['components/*.js'], ['reload', 'js']);
+     
 
  });
 
