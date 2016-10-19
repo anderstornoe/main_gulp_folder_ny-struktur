@@ -242,3 +242,5 @@
  });
 
  gulp.task('default', ['js', 'connect', 'watch', 'log']);
+
+ gulp.task('connect_only', ['js', 'connect']); 

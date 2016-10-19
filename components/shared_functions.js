@@ -12,7 +12,6 @@
 
 
 function one_line_footer() {
-    console.log("hej")
         //$('.container, .container-fluid').append('<div class="col-xs-12"><h6 class="footerCopywrite"> <a href="../../../kemiC_visningsite/builds/development/om_projektet.html">Digitale læringsmaterialer  Copyright 2015</a></h6></div>')
     var thisyear = new Date().getFullYear(); // $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='../pf_kem2015/om_projektet.html'>Digitale læringsmaterialer  Copyright 2015</a></h6></div>");
     $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='https://www.vucdigital.dk'>© " + thisyear + " vucdigital</a></h6></div>");
@@ -197,6 +196,7 @@ function embedlink(obj) {
 //      UserMsgBox(".FeedbackWrap", "Hurra - korrekt svar!");
 // where the class FeedbackWrap is the target selector in which the UserMsgBox will appear.
 function UserMsgBox(TargetSelector, UserMsg) {
+    console.log("bring up the box!");
 
     var HTML = "<div class = 'MsgBox_bgr'><div id='UserMsgBox'>";
     HTML += '<span class="CloseClass right glyphicon glyphicon-remove"></span><span class="clear"></span>';
@@ -212,6 +212,13 @@ function UserMsgBox(TargetSelector, UserMsg) {
             $(this).remove();
         });
     });
+    $(document).keyup(function(e) {
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+           $(".MsgBox_bgr").fadeOut(200, function() {
+            $(this).remove();
+        });
+    }
+});
 }
 
 
@@ -438,7 +445,7 @@ var GeneralOverlayClass = {
         $(document).on('click', ".OverlayTextContainer", function(event) {
             event.preventDefault();
             $(".OverlayTextContainer").fadeOut("fast", function() {
-                // $( ".Overlay" ).slideUp( "fast" );
+                // $( ".Overlay" ).slimsgdeUp( "fast" );
                 $(".Overlay").fadeOut("fast");
             });
         });
