@@ -169,3 +169,7 @@ textarea {
 .post-box{
     margin-bottom:10px;
 }
+
+.no-text-transform{
+    text-transform: none;
+}
