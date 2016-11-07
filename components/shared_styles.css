@@ -178,7 +178,8 @@
 }
 
 .explanation div:nth-child(2) {
-    width: 80%;
+    margin-left: 48px;
+    margin-top: -28px;
 }
 
 .explanation > .glyphicon {
@@ -202,6 +203,12 @@
     float: left;
     position: relative;
 }
+
+.instr_container{
+    margin-left: -12px;
+}
+
+
 
 .instruktion:before {
     /* Flyttet fra kvuc_design.css */
@@ -233,12 +240,15 @@
 }
 
 .instruktion div:nth-child(2) {
-    width: 83%;  /* Udført af THAN d. 4/4-2016. Sat ned fra 90% til 83%, så "instruktion" i danA_markering ikke break'er */
+   /* width: 83%;  /* Udført af THAN d. 4/4-2016. Sat ned fra 90% til 83%, så "instruktion" i danA_markering ikke break'er */
+margin-left: 36px;
+    margin-top: -28px;
 }
 
 @media (max-width: 750px) {
     .instruktion > .glyphicon {
         font-size: 14px;
+        top:-4px;
     }
 }
 

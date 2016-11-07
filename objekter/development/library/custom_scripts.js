@@ -12,7 +12,7 @@
 
 
 function one_line_footer() {
-        //$('.container, .container-fluid').append('<div class="col-xs-12"><h6 class="footerCopywrite"> <a href="../../../kemiC_visningsite/builds/development/om_projektet.html">Digitale læringsmaterialer  Copyright 2015</a></h6></div>')
+    //$('.container, .container-fluid').append('<div class="col-xs-12"><h6 class="footerCopywrite"> <a href="../../../kemiC_visningsite/builds/development/om_projektet.html">Digitale læringsmaterialer  Copyright 2015</a></h6></div>')
     var thisyear = new Date().getFullYear(); // $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='../pf_kem2015/om_projektet.html'>Digitale læringsmaterialer  Copyright 2015</a></h6></div>");
     $(".container, .container-fluid").append("<div class='col-xs-12'><h6 class='footerCopywrite'> <a href='https://www.vucdigital.dk'>© " + thisyear + " vucdigital</a></h6></div>");
 
@@ -213,12 +213,12 @@ function UserMsgBox(TargetSelector, UserMsg) {
         });
     });
     $(document).keyup(function(e) {
-     if (e.keyCode == 27) { // escape key maps to keycode `27`
-           $(".MsgBox_bgr").fadeOut(200, function() {
-            $(this).remove();
-        });
-    }
-});
+        if (e.keyCode == 27) { // escape key maps to keycode `27`
+            $(".MsgBox_bgr").fadeOut(200, function() {
+                $(this).remove();
+            });
+        }
+    });
 }
 
 
@@ -966,12 +966,12 @@ var cookieClass = {
 function instruction(instructionText) {
     var HTML = '<div class="col-xs-12 col-md-8">';
     HTML += '<h4 class="instruktion">';
-    HTML += '<div class="left glyphicon glyphicon-arrow-right"></div>';
-    HTML += '<div class="left instructionText">' + instructionText + '</div>';
+    HTML += '<div class="col-xs-1  glyphicon glyphicon-arrow-right"></div>';
+    HTML += '<div class="col-xs-11  instructionText">' + instructionText + '</div>';
     HTML += '</h4>';
-    HTML += '<div class="Clear"></div>';
     HTML += '</div>';
-    HTML += '<div class="Clear"></div>';
+    HTML += '<div class="col-xs-12"></div>';
+
     return HTML;
 }
 
@@ -982,19 +982,19 @@ function instruction_8col(instructionText) {
     HTML += '<div class="left glyphicon glyphicon-arrow-right"></div>';
     HTML += '<div class="left instructionText">' + instructionText + '</div>';
     HTML += '</h4>';
-    HTML += '<div class="Clear"></div>';
     HTML += '</div>';
-    HTML += '<div class="Clear"></div>';
+    
     return HTML;
 }
 
 
 function explanation(explanationText) {
     var HTML = '<div class="explanation col-xs-12 col-md-8">';
-    HTML += '<div class="left glyphicon glyphicon-bookmark"></div>';
-    HTML += '<div class="left explanationText">' + explanationText + '</div>';
-    HTML += '<div class="Clear"></div>';
+    HTML += '<div class="col-xs-1 glyphicon glyphicon-bookmark"></div>';
+    HTML += '<div class="col-xs-11 explanationText">' + explanationText + '</div>';
+
     HTML += '</div>';
+HTML += '<div class="col-xs-12"></div>';
     return HTML;
 }
 
@@ -1323,12 +1323,11 @@ function safariWarning() {
     // SEE:  https://jsfiddle.net/9atsffau/
 }
 
-function getUrlVars()   
-{
-    var vars = [], hash;
+function getUrlVars() {
+    var vars = [],
+        hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
+    for (var i = 0; i < hashes.length; i++) {
         hash = hashes[i].split('=');
         vars.push(hash[0]);
         vars[hash[0]] = hash[1];

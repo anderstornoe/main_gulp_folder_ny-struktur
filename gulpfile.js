@@ -9,7 +9,13 @@
      jshint = require('gulp-jshint'),
      ftp = require('vinyl-ftp'),
      stripDebug = require('gulp-strip-debug'),
-     rename = require('gulp-rename');
+     rename = require('gulp-rename'),
+     argv = require('yargs').argv;
+
+
+ var fag;
+
+ //var isProduction = (argv.production === undefined) ? false : true;
 
  var jsSources,
      cssSources,
@@ -202,7 +208,7 @@
              .pipe(gulp.dest("./"));
          objPath = "objekter/production/index.html";
          gutil.log("objPath: " + objPath);
-         
+
      }
 
      gutil.log();
@@ -229,7 +235,7 @@
      gulp.watch(['objekter/development/**/*.js', 'objekter/development/**/*.html', 'objekter/development/**/*.css', 'objekter/development/**/json/*.json'], ['reload']);
      gulp.watch(['components/*.css'], ['reload', 'css']);
      gulp.watch(['components/*.js'], ['reload', 'js']);
-     
+
 
  });
 
@@ -245,4 +251,9 @@
 
  gulp.task('default', ['js', 'connect', 'watch', 'log']);
 
- gulp.task('connect_only', ['js', 'connect']); 
+ gulp.task('connect_only', ['js', 'connect']);
+
+ gulp.task('mytask', function() {
+     fag = process.argv[4];
+     console.log("fag: " + fag);
+ });
