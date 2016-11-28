@@ -1191,6 +1191,7 @@ carouselClass = {
     randomSlides: false,
     bsColum: "col-10-center", // OPTIONS: "col-XX-center", "col-XX". NOTE: XX has to an even number if "center" has to work properly.
     init: function(jsonCarouselData) {
+        console.log("karussel: " + jsonCarouselData);
         if (this.randomSlides) {
             jsonCarouselData.carouselData.slides = this.shuffelArray(jsonCarouselData.carouselData.slides);
         }
@@ -1204,7 +1205,7 @@ carouselClass = {
         var center = (this.bsColum.indexOf('center') !== -1) ? true : false;
         var colMain = parseInt(this.bsColum.split('-')[1]);
         var colSide = Math.round((12 - colMain) / 2);
-        console.log("returnCarouselHtml - , center: " + center + ", colMain: " + colMain + ",colSide: " + colSide);
+        console.log("AreturnCarouselHtml - , center: " + center + ", colMain: " + colMain + ",colSide: " + colSide);
 
         HTML += (center) ? '<div class="col-md-' + colSide + '"></div>' : '';
         HTML += '<div id="questionCarousel" class="carousel slide col-xs-12 col-md-' + colMain + '" data-ride="carousel" data-interval="false">' +
