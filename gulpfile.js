@@ -53,16 +53,16 @@
          //.pipe(uglify())
          //.pipe(gulpif(env === 'production', uglify()))
          .pipe(gulp.dest('objekter/development/library'))
-         return stream;
 
-     var stream2 = gulp.src('components/shared_functions.js')
+
+     stream += gulp.src('components/shared_functions.js')
          .pipe(concat("custom_scripts.js"))
          //.pipe(uglify())
          //.pipe(gulpif(env === 'production', uglify()))
          .pipe(gulp.dest('objekter/development/library'))
          .pipe(connect.reload())
-         gutil.log("finished js");
-         return stream2;
+     gutil.log("finished js");
+     return stream;
  });
 
  gulp.task('css', function() {
@@ -76,7 +76,7 @@
          }))
          .pipe(gulp.dest('objekter/development/library/css'))
          .pipe(connect.reload())
-         return stream;
+     return stream;
 
  });
 
@@ -88,7 +88,7 @@
          //.pipe(gulpif(env === 'production', uglify()))
          //.pipe(gulp.dest('objekter/library'))
          .pipe(connect.reload())
-         return stream;
+     return stream;
  });
 
 

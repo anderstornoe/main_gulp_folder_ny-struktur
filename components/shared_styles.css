@@ -203,11 +203,9 @@
     position: relative;
 }
 
-.instr_container{
+.instr_container {
     margin-left: -12px;
 }
-
-
 
 .instruktion:before {
     /* Flyttet fra kvuc_design.css */
@@ -239,15 +237,15 @@
 }
 
 .instruktion div:nth-child(2) {
-   /* width: 83%;  /* Udført af THAN d. 4/4-2016. Sat ned fra 90% til 83%, så "instruktion" i danA_markering ikke break'er */
-margin-left: 36px;
+    /* width: 83%;  /* Udført af THAN d. 4/4-2016. Sat ned fra 90% til 83%, så "instruktion" i danA_markering ikke break'er */
+    margin-left: 36px;
     margin-top: -28px;
 }
 
 @media (max-width: 750px) {
     .instruktion > .glyphicon {
         font-size: 14px;
-        top:-4px;
+        top: -4px;
     }
 }
 
@@ -291,7 +289,11 @@ margin-left: 36px;
 }
 
 .glyphicon-fullscreen:before {
- margin-left: 10px;
+    margin-left: 10px;
 }
 
-
+.CloseClass {
+    margin-top: -25px;
+    margin-right: -25px;
+    z-index:1000;
+}

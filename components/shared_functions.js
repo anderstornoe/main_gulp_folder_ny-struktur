@@ -196,7 +196,7 @@ function embedlink(obj) {
 //      UserMsgBox(".FeedbackWrap", "Hurra - korrekt svar!");
 // where the class FeedbackWrap is the target selector in which the UserMsgBox will appear.
 function UserMsgBox(TargetSelector, UserMsg) {
-    //console.log("bring up the box!");
+    console.log("bring up the box!");
 
     var HTML = "<div class = 'MsgBox_bgr'><div id='UserMsgBox'>";
     HTML += '<span class="CloseClass right glyphicon glyphicon-remove"></span><span class="clear"></span>';
@@ -222,7 +222,8 @@ function UserMsgBox(TargetSelector, UserMsg) {
 }
 
 function UserMsgBox_xclick(TargetSelector, UserMsg) {
-    //console.log("bring up the box!");
+    console.log("bring up the box!");
+
 
     var HTML = "<div class = 'MsgBox_bgr'><div id='UserMsgBox'>";
     HTML += '<span class="CloseClass right glyphicon glyphicon-remove"></span><span class="clear"></span>';
@@ -234,6 +235,7 @@ function UserMsgBox_xclick(TargetSelector, UserMsg) {
     $(".MsgBox_bgr").fadeIn("slow");
 
     $(".CloseClass").click(function() {
+        console.log("close window attempt")
         $(".MsgBox_bgr").fadeOut(200, function() {
             $(this).remove();
         });

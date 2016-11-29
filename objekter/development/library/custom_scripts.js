@@ -196,7 +196,7 @@ function embedlink(obj) {
 //      UserMsgBox(".FeedbackWrap", "Hurra - korrekt svar!");
 // where the class FeedbackWrap is the target selector in which the UserMsgBox will appear.
 function UserMsgBox(TargetSelector, UserMsg) {
-    //console.log("bring up the box!");
+    console.log("bring up the box!");
 
     var HTML = "<div class = 'MsgBox_bgr'><div id='UserMsgBox'>";
     HTML += '<span class="CloseClass right glyphicon glyphicon-remove"></span><span class="clear"></span>';
@@ -222,7 +222,8 @@ function UserMsgBox(TargetSelector, UserMsg) {
 }
 
 function UserMsgBox_xclick(TargetSelector, UserMsg) {
-    //console.log("bring up the box!");
+    console.log("bring up the box!");
+
 
     var HTML = "<div class = 'MsgBox_bgr'><div id='UserMsgBox'>";
     HTML += '<span class="CloseClass right glyphicon glyphicon-remove"></span><span class="clear"></span>';
@@ -234,6 +235,7 @@ function UserMsgBox_xclick(TargetSelector, UserMsg) {
     $(".MsgBox_bgr").fadeIn("slow");
 
     $(".CloseClass").click(function() {
+        console.log("close window attempt")
         $(".MsgBox_bgr").fadeOut(200, function() {
             $(this).remove();
         });
@@ -1191,6 +1193,7 @@ carouselClass = {
     randomSlides: false,
     bsColum: "col-10-center", // OPTIONS: "col-XX-center", "col-XX". NOTE: XX has to an even number if "center" has to work properly.
     init: function(jsonCarouselData) {
+        console.log("karussel: " + jsonCarouselData);
         if (this.randomSlides) {
             jsonCarouselData.carouselData.slides = this.shuffelArray(jsonCarouselData.carouselData.slides);
         }
@@ -1204,7 +1207,7 @@ carouselClass = {
         var center = (this.bsColum.indexOf('center') !== -1) ? true : false;
         var colMain = parseInt(this.bsColum.split('-')[1]);
         var colSide = Math.round((12 - colMain) / 2);
-        console.log("returnCarouselHtml - , center: " + center + ", colMain: " + colMain + ",colSide: " + colSide);
+        console.log("AreturnCarouselHtml - , center: " + center + ", colMain: " + colMain + ",colSide: " + colSide);
 
         HTML += (center) ? '<div class="col-md-' + colSide + '"></div>' : '';
         HTML += '<div id="questionCarousel" class="carousel slide col-xs-12 col-md-' + colMain + '" data-ride="carousel" data-interval="false">' +
