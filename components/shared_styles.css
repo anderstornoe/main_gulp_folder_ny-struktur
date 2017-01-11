@@ -293,7 +293,8 @@
 }
 
 .CloseClass {
-    margin-top: -25px;
+   margin-top: -25px;
     margin-right: -25px;
-    z-index:1000;
+    z-index: 1000;
+    padding: 15px 15px 55px 75px;
 }

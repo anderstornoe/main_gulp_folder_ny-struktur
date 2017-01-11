@@ -55,7 +55,8 @@
          .pipe(gulp.dest('objekter/development/library'))
 
 
-     stream += gulp.src('components/shared_functions.js')
+     
+      gulp.src('components/shared_functions.js')
          .pipe(concat("custom_scripts.js"))
          //.pipe(uglify())
          //.pipe(gulpif(env === 'production', uglify()))
@@ -81,6 +82,7 @@
  });
 
  gulp.task('reload', function() {
+     gutil.log("am i reloading?");
      var stream = gulp.src('objekter/development/**/*.js')
          //.on('error', swallowError)
          //.pipe(concat("vendor_scripts.js"))
