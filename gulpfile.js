@@ -29,7 +29,7 @@
          'bower_components/jquery.boxfit/dist/jquery.boxfit.js',
          'bower_components/jquery-svg-pan-zoom/compiled/jquery.svg.pan.zoom.js',
          'bower_components/paper/dist/paper-full.js',
-         'bower_components/clipboard/dist/clipboard.min.js'
+         'bower_components/clipboard/dist/clipboard.min.js',
 
 
      ],
@@ -42,28 +42,32 @@
 
 
  gulp.task('log', function() {
-     gutil.log("Log kører....");
+     gutil.log("Log kører bro....");
  });
 
  gulp.task('js', function() {
      // Concat evt egne scripts til shared_functions.js 
-     gulp.src(jsSources)
+     var stream = gulp.src(jsSources)
          //.on('error', swallowError)
          .pipe(concat("vendor_scripts.js"))
          //.pipe(uglify())
          //.pipe(gulpif(env === 'production', uglify()))
          .pipe(gulp.dest('objekter/development/library'))
 
-     gulp.src('components/shared_functions.js')
+
+     
+      gulp.src('components/shared_functions.js')
          .pipe(concat("custom_scripts.js"))
          //.pipe(uglify())
          //.pipe(gulpif(env === 'production', uglify()))
          .pipe(gulp.dest('objekter/development/library'))
          .pipe(connect.reload())
+     gutil.log("finished js");
+     return stream;
  });
 
  gulp.task('css', function() {
-     gulp.src(cssSources)
+     var stream = gulp.src(cssSources)
          .pipe(concat("styles.css"))
          // .pipe(gulpif(env === 'production', minifyCSS({
          //     keepBreaks: false
@@ -73,17 +77,20 @@
          }))
          .pipe(gulp.dest('objekter/development/library/css'))
          .pipe(connect.reload())
+     return stream;
 
  });
 
  gulp.task('reload', function() {
-     gulp.src('objekter/development/**/*.js')
+     gutil.log("am i reloading?");
+     var stream = gulp.src('objekter/development/**/*.js')
          //.on('error', swallowError)
          //.pipe(concat("vendor_scripts.js"))
          //.pipe(uglify())
          //.pipe(gulpif(env === 'production', uglify()))
          //.pipe(gulp.dest('objekter/library'))
          .pipe(connect.reload())
+     return stream;
  });
 
 

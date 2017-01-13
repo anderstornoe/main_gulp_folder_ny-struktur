@@ -196,7 +196,7 @@ function embedlink(obj) {
 //      UserMsgBox(".FeedbackWrap", "Hurra - korrekt svar!");
 // where the class FeedbackWrap is the target selector in which the UserMsgBox will appear.
 function UserMsgBox(TargetSelector, UserMsg) {
-    //console.log("bring up the box!");
+    console.log("bring up the box!");
 
     var HTML = "<div class = 'MsgBox_bgr'><div id='UserMsgBox'>";
     HTML += '<span class="CloseClass right glyphicon glyphicon-remove"></span><span class="clear"></span>';
@@ -222,7 +222,8 @@ function UserMsgBox(TargetSelector, UserMsg) {
 }
 
 function UserMsgBox_xclick(TargetSelector, UserMsg) {
-    //console.log("bring up the box!");
+    console.log("bring up the box!");
+
 
     var HTML = "<div class = 'MsgBox_bgr'><div id='UserMsgBox'>";
     HTML += '<span class="CloseClass right glyphicon glyphicon-remove"></span><span class="clear"></span>';
@@ -233,7 +234,8 @@ function UserMsgBox_xclick(TargetSelector, UserMsg) {
 
     $(".MsgBox_bgr").fadeIn("slow");
 
-    $(".CloseClass").click(function() {
+    $(".CloseClass").on('click touchend', function() {
+        console.log("close window attempt")
         $(".MsgBox_bgr").fadeOut(200, function() {
             $(this).remove();
         });
@@ -251,8 +253,11 @@ function UserMsgBox_xclick(TargetSelector, UserMsg) {
 
 /// INDLEJLRING SLUT !
 
+/// SHUFFLE DIVS ex: $(".sortable_container").shuffle_div_position(); (Hvor ".sortable_container" er den klasse alle de elementer der skal shuffles hedder...)
 
 $.fn.shuffle_div_position = function() {
+
+    console.log("shuffles..")
 
     var allElems = this.get(),
         getRandom = function(max) {
@@ -339,7 +344,7 @@ var GeneralOverlayClass = {
             async: Async,
             dataType: DataType,
             success: function(Data) {
-                console.log("ReturnAjaxData: " + JSON.stringify(Data));
+                //console.log("ReturnAjaxData: " + JSON.stringify(Data));
                 HowWhyData = JSON.parse(JSON.stringify(Data));
                 // JsonExternalData = JSON.parse(JSON.stringify(Data));
                 // console.log("HowWhyData: " + HowWhyData);
@@ -778,7 +783,7 @@ var objectStorageClass = {
             this.localStorageObjName = localStorageObjName;
             this.localStorageObjData.timeStamp = this.setTimeStamp();
             var localStorageObjData = JSON.parse(localStorage.getItem(this.localStorageObjName));
-            console.log("objectStorageClass.init - localStorageObjName: " + this.localStorageObjName + ", localStorageObjData: " + JSON.stringify(localStorageObjData));
+            //console.log("objectStorageClass.init - localStorageObjName: " + this.localStorageObjName + ", localStorageObjData: " + JSON.stringify(localStorageObjData));
         } else {
             console.log("objectStorageClass.init - LocalStorage NOT supported!");
         }
@@ -885,7 +890,7 @@ var objectStorageClass = {
             console.log("objectStorageClass.startAutoSave - autoSaveTimeIdObj." + varName + " - OK!");
             this.localStorageObjData.autoSaveTimeIdObj[varName] = { id: 0, saveCount: 0, maxSaveCount: null }; // "maxSaveCount = null" makes it save indefinitely.
         }
-        console.log("objectStorageClass.startAutoSave - jsonData 2: " + JSON.stringify(this.localStorageObjData));
+        //console.log("objectStorageClass.startAutoSave - jsonData 2: " + JSON.stringify(this.localStorageObjData));
         console.log("objectStorageClass.startAutoSave - autoSaveTimeIdObj." + varName + " - START");
         var xthis = this;
         var LSA = this.localStorageObjData.autoSaveTimeIdObj[varName];
@@ -1153,7 +1158,7 @@ function getAjaxData(Type, Url, Async, DataType) {
             window.jsonData = JSON.parse(JSON.stringify(Data)); // NOTE: The call "window.jsonData" declares the variable "jsonData" as a global variable.
         }
     }).fail(function() {
-        alert("Ajax failed to fetch data - the requested quizdata might not exist...");
+        alert("Ajax failed to fetch data");
     });
 }
 
@@ -1191,6 +1196,7 @@ carouselClass = {
     randomSlides: false,
     bsColum: "col-10-center", // OPTIONS: "col-XX-center", "col-XX". NOTE: XX has to an even number if "center" has to work properly.
     init: function(jsonCarouselData) {
+        console.log("karussel: " + jsonCarouselData);
         if (this.randomSlides) {
             jsonCarouselData.carouselData.slides = this.shuffelArray(jsonCarouselData.carouselData.slides);
         }
@@ -1204,7 +1210,7 @@ carouselClass = {
         var center = (this.bsColum.indexOf('center') !== -1) ? true : false;
         var colMain = parseInt(this.bsColum.split('-')[1]);
         var colSide = Math.round((12 - colMain) / 2);
-        console.log("returnCarouselHtml - , center: " + center + ", colMain: " + colMain + ",colSide: " + colSide);
+        console.log("AreturnCarouselHtml - , center: " + center + ", colMain: " + colMain + ",colSide: " + colSide);
 
         HTML += (center) ? '<div class="col-md-' + colSide + '"></div>' : '';
         HTML += '<div id="questionCarousel" class="carousel slide col-xs-12 col-md-' + colMain + '" data-ride="carousel" data-interval="false">' +
