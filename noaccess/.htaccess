@@ -1,0 +1,5 @@
+AuthUserFile /home/u13dfs6/www/admin/.htpasswd
+AuthName "Meat Data Admin Console"
+AuthType Basic
+
+require user eteam

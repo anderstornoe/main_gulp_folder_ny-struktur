@@ -24,6 +24,7 @@ function FontSizeScalerNew(ParentSelector, SelectorClassArr, NativeWindowWidth) 
 }
 
 $(document).ready(function() {
+    /*
 
     var $container = $('.tn_container');
     $container.imagesLoaded(function() {
@@ -61,4 +62,5 @@ $(window).resize(function() {
     } else {
         $(".tn_container").css("margin-top", "0px");
     }
+*/
 });
