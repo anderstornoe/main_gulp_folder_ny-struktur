@@ -160,7 +160,7 @@
 
      gulp.src("objekter/production/" + objSrcFolder + "/*.js")
          .pipe(uglify())
-         .pipe(stripDebug())
+        // .pipe(stripDebug())
          .pipe(gulp.dest('objekter/production/' + objDistFolder))
 
      gutil.log("all done");

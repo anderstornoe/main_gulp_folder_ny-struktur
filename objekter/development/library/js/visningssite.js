@@ -24,10 +24,12 @@ function FontSizeScalerNew(ParentSelector, SelectorClassArr, NativeWindowWidth) 
 }
 
 $(document).ready(function() {
-    /*
+
+    console.log("doc_ready");
 
     var $container = $('.tn_container');
     $container.imagesLoaded(function() {
+console.log("img loaded");        
         $container.masonry({
             itemSelector: '.post-box',
             columnWidth: '.post-box',
@@ -62,5 +64,4 @@ $(window).resize(function() {
     } else {
         $(".tn_container").css("margin-top", "0px");
     }
-*/
 });
