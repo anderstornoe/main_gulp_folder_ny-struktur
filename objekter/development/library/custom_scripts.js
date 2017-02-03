@@ -202,7 +202,7 @@ function UserMsgBox(TargetSelector, UserMsg) {
     HTML += '<span class="CloseClass right glyphicon glyphicon-remove"></span><span class="clear"></span>';
     HTML += UserMsg;
     HTML += "</div> </div>";
-    $
+    // $ <--------------------------------------------   UDKOMMENTERET AF THAN 03-02-2017
     $(TargetSelector).prepend(HTML);
 
     $(".MsgBox_bgr").fadeIn("slow");
