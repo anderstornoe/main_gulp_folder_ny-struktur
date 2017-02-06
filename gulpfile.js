@@ -9,7 +9,13 @@
      jshint = require('gulp-jshint'),
      ftp = require('vinyl-ftp'),
      stripDebug = require('gulp-strip-debug'),
-     rename = require('gulp-rename');
+     rename = require('gulp-rename'),
+     argv = require('yargs').argv;
+
+
+ var fag;
+
+ //var isProduction = (argv.production === undefined) ? false : true;
 
  var jsSources,
      cssSources,
@@ -21,8 +27,10 @@
          'bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.js',
          'bower_components/jquery-ui-sortable-animation/jquery.ui.sortable-animation.js',
          'bower_components/jquery.boxfit/dist/jquery.boxfit.js',
-         'bower_components/jquery-svg-pan-zoom/compiled/jquery.svg.pan.zoom.js', 
-         'bower_components/paper/dist/paper-full.js'
+         'bower_components/jquery-svg-pan-zoom/compiled/jquery.svg.pan.zoom.js',
+         'bower_components/paper/dist/paper-full.js',
+         'bower_components/clipboard/dist/clipboard.min.js',
+
 
      ],
 
@@ -34,28 +42,32 @@
 
 
  gulp.task('log', function() {
-     gutil.log("Log kører....");
+     gutil.log("Log kører bro....");
  });
 
  gulp.task('js', function() {
      // Concat evt egne scripts til shared_functions.js 
-     gulp.src(jsSources)
+     var stream = gulp.src(jsSources)
          //.on('error', swallowError)
          .pipe(concat("vendor_scripts.js"))
          //.pipe(uglify())
          //.pipe(gulpif(env === 'production', uglify()))
          .pipe(gulp.dest('objekter/development/library'))
 
-     gulp.src('components/shared_functions.js')
+
+     
+      gulp.src('components/shared_functions.js')
          .pipe(concat("custom_scripts.js"))
          //.pipe(uglify())
          //.pipe(gulpif(env === 'production', uglify()))
          .pipe(gulp.dest('objekter/development/library'))
          .pipe(connect.reload())
+     gutil.log("finished js");
+     return stream;
  });
 
  gulp.task('css', function() {
-     gulp.src(cssSources)
+     var stream = gulp.src(cssSources)
          .pipe(concat("styles.css"))
          // .pipe(gulpif(env === 'production', minifyCSS({
          //     keepBreaks: false
@@ -65,17 +77,20 @@
          }))
          .pipe(gulp.dest('objekter/development/library/css'))
          .pipe(connect.reload())
+     return stream;
 
  });
 
  gulp.task('reload', function() {
-     gulp.src('objekter/development/**/*.js')
+     gutil.log("am i reloading?");
+     var stream = gulp.src('objekter/development/**/*.js')
          //.on('error', swallowError)
          //.pipe(concat("vendor_scripts.js"))
          //.pipe(uglify())
          //.pipe(gulpif(env === 'production', uglify()))
          //.pipe(gulp.dest('objekter/library'))
          .pipe(connect.reload())
+     return stream;
  });
 
 
@@ -145,7 +160,7 @@
 
      gulp.src("objekter/production/" + objSrcFolder + "/*.js")
          .pipe(uglify())
-         .pipe(stripDebug())
+        // .pipe(stripDebug())
          .pipe(gulp.dest('objekter/production/' + objDistFolder))
 
      gutil.log("all done");
@@ -200,7 +215,7 @@
              .pipe(gulp.dest("./"));
          objPath = "objekter/production/index.html";
          gutil.log("objPath: " + objPath);
-         
+
      }
 
      gutil.log();
@@ -228,6 +243,7 @@
      gulp.watch(['components/*.css'], ['reload', 'css']);
      gulp.watch(['components/*.js'], ['reload', 'js']);
 
+
  });
 
 
@@ -241,3 +257,10 @@
  });
 
  gulp.task('default', ['js', 'connect', 'watch', 'log']);
+
+ gulp.task('connect_only', ['js', 'connect']);
+
+ gulp.task('mytask', function() {
+     fag = process.argv[4];
+     console.log("fag: " + fag);
+ });
