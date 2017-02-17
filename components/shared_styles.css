@@ -298,3 +298,30 @@
     z-index: 1000;
     padding: 15px 15px 55px 75px;
 }
+
+/* =======   Microhint styling  ======= */
+.microhint{
+   position: absolute;
+    z-index: 100;
+    
+    cursor: pointer;
+    font-size: 1vw;
+    background-color: #FC4F71;
+    color: white;
+    padding: 10px;
+    max-width: 10%;
+    border-radius:4px;
+
+}
+
+.glyphicon-arrow-down {
+    color: #FC4F71;
+    font-size: 1.5em;
+    position: absolute;
+    
+    top: -8%;
+    z-index: -1;
+
+}
+
+/* =======   Microhint style slurt  ======= */
