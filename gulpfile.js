@@ -30,6 +30,7 @@
          'bower_components/jquery-svg-pan-zoom/compiled/jquery.svg.pan.zoom.js',
          'bower_components/paper/dist/paper-full.js',
          'bower_components/clipboard/dist/clipboard.min.js',
+         'bower_components/qtip2/jquery.qtip.js'
 
 
      ],
