@@ -26837,13 +26837,8 @@ var tooltip = $.widget( "ui.tooltip", {
 
 }));
 /*!
-<<<<<<< HEAD
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
-=======
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
  * Licensed under the MIT license
  */
 
@@ -26854,22 +26849,13 @@ if (typeof jQuery === 'undefined') {
 +function ($) {
   'use strict';
   var version = $.fn.jquery.split(' ')[0].split('.')
-<<<<<<< HEAD
-  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 2)) {
-    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 3')
-=======
   if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 3)) {
     throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4')
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
   }
 }(jQuery);
 
 /* ========================================================================
-<<<<<<< HEAD
- * Bootstrap: transition.js v3.3.6
-=======
  * Bootstrap: transition.js v3.3.7
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
  * Copyright 2011-2016 Twitter, Inc.
@@ -26929,11 +26915,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
-<<<<<<< HEAD
- * Bootstrap: alert.js v3.3.6
-=======
  * Bootstrap: alert.js v3.3.7
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
  * http://getbootstrap.com/javascript/#alerts
  * ========================================================================
  * Copyright 2011-2016 Twitter, Inc.
@@ -26952,11 +26934,7 @@ if (typeof jQuery === 'undefined') {
     $(el).on('click', dismiss, this.close)
   }
 
-<<<<<<< HEAD
-  Alert.VERSION = '3.3.6'
-=======
   Alert.VERSION = '3.3.7'
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
 
   Alert.TRANSITION_DURATION = 150
 
@@ -27032,11 +27010,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
-<<<<<<< HEAD
- * Bootstrap: button.js v3.3.6
-=======
  * Bootstrap: button.js v3.3.7
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
  * http://getbootstrap.com/javascript/#buttons
  * ========================================================================
  * Copyright 2011-2016 Twitter, Inc.
@@ -27056,11 +27030,7 @@ if (typeof jQuery === 'undefined') {
     this.isLoading = false
   }
 
-<<<<<<< HEAD
-  Button.VERSION  = '3.3.6'
-=======
   Button.VERSION  = '3.3.7'
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
 
   Button.DEFAULTS = {
     loadingText: 'loading...'
@@ -27166,11 +27136,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
-<<<<<<< HEAD
- * Bootstrap: carousel.js v3.3.6
-=======
  * Bootstrap: carousel.js v3.3.7
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
  * http://getbootstrap.com/javascript/#carousel
  * ========================================================================
  * Copyright 2011-2016 Twitter, Inc.
@@ -27201,11 +27167,7 @@ if (typeof jQuery === 'undefined') {
       .on('mouseleave.bs.carousel', $.proxy(this.cycle, this))
   }
 
-<<<<<<< HEAD
-  Carousel.VERSION  = '3.3.6'
-=======
   Carousel.VERSION  = '3.3.7'
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
 
   Carousel.TRANSITION_DURATION = 600
 
@@ -27412,11 +27374,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
-<<<<<<< HEAD
- * Bootstrap: collapse.js v3.3.6
-=======
  * Bootstrap: collapse.js v3.3.7
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
  * http://getbootstrap.com/javascript/#collapse
  * ========================================================================
  * Copyright 2011-2016 Twitter, Inc.
@@ -27447,11 +27405,7 @@ if (typeof jQuery === 'undefined') {
     if (this.options.toggle) this.toggle()
   }
 
-<<<<<<< HEAD
-  Collapse.VERSION  = '3.3.6'
-=======
   Collapse.VERSION  = '3.3.7'
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
 
   Collapse.TRANSITION_DURATION = 350
 
@@ -27633,11 +27587,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
-<<<<<<< HEAD
- * Bootstrap: dropdown.js v3.3.6
-=======
  * Bootstrap: dropdown.js v3.3.7
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
  * http://getbootstrap.com/javascript/#dropdowns
  * ========================================================================
  * Copyright 2011-2016 Twitter, Inc.
@@ -27657,11 +27607,7 @@ if (typeof jQuery === 'undefined') {
     $(element).on('click.bs.dropdown', this.toggle)
   }
 
-<<<<<<< HEAD
-  Dropdown.VERSION = '3.3.6'
-=======
   Dropdown.VERSION = '3.3.7'
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
 
   function getParent($this) {
     var selector = $this.attr('data-target')
@@ -27807,11 +27753,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
-<<<<<<< HEAD
- * Bootstrap: modal.js v3.3.6
-=======
  * Bootstrap: modal.js v3.3.7
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
  * http://getbootstrap.com/javascript/#modals
  * ========================================================================
  * Copyright 2011-2016 Twitter, Inc.
@@ -27845,11 +27787,7 @@ if (typeof jQuery === 'undefined') {
     }
   }
 
-<<<<<<< HEAD
-  Modal.VERSION  = '3.3.6'
-=======
   Modal.VERSION  = '3.3.7'
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
 
   Modal.TRANSITION_DURATION = 300
   Modal.BACKDROP_TRANSITION_DURATION = 150
@@ -28155,11 +28093,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
-<<<<<<< HEAD
- * Bootstrap: tooltip.js v3.3.6
-=======
  * Bootstrap: tooltip.js v3.3.7
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
  * http://getbootstrap.com/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ========================================================================
@@ -28186,11 +28120,7 @@ if (typeof jQuery === 'undefined') {
     this.init('tooltip', element, options)
   }
 
-<<<<<<< HEAD
-  Tooltip.VERSION  = '3.3.6'
-=======
   Tooltip.VERSION  = '3.3.7'
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
 
   Tooltip.TRANSITION_DURATION = 150
 
@@ -28684,11 +28614,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
-<<<<<<< HEAD
- * Bootstrap: popover.js v3.3.6
-=======
  * Bootstrap: popover.js v3.3.7
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
  * http://getbootstrap.com/javascript/#popovers
  * ========================================================================
  * Copyright 2011-2016 Twitter, Inc.
@@ -28708,11 +28634,7 @@ if (typeof jQuery === 'undefined') {
 
   if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
 
-<<<<<<< HEAD
-  Popover.VERSION  = '3.3.6'
-=======
   Popover.VERSION  = '3.3.7'
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
 
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
     placement: 'right',
@@ -28801,11 +28723,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
-<<<<<<< HEAD
- * Bootstrap: scrollspy.js v3.3.6
-=======
  * Bootstrap: scrollspy.js v3.3.7
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
  * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================
  * Copyright 2011-2016 Twitter, Inc.
@@ -28834,11 +28752,7 @@ if (typeof jQuery === 'undefined') {
     this.process()
   }
 
-<<<<<<< HEAD
-  ScrollSpy.VERSION  = '3.3.6'
-=======
   ScrollSpy.VERSION  = '3.3.7'
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
 
   ScrollSpy.DEFAULTS = {
     offset: 10
@@ -28982,11 +28896,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
-<<<<<<< HEAD
- * Bootstrap: tab.js v3.3.6
-=======
  * Bootstrap: tab.js v3.3.7
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
  * http://getbootstrap.com/javascript/#tabs
  * ========================================================================
  * Copyright 2011-2016 Twitter, Inc.
@@ -29006,11 +28916,7 @@ if (typeof jQuery === 'undefined') {
     // jscs:enable requireDollarBeforejQueryAssignment
   }
 
-<<<<<<< HEAD
-  Tab.VERSION = '3.3.6'
-=======
   Tab.VERSION = '3.3.7'
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
 
   Tab.TRANSITION_DURATION = 150
 
@@ -29146,11 +29052,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
-<<<<<<< HEAD
- * Bootstrap: affix.js v3.3.6
-=======
  * Bootstrap: affix.js v3.3.7
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
  * http://getbootstrap.com/javascript/#affix
  * ========================================================================
  * Copyright 2011-2016 Twitter, Inc.
@@ -29179,11 +29081,7 @@ if (typeof jQuery === 'undefined') {
     this.checkPosition()
   }
 
-<<<<<<< HEAD
-  Affix.VERSION  = '3.3.6'
-=======
   Affix.VERSION  = '3.3.7'
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
 
   Affix.RESET    = 'affix affix-top affix-bottom'
 
@@ -29485,28 +29383,38 @@ if (typeof jQuery === 'undefined') {
  * Depends:
  *  jquery.ui.sortable.js
  */
-(function(factory) {
-  if (typeof define === "function" && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(["jquery", "jquery-ui"], factory);
-  } else {
-    // Browser globals
-    factory(jQuery);
-  }
-}(function($) {
+ 
+(function( factory ) {
+	if ( typeof define === "function" && define.amd ) {
+
+		// AMD. Register as an anonymous module.
+		define([ "jquery", "jquery-ui" ], factory );
+	} else {
+
+		// Browser globals
+		factory( jQuery );
+	}
+}(function( $ ) {
+  
+(function (window, $) {
   var supports = {},
       testProp = function (prefixes) {
-        var test_el = document.createElement('div'), i, l;
+        var testEl = document.createElement('div'), i, l;
 
-        for (i = 0; l = prefixes.length, i < l; i++) {
-          if (test_el.style[prefixes[i]] != undefined) {
+        for (i = 0; l = prefixes.length, i < l; i += 1) {
+          if (document.createElement('div').style[prefixes[i]] != undefined) {
             return prefixes[i];
           }
         }
 
         return '';
       },
-      use_css_animation = false;
+      prepareTransition = function ($el) {
+        $el.offset();
+        return $el;
+      },
+      last_top,
+      css_animation = false;
 
   // check for css-transforms support
   supports['transform'] = testProp([
@@ -29522,85 +29430,174 @@ if (typeof jQuery === 'undefined') {
     'msTransition'
   ]);
 
-  use_css_animation = supports['transform'] && supports['transition'];
+  // check for transitionEnd event
+  supports['transitionend'] = function () {
+    var prefixes = ['webkit', 'o', ''],
+        i, l = prefixes.length;
 
-  $.widget("ui.sortable", $.ui.sortable, {
+    for (i = 0; l = prefixes.length, i < l; i += 1) {
+      if (("on" + prefixes[i] + "transitionend") in window) {
+        return  (prefixes[i] ? prefixes[i] + "T" : "t") + "ransitionEnd";
+      }
+    }
+
+    return '';
+  }();
+
+  css_animation = supports['transform'] && supports['transition'] && supports['transitionend'];
+
+  $.widget("app.sortable", $.ui.sortable, {
     options: {
-      // adds the new `animation` option, turned off by default.
-      animation: 0,
+      // adds the new `sortAnimate` option, turned off by default.
+      sortAnimate: false,
+      sortAnimateDuration: 150
     },
 
     // called internally by sortable when sortable
     // items are rearranged.
-    _rearrange: function (e, item) {
+    _rearrange: function ( e, item ) {
       var $item,
           props = {},
-          reset_props = {},
-          offset,
-          axis = $.trim(this.options.axis);
+          offset;
 
       // just call the original implementation of _rearrange()
-      // if option `animation` is turned off
+      // if option `sortAnimate` is turned off
       // `currentContainer` used for animating received items
       // from another sortable container (`connectWith` option)
-      if (!parseInt(this.currentContainer.options.animation) ||
-          !axis
-      ) {
+      if (!this.currentContainer.options.sortAnimate) {
         return this._superApply(arguments);
       }
 
       $item = $(item.item[0]);
       // if moved up, then move item up to its height,
       // if moved down, then move item down
-      offset = (this.direction == 'up' ? '' : '-') + ($item[axis == 'x' ? 'width' : 'height']()) + 'px';
+      offset = (this.direction == 'up' ? '' : '-') + ($item.height()) + 'px';
 
       // call original _rearrange() at first
       this._superApply(arguments);
 
       // prepare starting css props
-      if (use_css_animation) {
-        props[supports['transform']] = (axis == 'x' ? 'translateX' : 'translateY') + '(' + offset + ')';
+      if (css_animation) {
+        props[supports['transform']] = 'translateY(' + offset + ')';
       } else {
         props = {
           position: 'relative',
+          top: offset
         };
-        props[axis == 'x' ? 'left' : 'top'] = offset;
       }
 
       // set starting css props on item
       $item.css(props);
 
-      // if css animations are not supported
+      // if css animations do not supported
       // use jQuery animations
-      if (use_css_animation) {
-        props[supports['transition']] = supports['transform'] + ' ' + this.options.animation + 'ms';
+      if (css_animation) {
+        props[supports['transition']] = supports['transform'] + ' ' + this.options.sortAnimateDuration + 'ms';
         props[supports['transform']] = '';
-        reset_props[supports['transform']] = '';
-        reset_props[supports['transition']] = '';
 
-        setTimeout(function () {
-          $item.css(props);
-        }, 0);
+        prepareTransition($item)
+          .css(props)
+          .one(supports['transitionend'], function () {
+            $item
+              .css(supports['transform'], '')
+              .css(supports['transition'], '');
+          });
       } else {
-        reset_props.top = '';
-        reset_props.position = '';
-
         $item.animate({
           top: '',
           position: ''
-        }, this.options.animation);
+        }, this.options.sortAnimateDuration);
       }
-
-      // after animation ends
-      // clear changed for animation props
-      setTimeout(function () {
-        $item.css(reset_props);
-      }, this.options.animation);
     }
-<<<<<<< HEAD
-  });
+  });   
+})(window, jQuery);
+
 }));
-=======
+// Generated by CoffeeScript 1.10.0
+
+/*
+jQuery SVG Pan Zoom v1.0.2, June 2015
+
+Author: Daniel Hoffmann Bernardes (daniel.hoffmann.bernardes@gmail.com)
+
+Repository: https://github.com/DanielHoffmann/jquery-svg-pan-zoom/
+
+jQuery plugin to enable pan and zoom in SVG images either programmatically or through mouse/touch events.
+
+[Demo page](http://danielhoffmann.github.io/jquery-svg-pan-zoom/)
+
+ * Features
+ - Programmatically manipulate the SVG viewBox
+ - Mouse and touch events to pan the SVG viewBox
+ - Mousewheel events to zoom in or out the SVG viewBox
+ - Animations
+ - Mousewheel zooming keeps the cursor over the same coordinates relative to the image (A.K.A. GoogleMaps-like zoom)
+ - Limiting the navigable area
+
+ * Requirements
+
+jQuery
+
+SVG-enabled browser (does not work with SVG work-arounds that use Flash)
+
+ * The viewBox
+The viewBox is an attribute of SVG images that defines the area of the SVG that is visible, it is defined by 4 numbers: X, Y, Width, Height. These numbers together specify the visible area. This plugin works by manipulating these four numbers. For example, moving the image to the right alters the X value while zooming in reduces Width and Height.
+
+
+ * Usage
+```javascript
+var svgPanZoom= $("svg").svgPanZoom(options)
+```
+
+If the selection has more than one element `svgPanZoom` will return an array with a SvgPanZoom object for each image in the same order of the selection. If only one element is selected then the return is a single SvgPanZoom object. If no elements are selected the above call returns `null`
+
+The returned SvgPanZoom object contains all options, these options can be overriden at any time directly, for example to disable mouseWheel events simply:
+
+```javascript
+svgPanZoom.events.mouseWheel= false
+```
+
+
+the SvgPanZoom object also has methods for manipulating the viewBox programmatically. For example:
+
+```javascript
+svgPanZoom.zoomIn()
+```
+
+will zoomIn the image using options.zoomFactor.
+
+ * Building
+This project requires coffeescript to be installed in order to build.
+
+ `coffee -m --compile --output compiled/ src/`
+
+ * Options
+
+```javascript
+Options:
+{
+    events: {
+        mouseWheel: boolean (true), // enables mouse wheel zooming events
+        doubleClick: boolean (true), // enables double-click to zoom-in events
+        drag: boolean (true), // enables drag and drop to move the SVG events
+        dragCursor: string "move" // cursor to use while dragging the SVG
+    },
+    animationTime: number (300), // time in milliseconds to use as default for animations. Set 0 to remove the animation
+    zoomFactor: number (0.25), // how much to zoom-in or zoom-out
+    maxZoom: number (3), //maximum zoom in, must be a number bigger than 1
+    panFactor: (number (100), // how much to move the viewBox when calling .panDirection() methods
+    initialViewBox: { // the initial viewBox, if null or undefined will try to use the viewBox set in the svg tag. Also accepts string in the format "X Y Width Height"
+        x: number (0) // the top-left corner X coordinate
+        y: number (0) // the top-left corner Y coordinate
+        width: number (1000) // the width of the viewBox
+        height: number (1000) // the height of the viewBox
+    },
+    limits: { // the limits in which the image can be moved. If null or undefined will use the initialViewBox plus 15% in each direction
+        x: number (-150)
+        y: number (-150)
+        x2: number (1150)
+        y2: number (1150)
+    }
 }
 ```
 
@@ -44779,10 +44776,9 @@ return paper;
 }.call(this, typeof self === 'object' ? self : null);
 
 /*!
- * clipboard.js v1.5.15
+ * clipboard.js v1.5.12
  * https://zenorocha.github.io/clipboard.js
  *
  * Licensed MIT © Zeno Rocha
  */
-!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var t;t="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this,t.Clipboard=e()}}(function(){var e,t,n;return function e(t,n,i){function o(a,c){if(!n[a]){if(!t[a]){var l="function"==typeof require&&require;if(!c&&l)return l(a,!0);if(r)return r(a,!0);var s=new Error("Cannot find module '"+a+"'");throw s.code="MODULE_NOT_FOUND",s}var u=n[a]={exports:{}};t[a][0].call(u.exports,function(e){var n=t[a][1][e];return o(n?n:e)},u,u.exports,e,t,n,i)}return n[a].exports}for(var r="function"==typeof require&&require,a=0;a<i.length;a++)o(i[a]);return o}({1:[function(e,t,n){function i(e,t){for(;e&&e!==document;){if(e.matches(t))return e;e=e.parentNode}}if(Element&&!Element.prototype.matches){var o=Element.prototype;o.matches=o.matchesSelector||o.mozMatchesSelector||o.msMatchesSelector||o.oMatchesSelector||o.webkitMatchesSelector}t.exports=i},{}],2:[function(e,t,n){function i(e,t,n,i,r){var a=o.apply(this,arguments);return e.addEventListener(n,a,r),{destroy:function(){e.removeEventListener(n,a,r)}}}function o(e,t,n,i){return function(n){n.delegateTarget=r(n.target,t),n.delegateTarget&&i.call(e,n)}}var r=e("./closest");t.exports=i},{"./closest":1}],3:[function(e,t,n){n.node=function(e){return void 0!==e&&e instanceof HTMLElement&&1===e.nodeType},n.nodeList=function(e){var t=Object.prototype.toString.call(e);return void 0!==e&&("[object NodeList]"===t||"[object HTMLCollection]"===t)&&"length"in e&&(0===e.length||n.node(e[0]))},n.string=function(e){return"string"==typeof e||e instanceof String},n.fn=function(e){var t=Object.prototype.toString.call(e);return"[object Function]"===t}},{}],4:[function(e,t,n){function i(e,t,n){if(!e&&!t&&!n)throw new Error("Missing required arguments");if(!c.string(t))throw new TypeError("Second argument must be a String");if(!c.fn(n))throw new TypeError("Third argument must be a Function");if(c.node(e))return o(e,t,n);if(c.nodeList(e))return r(e,t,n);if(c.string(e))return a(e,t,n);throw new TypeError("First argument must be a String, HTMLElement, HTMLCollection, or NodeList")}function o(e,t,n){return e.addEventListener(t,n),{destroy:function(){e.removeEventListener(t,n)}}}function r(e,t,n){return Array.prototype.forEach.call(e,function(e){e.addEventListener(t,n)}),{destroy:function(){Array.prototype.forEach.call(e,function(e){e.removeEventListener(t,n)})}}}function a(e,t,n){return l(document.body,e,t,n)}var c=e("./is"),l=e("delegate");t.exports=i},{"./is":3,delegate:2}],5:[function(e,t,n){function i(e){var t;if("SELECT"===e.nodeName)e.focus(),t=e.value;else if("INPUT"===e.nodeName||"TEXTAREA"===e.nodeName)e.focus(),e.setSelectionRange(0,e.value.length),t=e.value;else{e.hasAttribute("contenteditable")&&e.focus();var n=window.getSelection(),i=document.createRange();i.selectNodeContents(e),n.removeAllRanges(),n.addRange(i),t=n.toString()}return t}t.exports=i},{}],6:[function(e,t,n){function i(){}i.prototype={on:function(e,t,n){var i=this.e||(this.e={});return(i[e]||(i[e]=[])).push({fn:t,ctx:n}),this},once:function(e,t,n){function i(){o.off(e,i),t.apply(n,arguments)}var o=this;return i._=t,this.on(e,i,n)},emit:function(e){var t=[].slice.call(arguments,1),n=((this.e||(this.e={}))[e]||[]).slice(),i=0,o=n.length;for(i;i<o;i++)n[i].fn.apply(n[i].ctx,t);return this},off:function(e,t){var n=this.e||(this.e={}),i=n[e],o=[];if(i&&t)for(var r=0,a=i.length;r<a;r++)i[r].fn!==t&&i[r].fn._!==t&&o.push(i[r]);return o.length?n[e]=o:delete n[e],this}},t.exports=i},{}],7:[function(t,n,i){!function(o,r){if("function"==typeof e&&e.amd)e(["module","select"],r);else if("undefined"!=typeof i)r(n,t("select"));else{var a={exports:{}};r(a,o.select),o.clipboardAction=a.exports}}(this,function(e,t){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var o=n(t),r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(t,n,i){return n&&e(t.prototype,n),i&&e(t,i),t}}(),c=function(){function e(t){i(this,e),this.resolveOptions(t),this.initSelection()}return a(e,[{key:"resolveOptions",value:function e(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};this.action=t.action,this.emitter=t.emitter,this.target=t.target,this.text=t.text,this.trigger=t.trigger,this.selectedText=""}},{key:"initSelection",value:function e(){this.text?this.selectFake():this.target&&this.selectTarget()}},{key:"selectFake",value:function e(){var t=this,n="rtl"==document.documentElement.getAttribute("dir");this.removeFake(),this.fakeHandlerCallback=function(){return t.removeFake()},this.fakeHandler=document.body.addEventListener("click",this.fakeHandlerCallback)||!0,this.fakeElem=document.createElement("textarea"),this.fakeElem.style.fontSize="12pt",this.fakeElem.style.border="0",this.fakeElem.style.padding="0",this.fakeElem.style.margin="0",this.fakeElem.style.position="absolute",this.fakeElem.style[n?"right":"left"]="-9999px";var i=window.pageYOffset||document.documentElement.scrollTop;this.fakeElem.addEventListener("focus",window.scrollTo(0,i)),this.fakeElem.style.top=i+"px",this.fakeElem.setAttribute("readonly",""),this.fakeElem.value=this.text,document.body.appendChild(this.fakeElem),this.selectedText=(0,o.default)(this.fakeElem),this.copyText()}},{key:"removeFake",value:function e(){this.fakeHandler&&(document.body.removeEventListener("click",this.fakeHandlerCallback),this.fakeHandler=null,this.fakeHandlerCallback=null),this.fakeElem&&(document.body.removeChild(this.fakeElem),this.fakeElem=null)}},{key:"selectTarget",value:function e(){this.selectedText=(0,o.default)(this.target),this.copyText()}},{key:"copyText",value:function e(){var t=void 0;try{t=document.execCommand(this.action)}catch(e){t=!1}this.handleResult(t)}},{key:"handleResult",value:function e(t){this.emitter.emit(t?"success":"error",{action:this.action,text:this.selectedText,trigger:this.trigger,clearSelection:this.clearSelection.bind(this)})}},{key:"clearSelection",value:function e(){this.target&&this.target.blur(),window.getSelection().removeAllRanges()}},{key:"destroy",value:function e(){this.removeFake()}},{key:"action",set:function e(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"copy";if(this._action=t,"copy"!==this._action&&"cut"!==this._action)throw new Error('Invalid "action" value, use either "copy" or "cut"')},get:function e(){return this._action}},{key:"target",set:function e(t){if(void 0!==t){if(!t||"object"!==("undefined"==typeof t?"undefined":r(t))||1!==t.nodeType)throw new Error('Invalid "target" value, use a valid Element');if("copy"===this.action&&t.hasAttribute("disabled"))throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');if("cut"===this.action&&(t.hasAttribute("readonly")||t.hasAttribute("disabled")))throw new Error('Invalid "target" attribute. You can\'t cut text from elements with "readonly" or "disabled" attributes');this._target=t}},get:function e(){return this._target}}]),e}();e.exports=c})},{select:5}],8:[function(t,n,i){!function(o,r){if("function"==typeof e&&e.amd)e(["module","./clipboard-action","tiny-emitter","good-listener"],r);else if("undefined"!=typeof i)r(n,t("./clipboard-action"),t("tiny-emitter"),t("good-listener"));else{var a={exports:{}};r(a,o.clipboardAction,o.tinyEmitter,o.goodListener),o.clipboard=a.exports}}(this,function(e,t,n,i){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function a(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function c(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}function l(e,t){var n="data-clipboard-"+e;if(t.hasAttribute(n))return t.getAttribute(n)}var s=o(t),u=o(n),f=o(i),d=function(){function e(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(t,n,i){return n&&e(t.prototype,n),i&&e(t,i),t}}(),h=function(e){function t(e,n){r(this,t);var i=a(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return i.resolveOptions(n),i.listenClick(e),i}return c(t,e),d(t,[{key:"resolveOptions",value:function e(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};this.action="function"==typeof t.action?t.action:this.defaultAction,this.target="function"==typeof t.target?t.target:this.defaultTarget,this.text="function"==typeof t.text?t.text:this.defaultText}},{key:"listenClick",value:function e(t){var n=this;this.listener=(0,f.default)(t,"click",function(e){return n.onClick(e)})}},{key:"onClick",value:function e(t){var n=t.delegateTarget||t.currentTarget;this.clipboardAction&&(this.clipboardAction=null),this.clipboardAction=new s.default({action:this.action(n),target:this.target(n),text:this.text(n),trigger:n,emitter:this})}},{key:"defaultAction",value:function e(t){return l("action",t)}},{key:"defaultTarget",value:function e(t){var n=l("target",t);if(n)return document.querySelector(n)}},{key:"defaultText",value:function e(t){return l("text",t)}},{key:"destroy",value:function e(){this.listener.destroy(),this.clipboardAction&&(this.clipboardAction.destroy(),this.clipboardAction=null)}}]),t}(u.default);e.exports=h})},{"./clipboard-action":7,"good-listener":4,"tiny-emitter":6}]},{},[8])(8)});
->>>>>>> aaef072a8dbe104676d46bac2c9ccd1f02247062
+!function(t){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{var e;e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this,e.Clipboard=t()}}(function(){var t,e,n;return function t(e,n,o){function i(a,c){if(!n[a]){if(!e[a]){var s="function"==typeof require&&require;if(!c&&s)return s(a,!0);if(r)return r(a,!0);var l=new Error("Cannot find module '"+a+"'");throw l.code="MODULE_NOT_FOUND",l}var u=n[a]={exports:{}};e[a][0].call(u.exports,function(t){var n=e[a][1][t];return i(n?n:t)},u,u.exports,t,e,n,o)}return n[a].exports}for(var r="function"==typeof require&&require,a=0;a<o.length;a++)i(o[a]);return i}({1:[function(t,e,n){var o=t("matches-selector");e.exports=function(t,e,n){for(var i=n?t:t.parentNode;i&&i!==document;){if(o(i,e))return i;i=i.parentNode}}},{"matches-selector":5}],2:[function(t,e,n){function o(t,e,n,o,r){var a=i.apply(this,arguments);return t.addEventListener(n,a,r),{destroy:function(){t.removeEventListener(n,a,r)}}}function i(t,e,n,o){return function(n){n.delegateTarget=r(n.target,e,!0),n.delegateTarget&&o.call(t,n)}}var r=t("closest");e.exports=o},{closest:1}],3:[function(t,e,n){n.node=function(t){return void 0!==t&&t instanceof HTMLElement&&1===t.nodeType},n.nodeList=function(t){var e=Object.prototype.toString.call(t);return void 0!==t&&("[object NodeList]"===e||"[object HTMLCollection]"===e)&&"length"in t&&(0===t.length||n.node(t[0]))},n.string=function(t){return"string"==typeof t||t instanceof String},n.fn=function(t){var e=Object.prototype.toString.call(t);return"[object Function]"===e}},{}],4:[function(t,e,n){function o(t,e,n){if(!t&&!e&&!n)throw new Error("Missing required arguments");if(!c.string(e))throw new TypeError("Second argument must be a String");if(!c.fn(n))throw new TypeError("Third argument must be a Function");if(c.node(t))return i(t,e,n);if(c.nodeList(t))return r(t,e,n);if(c.string(t))return a(t,e,n);throw new TypeError("First argument must be a String, HTMLElement, HTMLCollection, or NodeList")}function i(t,e,n){return t.addEventListener(e,n),{destroy:function(){t.removeEventListener(e,n)}}}function r(t,e,n){return Array.prototype.forEach.call(t,function(t){t.addEventListener(e,n)}),{destroy:function(){Array.prototype.forEach.call(t,function(t){t.removeEventListener(e,n)})}}}function a(t,e,n){return s(document.body,t,e,n)}var c=t("./is"),s=t("delegate");e.exports=o},{"./is":3,delegate:2}],5:[function(t,e,n){function o(t,e){if(r)return r.call(t,e);for(var n=t.parentNode.querySelectorAll(e),o=0;o<n.length;++o)if(n[o]==t)return!0;return!1}var i=Element.prototype,r=i.matchesSelector||i.webkitMatchesSelector||i.mozMatchesSelector||i.msMatchesSelector||i.oMatchesSelector;e.exports=o},{}],6:[function(t,e,n){function o(t){var e;if("INPUT"===t.nodeName||"TEXTAREA"===t.nodeName)t.focus(),t.setSelectionRange(0,t.value.length),e=t.value;else{t.hasAttribute("contenteditable")&&t.focus();var n=window.getSelection(),o=document.createRange();o.selectNodeContents(t),n.removeAllRanges(),n.addRange(o),e=n.toString()}return e}e.exports=o},{}],7:[function(t,e,n){function o(){}o.prototype={on:function(t,e,n){var o=this.e||(this.e={});return(o[t]||(o[t]=[])).push({fn:e,ctx:n}),this},once:function(t,e,n){function o(){i.off(t,o),e.apply(n,arguments)}var i=this;return o._=e,this.on(t,o,n)},emit:function(t){var e=[].slice.call(arguments,1),n=((this.e||(this.e={}))[t]||[]).slice(),o=0,i=n.length;for(o;i>o;o++)n[o].fn.apply(n[o].ctx,e);return this},off:function(t,e){var n=this.e||(this.e={}),o=n[t],i=[];if(o&&e)for(var r=0,a=o.length;a>r;r++)o[r].fn!==e&&o[r].fn._!==e&&i.push(o[r]);return i.length?n[t]=i:delete n[t],this}},e.exports=o},{}],8:[function(e,n,o){!function(i,r){if("function"==typeof t&&t.amd)t(["module","select"],r);else if("undefined"!=typeof o)r(n,e("select"));else{var a={exports:{}};r(a,i.select),i.clipboardAction=a.exports}}(this,function(t,e){"use strict";function n(t){return t&&t.__esModule?t:{"default":t}}function o(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}var i=n(e),r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol?"symbol":typeof t},a=function(){function t(t,e){for(var n=0;n<e.length;n++){var o=e[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(t,o.key,o)}}return function(e,n,o){return n&&t(e.prototype,n),o&&t(e,o),e}}(),c=function(){function t(e){o(this,t),this.resolveOptions(e),this.initSelection()}return t.prototype.resolveOptions=function t(){var e=arguments.length<=0||void 0===arguments[0]?{}:arguments[0];this.action=e.action,this.emitter=e.emitter,this.target=e.target,this.text=e.text,this.trigger=e.trigger,this.selectedText=""},t.prototype.initSelection=function t(){this.text?this.selectFake():this.target&&this.selectTarget()},t.prototype.selectFake=function t(){var e=this,n="rtl"==document.documentElement.getAttribute("dir");this.removeFake(),this.fakeHandlerCallback=function(){return e.removeFake()},this.fakeHandler=document.body.addEventListener("click",this.fakeHandlerCallback)||!0,this.fakeElem=document.createElement("textarea"),this.fakeElem.style.fontSize="12pt",this.fakeElem.style.border="0",this.fakeElem.style.padding="0",this.fakeElem.style.margin="0",this.fakeElem.style.position="absolute",this.fakeElem.style[n?"right":"left"]="-9999px",this.fakeElem.style.top=(window.pageYOffset||document.documentElement.scrollTop)+"px",this.fakeElem.setAttribute("readonly",""),this.fakeElem.value=this.text,document.body.appendChild(this.fakeElem),this.selectedText=(0,i.default)(this.fakeElem),this.copyText()},t.prototype.removeFake=function t(){this.fakeHandler&&(document.body.removeEventListener("click",this.fakeHandlerCallback),this.fakeHandler=null,this.fakeHandlerCallback=null),this.fakeElem&&(document.body.removeChild(this.fakeElem),this.fakeElem=null)},t.prototype.selectTarget=function t(){this.selectedText=(0,i.default)(this.target),this.copyText()},t.prototype.copyText=function t(){var e=void 0;try{e=document.execCommand(this.action)}catch(n){e=!1}this.handleResult(e)},t.prototype.handleResult=function t(e){e?this.emitter.emit("success",{action:this.action,text:this.selectedText,trigger:this.trigger,clearSelection:this.clearSelection.bind(this)}):this.emitter.emit("error",{action:this.action,trigger:this.trigger,clearSelection:this.clearSelection.bind(this)})},t.prototype.clearSelection=function t(){this.target&&this.target.blur(),window.getSelection().removeAllRanges()},t.prototype.destroy=function t(){this.removeFake()},a(t,[{key:"action",set:function t(){var e=arguments.length<=0||void 0===arguments[0]?"copy":arguments[0];if(this._action=e,"copy"!==this._action&&"cut"!==this._action)throw new Error('Invalid "action" value, use either "copy" or "cut"')},get:function t(){return this._action}},{key:"target",set:function t(e){if(void 0!==e){if(!e||"object"!==("undefined"==typeof e?"undefined":r(e))||1!==e.nodeType)throw new Error('Invalid "target" value, use a valid Element');if("copy"===this.action&&e.hasAttribute("disabled"))throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');if("cut"===this.action&&(e.hasAttribute("readonly")||e.hasAttribute("disabled")))throw new Error('Invalid "target" attribute. You can\'t cut text from elements with "readonly" or "disabled" attributes');this._target=e}},get:function t(){return this._target}}]),t}();t.exports=c})},{select:6}],9:[function(e,n,o){!function(i,r){if("function"==typeof t&&t.amd)t(["module","./clipboard-action","tiny-emitter","good-listener"],r);else if("undefined"!=typeof o)r(n,e("./clipboard-action"),e("tiny-emitter"),e("good-listener"));else{var a={exports:{}};r(a,i.clipboardAction,i.tinyEmitter,i.goodListener),i.clipboard=a.exports}}(this,function(t,e,n,o){"use strict";function i(t){return t&&t.__esModule?t:{"default":t}}function r(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function a(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}function c(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}function s(t,e){var n="data-clipboard-"+t;if(e.hasAttribute(n))return e.getAttribute(n)}var l=i(e),u=i(n),f=i(o),d=function(t){function e(n,o){r(this,e);var i=a(this,t.call(this));return i.resolveOptions(o),i.listenClick(n),i}return c(e,t),e.prototype.resolveOptions=function t(){var e=arguments.length<=0||void 0===arguments[0]?{}:arguments[0];this.action="function"==typeof e.action?e.action:this.defaultAction,this.target="function"==typeof e.target?e.target:this.defaultTarget,this.text="function"==typeof e.text?e.text:this.defaultText},e.prototype.listenClick=function t(e){var n=this;this.listener=(0,f.default)(e,"click",function(t){return n.onClick(t)})},e.prototype.onClick=function t(e){var n=e.delegateTarget||e.currentTarget;this.clipboardAction&&(this.clipboardAction=null),this.clipboardAction=new l.default({action:this.action(n),target:this.target(n),text:this.text(n),trigger:n,emitter:this})},e.prototype.defaultAction=function t(e){return s("action",e)},e.prototype.defaultTarget=function t(e){var n=s("target",e);return n?document.querySelector(n):void 0},e.prototype.defaultText=function t(e){return s("text",e)},e.prototype.destroy=function t(){this.listener.destroy(),this.clipboardAction&&(this.clipboardAction.destroy(),this.clipboardAction=null)},e}(u.default);t.exports=d})},{"./clipboard-action":8,"good-listener":4,"tiny-emitter":7}]},{},[9])(9)});
