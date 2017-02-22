@@ -311,15 +311,14 @@
     padding: 10px;
     max-width: 10%;
     border-radius:4px;
+    line-height: 1.2;
 
 }
 
-.glyphicon-arrow-down {
+.triangle {
     color: #FC4F71;
-    font-size: 1.5em;
+    font-size: 2.5vw;
     position: absolute;
-    
-    top: -8%;
     z-index: -1;
 
 }

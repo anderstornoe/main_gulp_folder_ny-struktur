@@ -1393,17 +1393,72 @@ function getUrlVars() {
 
 
 function microhint(obj, string, color) {
+    var top_pos;
+    var left_pos;
+    var arrow_pos;
+    var arrow_rotation;
+
+    $(".microhint").remove();
+
+    $("body").append("<div class='microhint'>" + string + "<span class='glyphicon triangle glyphicon-play'></span></div>");
+
     var data = getPos(obj);
-    console.log("MICRO: " + data)
-    $("body").append("<div class='microhint'>"+string+"<span class='glyphicon glyphicon-arrow-down'></span></div>");
 
-    console.log("MS - width" + $(".microhint").css("width"));
-$(".microhint").css("top", data[1] - $(".microhint").height()-30).css("left", data[2] + obj.width()/2 - $(".microhint").width()/2);
-  $(".glyphicon-arrow-down").css("top", $(".microhint").height() + 8);  /*if (data[0] == "1" || data[0] == "2") {
-        
-    } else if (data[0] == "3" || data[0] == "4") {
+    var fluid_offset = $(".container-fluid").offset();
 
-    }*/
+    var fluid_padding = parseInt($(".container-fluid").css("padding-left"));
+    var microhint_padding = parseInt($(".microhint").css("padding-left")) * 2;
+
+
+    if (data[0] == "1" || data[0] == "2") {
+        console.log(obj.css("height"));
+        top_pos = data[1] + parseInt(obj.css("height")) + 3;
+        arrow_pos = "-12%";
+        arrow_rotation = 180;
+    } else {
+        top_pos = data[1] - $(".microhint").height() - 30;
+        arrow_pos = $(".microhint").height();
+    }
+
+    $(".microhint").css("top", top_pos).css("left", data[2] + obj.width() / 2 - $(".microhint").width() / 2);
+
+    $(".triangle").css("top", arrow_pos);
+
+
+
+
+
+    console.log("MS LEFT + MS width" + MicroHintleft_width + "Container: " + container_right_edge);
+
+    /*=============================================
+    =Tjek om microhint overskrider container bredde=
+    =============================================*/
+
+
+
+    console.log("FP:" + fluid_padding);
+
+    console.log("microhint: " + $(".microhint").offset().left + ", FL off: " + (fluid_offset.left + fluid_padding) + ", obj" + obj.offset().left);
+
+    var MicroHintleft_width = $(".microhint").offset().left + $(".microhint").width();
+
+    var container_right_edge = fluid_offset.left + fluid_padding + $(".container-fluid").width();
+
+    if ($(".microhint").offset().left < (fluid_offset.left + fluid_padding)) {
+        $(".microhint").css("left", fluid_offset.left + fluid_padding);
+        $(".triangle").css("left", 20);
+    } else if ($(".microhint").offset().left + $(".microhint").width() > container_right_edge) {
+        $(".triangle").css("left", $(".microhint").width() - 20);
+        console.log("too far");
+        $(".microhint").css("left", container_right_edge - $(".microhint").width() - microhint_padding);
+        console.log($(".microhint").css("left") + "width: " + $(".microhint").width());
+    }
+    /*if (data[0] == "1" || data[0] == "2") {
+          
+      } else if (data[0] == "3" || data[0] == "4") {
+
+      }*/
+    /*=====  End of Section comment block  ======*/
 };
 
 
@@ -1427,7 +1482,7 @@ function getPos(obj) {
     var kvadrant;
 
     var p = obj;
-    p.css("border", "2px solid red");
+    //p.css("border", "2px solid red");
     var position = p.offset();
     console.log("left: " + position.left + ", top: " + position.top);
 
