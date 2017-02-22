@@ -1409,6 +1409,10 @@ function microhint(obj, string, color) {
     var fluid_padding = parseInt($(".container-fluid").css("padding-left"));
     var microhint_padding = parseInt($(".microhint").css("padding-left")) * 2;
 
+    console.log("MHP: " + microhint_padding);
+
+    console.log("MHP:"  + $(".triangle").height()/2);
+
 
     if (data[0] == "1" || data[0] == "2") {
         console.log(obj.css("height"));
@@ -1416,8 +1420,12 @@ function microhint(obj, string, color) {
         arrow_pos = "-12%";
         arrow_rotation = 180;
     } else {
-        top_pos = data[1] - $(".microhint").height() - 30;
-        arrow_pos = $(".microhint").height();
+        top_pos = data[1] - $(".microhint").height() - microhint_padding - 10;
+        arrow_pos = $(".microhint").height() + microhint_padding - $(".triangle").height()/2;
+    }
+
+    if (data[0] == 2 || data[0] == 4){
+        $(".triangle").addClass("rotate_triangle");
     }
 
     $(".microhint").css("top", top_pos).css("left", data[2] + obj.width() / 2 - $(".microhint").width() / 2);
