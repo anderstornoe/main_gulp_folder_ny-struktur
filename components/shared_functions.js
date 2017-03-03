@@ -1433,6 +1433,12 @@ function microhint(obj, string, color) {
 
     $(".microhint").css("top", top_pos).css("left", data[2] + obj.width() / 2 - $(".microhint").width() / 2);
 
+    if (color !=""){
+        $(".microhint").css("background-color", color);
+        $(".triangle").css("color", color);
+
+    }
+
 
 
 
