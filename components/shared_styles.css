@@ -196,7 +196,7 @@
     border-bottom: 1px solid #ddd;
     border-top: 1px solid #ddd;
     font-weight: 600;
-    padding: 15px;
+    padding: 15px 15px 15px 0px;
     margin-bottom: 20px;
     line-height: 1.7;
     float: left;
@@ -233,7 +233,6 @@
 
 .instruktion {
     width: 100%;
-    padding-left: 10px;
 }
 
 .instruktion div:nth-child(2) {

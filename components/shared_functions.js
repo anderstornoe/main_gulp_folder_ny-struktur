@@ -1402,6 +1402,7 @@ function microhint(obj, string, color) {
 
     $("body").append("<div class='microhint'>" + string + "<span class='glyphicon triangle glyphicon-play'></span></div>");
 
+    $(".microhint").draggable();
     var data = getPos(obj);
 
     var fluid_offset = $(".container-fluid").offset();
@@ -1428,12 +1429,12 @@ function microhint(obj, string, color) {
 
     if (data[0] == 2 || data[0] == 4) {
         $(".triangle").addClass("rotate_triangle");
-        $(".triangle").css("top", arrow_pos).css("left", ($(".microhint").width() -30) / 2);
+        $(".triangle").css("top", arrow_pos).css("left", ($(".microhint").width() - 30) / 2);
     }
 
     $(".microhint").css("top", top_pos).css("left", data[2] + obj.width() / 2 - $(".microhint").width() / 2);
 
-    if (color !=""){
+    if (color != "") {
         $(".microhint").css("background-color", color);
         $(".triangle").css("color", color);
 
