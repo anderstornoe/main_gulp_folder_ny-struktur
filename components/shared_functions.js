@@ -8,9 +8,6 @@
 //     return replaced_string;
 // }
 
-function visningssite_wrapping(){
-    console.log("wrapping ongoing");
-}
 
 
 
@@ -1425,7 +1422,7 @@ function microhint(obj, string, color) {
         arrow_rotation = 180;
     } else {
         top_pos = data[1] - $(".microhint").height() - microhint_padding - 10;
-        arrow_pos = ($(".microhint").height() + microhint_padding - $(".triangle").height() / 2) -4;
+        arrow_pos = $(".microhint").height() + microhint_padding - $(".triangle").height() / 2;
     }
 
     $(".triangle").css("top", arrow_pos).css("left", $(".microhint").width() / 2);
