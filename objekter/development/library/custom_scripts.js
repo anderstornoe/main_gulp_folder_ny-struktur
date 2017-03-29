@@ -8,6 +8,9 @@
 //     return replaced_string;
 // }
 
+function visningssite_wrapping() {
+    console.log("wrapping ongoing");
+}
 
 
 
@@ -1393,6 +1396,7 @@ function getUrlVars() {
 
 
 function microhint(obj, string, color) {
+
     var top_pos;
     var left_pos;
     var arrow_pos;
@@ -1400,7 +1404,7 @@ function microhint(obj, string, color) {
 
     $(".microhint").remove();
 
-    $("body").append("<div class='microhint'>" + string + "<span class='glyphicon triangle glyphicon-play'></span></div>");
+    $("body").append("<div class='microhint'>" + string + "<span class='glyphicon triangle glyphicon  glyphicon-arrow-up'></span></div>");
 
     $(".microhint").draggable();
     var data = getPos(obj);
@@ -1410,29 +1414,30 @@ function microhint(obj, string, color) {
     var fluid_padding = parseInt($(".container-fluid").css("padding-left"));
     var microhint_padding = parseInt($(".microhint").css("padding-left")) * 2;
 
-    console.log("MHP: " + microhint_padding);
+    //console.log("MHP: " + microhint_padding);
 
-    console.log("MHP:" + $(".triangle").height() / 2);
+    //console.log("MHP:" + $(".triangle").height() / 2);
 
+    console.log("DATA: " + data);
 
-    if (data[0] == "1" || data[0] == "2") {
-        console.log(obj.css("height"));
-        top_pos = data[1] + parseInt(obj.css("height")) + 3;
-        arrow_pos = "-12%";
-        arrow_rotation = 180;
+    //øvre kvadrant: 
+    if (data[0] == 1 || data[0] == 2) {
+        console.log("(case 1 or 2)" + obj.css("height"));
+        top_pos = data[1] + parseInt(obj.css("height")) + 20;
+        $(".triangle").removeClass("rotate_triangle");
+        arrow_pos = "-14px";
+        //arrow_rotation = 90;
+
     } else {
-        top_pos = data[1] - $(".microhint").height() - microhint_padding - 10;
-        arrow_pos = $(".microhint").height() + microhint_padding - $(".triangle").height() / 2;
-    }
-
-    $(".triangle").css("top", arrow_pos).css("left", $(".microhint").width() / 2);
-
-    if (data[0] == 2 || data[0] == 4) {
+        top_pos = data[1] - $(".microhint").height() - microhint_padding - 20;
+        arrow_pos = ($(".microhint").height() + microhint_padding - $(".triangle").height() / 2);
         $(".triangle").addClass("rotate_triangle");
-        $(".triangle").css("top", arrow_pos).css("left", ($(".microhint").width() - 30) / 2);
     }
 
+    $(".triangle").css("top", arrow_pos); //.css("left", data[3] + "px");
     $(".microhint").css("top", top_pos).css("left", data[2] + obj.width() / 2 - $(".microhint").width() / 2);
+    $(".triangle").css("left", $(".microhint").width() / 2 + "px");
+
 
     if (color != "") {
         $(".microhint").css("background-color", color);
@@ -1440,43 +1445,64 @@ function microhint(obj, string, color) {
 
     }
 
-
-
-
-
-
-
     console.log("MS LEFT + MS width" + MicroHintleft_width + "Container: " + container_right_edge);
 
     /*=============================================
     =Tjek om microhint overskrider container bredde=
     =============================================*/
 
+    console.log("HALLO:" + $(".microhint").width() / 2 + "px");
+
 
 
     console.log("FP:" + fluid_padding);
 
-    console.log("microhint: " + $(".microhint").offset().left + ", FL off: " + (fluid_offset.left + fluid_padding) + ", obj" + obj.offset().left);
+    console.log("microhint offset: " + $(".microhint").offset().left + ", FL off: " + (fluid_offset.left + fluid_padding) + ", obj" + obj.offset().left);
 
     var MicroHintleft_width = $(".microhint").offset().left + $(".microhint").width();
 
-    var container_right_edge = fluid_offset.left + fluid_padding + $(".container-fluid").width();
+    var container_right_edge = fluid_offset.left + fluid_padding; // + $(".container-fluid").width();
 
-    if ($(".microhint").offset().left < (fluid_offset.left + fluid_padding)) {
-        $(".microhint").css("left", fluid_offset.left + fluid_padding);
-        $(".triangle").css("left", 20);
-    } else if ($(".microhint").offset().left + $(".microhint").width() > container_right_edge) {
-        $(".triangle").css("left", $(".microhint").width() - 40);
-        console.log("too far");
-        $(".microhint").css("left", container_right_edge - $(".microhint").width() - microhint_padding);
-        console.log($(".microhint").css("left") + "width: " + $(".microhint").width());
+    console.log("Samlet width" + ($(".microhint").offset().left + $(".microhint").width()) + " WINDOW WIDTH: " + $(window).width());
+
+    if ($(".microhint").offset().left < 0) {
+        var neg_offset = Math.abs($(".microhint").offset().left);
+        $(".microhint").css("left", 0 + "px");
+        //$(".triangle").css("left", $("") + "px");
+
+    } else if (MicroHintleft_width + container_right_edge > $(window).width()) {
+    var new_pos = $(window).width() - $(".microhint").width();
+        console.log("EXCEEDING WIDTH: " + new_pos);
+        $(".microhint").css("left", new_pos - 60 + "px");
+
     }
+
+
+    /* if ($(".microhint").offset().left < (fluid_offset.left + fluid_padding)) {
+
+         console.log("BALLADE til siden_1");
+         $(".microhint").css("left", fluid_offset.left + fluid_padding);
+         //$(".triangle").css("left", 20);
+     } else if ($(".microhint").offset().left + $(".microhint").width() > container_right_edge) {
+
+
+         console.log("too far");
+         $(".microhint").css("left", container_right_edge - $(".microhint").width() - microhint_padding);
+         console.log($(".microhint").css("left") + "width: " + $(".microhint").width());
+
+         //var arrow_pos = data[2] - parseInt($(".microhint").css("left"));
+         console.log("udregning: " + data[2] + " , MS: LEFT: " + parseInt($(".microhint").css("left")) + ", Arrow_pos_ " + arrow_pos);
+         console.log("BALLADE til siden_2: " + $(".microhint").css("left") + ", " + data[2]);
+         //$(".triangle").css("left", arrow_pos + " px");
+     }*/
     /*if (data[0] == "1" || data[0] == "2") {
           
       } else if (data[0] == "3" || data[0] == "4") {
 
       }*/
     /*=====  End of Section comment block  ======*/
+
+    $(".microhint").find(".label").css("width", "100%");
 };
 
 
