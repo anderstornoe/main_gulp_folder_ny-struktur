@@ -179,15 +179,19 @@
 
 /*********   Tilføjet d. 29/3-2016 af THAN fra 2016-01-15 Vucdigital_Overblik_v22_UDEN_GUIDES.pdf  **********/
 .vuc-primary{color: #fff; background-color: #56bfc5;}
+.vuc-primary:hover{color: #fff; background-color: #05a0a8;}
 .vuc-primary-hover{color: #fff; background-color: #05a0a8;}
 .vuc-primary-active{color: #fff; background-color: #05a0a8;}
+.vuc-primary:active{color: #fff; background-color: #05a0a8;}
 
 .vuc-info{color: #000; background-color: #e7e6e2;}
 .vuc-info-hover{color: #000; background-color: #cececc;}
+.vuc-info:hover{color: #000; background-color: #cececc;}
 .vuc-info-active{color: #fff; background-color: #717272;}
 
 .vuc-default{color: #000; background-color: #fff;}
 .vuc-default-hover{color: #000; background-color: #e7e6e2;}
+.vuc-default:hover{color: #000; background-color: #e7e6e2;}
 .vuc-default-active{color: #fff; background-color: #717272;}
 
 .vuc-correct{color: #fff; background-color: #2abb2a;}
