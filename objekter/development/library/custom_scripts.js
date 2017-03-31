@@ -1394,15 +1394,29 @@ function getUrlVars() {
 =            MicroHint 2017            =
 ======================================*/
 
+// Usage: microhint($("DOM")element der appendes til, "HTML der genereres i MicroHint", "hvis ikke default: farve");
+
+//Eksempler:
+
+// Microhint med label: microhint($(this), "<div class='microhint_label_success'>Korrekt placeret</div>En længere klamamse om historien bag microhints og mange tilsvarende spændende ting og sager.");
+
+// Standard microhint: microhint($(this), "Standard microhint: En længere klamamse om historien bag microhints og mange tilsvarende spændende ting og sager.");
+
+// Rigtigt forkert svar microhint: microhint($(this), "<b>Forkert placeret </b>", "#ED3E3A");
+       
 
 function microhint(obj, string, color) {
+
+    var numHints = $(".microhint").length;
+
+    console.log("NUM HINTS: " + numHints);
 
     var top_pos;
     var left_pos;
     var arrow_pos;
     var arrow_rotation;
 
-    $(".microhint").remove();
+    //$(".microhint").remove();
 
     $("body").append("<div class='microhint'>" + string + "<span class='glyphicon triangle glyphicon  glyphicon-arrow-up'></span></div>");
 
@@ -1414,35 +1428,38 @@ function microhint(obj, string, color) {
     var fluid_padding = parseInt($(".container-fluid").css("padding-left"));
     var microhint_padding = parseInt($(".microhint").css("padding-left")) * 2;
 
+
+    var this_microhint = $(".microhint:last"); 
+    var this_triangle = $(".microhint:last").find(".triangle"); 
+
     //console.log("MHP: " + microhint_padding);
 
-    //console.log("MHP:" + $(".triangle").height() / 2);
+    //console.log("MHP:" + this_triangle.height() / 2);
 
     console.log("DATA: " + data);
 
     //øvre kvadrant: 
     if (data[0] == 1 || data[0] == 2) {
         console.log("(case 1 or 2)" + obj.css("height"));
-        top_pos = data[1] + parseInt(obj.css("height")) + 20;
-        $(".triangle").removeClass("rotate_triangle");
+        top_pos = data[1] + parseInt(obj.css("height")) + 26;
+        this_triangle.removeClass("rotate_triangle");
         arrow_pos = "-14px";
         //arrow_rotation = 90;
 
     } else {
-        top_pos = data[1] - $(".microhint").height() - microhint_padding - 20;
-        arrow_pos = ($(".microhint").height() + microhint_padding - $(".triangle").height() / 2);
-        $(".triangle").addClass("rotate_triangle");
+        top_pos = data[1] - this_microhint.height() - microhint_padding - 26;
+        arrow_pos = (this_microhint.height() + microhint_padding - this_triangle.height() / 2);
+        this_triangle.addClass("rotate_triangle");
     }
 
-    $(".triangle").css("top", arrow_pos); //.css("left", data[3] + "px");
-    $(".microhint").css("top", top_pos).css("left", data[2] + obj.width() / 2 - $(".microhint").width() / 2);
-    $(".triangle").css("left", $(".microhint").width() / 2 + "px");
+    this_triangle.css("top", arrow_pos); //.css("left", data[3] + "px");
+    this_microhint.css("top", top_pos).css("left", data[2] + obj.width() / 2 - this_microhint.width() / 2);
+    this_triangle.css("left", this_microhint.width() / 2 + "px");
 
 
     if (color != "") {
-        $(".microhint").css("background-color", color);
-        $(".triangle").css("color", color);
-
+        this_microhint.css("background-color", color);
+        this_triangle.css("color", color);
     }
 
     console.log("MS LEFT + MS width" + MicroHintleft_width + "Container: " + container_right_edge);
@@ -1451,29 +1468,29 @@ function microhint(obj, string, color) {
     =Tjek om microhint overskrider container bredde=
     =============================================*/
 
-    console.log("HALLO:" + $(".microhint").width() / 2 + "px");
+    console.log("HALLO:" + this_microhint.width() / 2 + "px");
 
 
 
     console.log("FP:" + fluid_padding);
 
-    console.log("microhint offset: " + $(".microhint").offset().left + ", FL off: " + (fluid_offset.left + fluid_padding) + ", obj" + obj.offset().left);
+    console.log("microhint offset: " + this_microhint.offset().left + ", FL off: " + (fluid_offset.left + fluid_padding) + ", obj" + obj.offset().left);
 
-    var MicroHintleft_width = $(".microhint").offset().left + $(".microhint").width();
+    var MicroHintleft_width = this_microhint.offset().left + this_microhint.width();
 
     var container_right_edge = fluid_offset.left + fluid_padding; // + $(".container-fluid").width();
 
-    console.log("Samlet width" + ($(".microhint").offset().left + $(".microhint").width()) + " WINDOW WIDTH: " + $(window).width());
+    console.log("Samlet width" + (this_microhint.offset().left + this_microhint.width()) + " WINDOW WIDTH: " + $(window).width());
 
-    if ($(".microhint").offset().left < 0) {
-        var neg_offset = Math.abs($(".microhint").offset().left);
-        $(".microhint").css("left", 0 + "px");
+    if (this_microhint.offset().left < 0) {
+        var neg_offset = Math.abs(this_microhint.offset().left);
+        this_microhint.css("left", 0 + "px");
         //$(".triangle").css("left", $("") + "px");
 
     } else if (MicroHintleft_width + container_right_edge > $(window).width()) {
-    var new_pos = $(window).width() - $(".microhint").width();
+    var new_pos = $(window).width() - this_microhint.width();
         console.log("EXCEEDING WIDTH: " + new_pos);
-        $(".microhint").css("left", new_pos - 60 + "px");
+        this_microhint.css("left", new_pos - 60 + "px");
 
     }
 
@@ -1502,7 +1519,7 @@ function microhint(obj, string, color) {
       }*/
     /*=====  End of Section comment block  ======*/
 
-    $(".microhint").find(".label").css("width", "100%");
+    this_microhint.find(".label").css("width", "100%");
 };
 
 

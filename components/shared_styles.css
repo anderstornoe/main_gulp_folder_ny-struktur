@@ -310,10 +310,10 @@
     background-color: #333333;
     color: white;
     padding: 4px;
-    max-width: 20%;
+    
     border-radius: 6px;
     line-height: 21px;
-    min-width: 200px;
+    max-width:20%;
     padding: 20px;
     box-shadow: 2px 2px 5px #999999;
 }
