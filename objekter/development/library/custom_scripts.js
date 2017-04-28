@@ -931,12 +931,12 @@ var objectStorageClass = {
  *
  * VERY IMPORTANT:
  * ===============
- * The scope of a cookie is the folder it is placed and in all subfolders on a webserver. So for a cookie to be effektive on the entire website, it needs 
+ * The scope of a cookie is the folder it is placed and in all subfolders on a webserver. So for a cookie to be effective on the entire website, it needs 
  * to be installed / given in the root-folder of the webserver. 
  * 
  * NOTE:
  * =====
- * As a consequense of the cookie-scope mentioned above, a "development cookie" (that deactivates google-analytics) using the script below, is installed / given in the 
+ * As a consequence of the cookie-scope mentioned above, a "development cookie" (that deactivates google-analytics) using the script below, is installed / given in the 
  * root of the webserver on this page:
  *
  *      https://www.vucdigital.dk/devCookie.html
