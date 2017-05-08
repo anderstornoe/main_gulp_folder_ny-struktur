@@ -1417,9 +1417,13 @@ function getUrlVars() {
 // Standard microhint: microhint($(this), "Standard microhint: En længere klamamse om historien bag microhints og mange tilsvarende spændende ting og sager.");
 
 // Rigtigt forkert svar microhint: microhint($(this), "<b>Forkert placeret </b>", "#ED3E3A");
-       
 
-function microhint(obj, string, color) {
+// Hvis multiple != true fjernes microhintet ved klik på body
+
+
+function microhint(obj, string, multiple, color) {
+
+
 
     var numHints = $(".microhint").length;
 
@@ -1434,6 +1438,7 @@ function microhint(obj, string, color) {
 
     $("body").append("<div class='microhint'>" + string + "<span class='glyphicon triangle glyphicon  glyphicon-arrow-up'></span></div>");
 
+
     $(".microhint").draggable();
     var data = getPos(obj);
 
@@ -1443,8 +1448,8 @@ function microhint(obj, string, color) {
     var microhint_padding = parseInt($(".microhint").css("padding-left")) * 2;
 
 
-    var this_microhint = $(".microhint:last"); 
-    var this_triangle = $(".microhint:last").find(".triangle"); 
+    var this_microhint = $(".microhint:last");
+    var this_triangle = $(".microhint:last").find(".triangle");
 
     //console.log("MHP: " + microhint_padding);
 
@@ -1484,8 +1489,6 @@ function microhint(obj, string, color) {
 
     console.log("HALLO:" + this_microhint.width() / 2 + "px");
 
-
-
     console.log("FP:" + fluid_padding);
 
     console.log("microhint offset: " + this_microhint.offset().left + ", FL off: " + (fluid_offset.left + fluid_padding) + ", obj" + obj.offset().left);
@@ -1502,12 +1505,26 @@ function microhint(obj, string, color) {
         //$(".triangle").css("left", $("") + "px");
 
     } else if (MicroHintleft_width + container_right_edge > $(window).width()) {
-    var new_pos = $(window).width() - this_microhint.width();
+        var new_pos = $(window).width() - this_microhint.width();
         console.log("EXCEEDING WIDTH: " + new_pos);
         this_microhint.css("left", new_pos - 60 + "px");
 
     }
 
+    if (multiple != true) {
+        setTimeout(function() {
+            $("body").click(fadeOutMH);
+
+        }, 1000);
+    }
+
+    function fadeOutMH() {
+        this_microhint.fadeOut("slow", function() {
+            this_microhint.remove();
+            console.log("DET ER MIG DER FADER!");
+            $("body").click(fadeOutMH).off();
+        });
+    };
 
     /* if ($(".microhint").offset().left < (fluid_offset.left + fluid_padding)) {
 
