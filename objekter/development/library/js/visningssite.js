@@ -25,11 +25,12 @@ function FontSizeScalerNew(ParentSelector, SelectorClassArr, NativeWindowWidth) 
 
 $(document).ready(function() {
 
+
     console.log("doc_ready");
 
     var $container = $('.tn_container');
     $container.imagesLoaded(function() {
-console.log("img loaded");        
+        console.log("img loaded");
         $container.masonry({
             itemSelector: '.post-box',
             columnWidth: '.post-box',
@@ -54,6 +55,11 @@ console.log("img loaded");
     });
 
 
+    header_new();
+    footer_new();
+
+    google_analytics();
+
 });
 
 $(window).resize(function() {
@@ -65,3 +71,46 @@ $(window).resize(function() {
         $(".tn_container").css("margin-top", "0px");
     }
 });
+
+function header_new() {
+
+    var HTML = '';
+
+    HTML += '<div class="top_header ">'
+    HTML += '<div class="container-fluid">'
+    HTML += '<div class="col-xs-6">';
+    HTML += '<a href="https://www.vucdigital.dk/search/"><div class="innner_logo"> <img class="v_logo" src="https://www.vucdigital.dk/search/img/VucdigitalLOGO_forHeader.svg"> </a><div>';
+    HTML += '<span class="logo_text">vucdigital.dk</span>';
+    HTML += '</div> </div>';
+    HTML += '<div class="txt_container"> </div>'
+    HTML += '</div>';
+    HTML += '<div class="col-xs-6 menu ">';
+    HTML += '<span> <a class="menu_a" href="https://www.vucdigital.dk">FORSIDE</a></span> | <span> <a class="menu_a" href="about.html">OM OS</a></span>';
+    HTML += '</div> </div> </div>';
+
+    $("body").prepend(HTML);
+
+    $(".v_logo .v_logo_embed .logo_text .logo_text_embed").click(function() {
+        document.location.href = "https://www.vucdigital.dk";
+    });
+
+    $(".container-fluid").css("padding-top", "0px");
+
+}
+
+function footer_new() {
+
+    var HTML = '';
+    HTML += '<div class="footer_search">';
+    HTML += '<div class="container-fluid">';
+    HTML += '<b><p class="copyright">Et samarbejde mellem</b></p>';
+    HTML += '<img src="https://www.vucdigital.dk/search/img/logoer.png" class="img-responsive">';
+    HTML += '<div class="hr_line"></div>';
+    HTML += '<div class="col-xs-6 footerlinks">';
+    HTML += '<p class="contact"><a class="contact_a" href="mailto:info@vucdigital.dk">info@vucdigital.dk</a></p>';
+    HTML += '</div>';
+    HTML += '<div class="col-xs-6 leftlink">© 2017 vucdigital</div>';
+    HTML += '</div>';
+    HTML += '</div>';
+    $("body").append(HTML);
+}
