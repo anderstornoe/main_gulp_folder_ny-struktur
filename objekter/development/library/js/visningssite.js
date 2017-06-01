@@ -85,8 +85,9 @@ function header_new() {
     HTML += '<div class="txt_container"> </div>'
     HTML += '</div>';
     HTML += '<div class="col-xs-6 menu ">';
-    HTML += '<span> <a class="menu_a" href="https://www.vucdigital.dk">FORSIDE</a></span> | <span> <a class="menu_a" href="about.html">OM OS</a></span>';
+    HTML += '<span> <a class="menu_a" href="https://www.vucdigital.dk">FORSIDE</a></span> | <span> <a class="menu_a" href="https://www.vucdigital.dk/search/about.html">OM OS</a></span>';
     HTML += '</div> </div> </div>';
+    HTML += '<div class="row"> </div>';
 
     $("body").prepend(HTML);
 
