@@ -1,12 +1,11 @@
-body{
+body {
     background-color: white;
 }
+
 .btn-lg {
     display: table-cell;
     font-weight: 200;
 }
-
-
 
 .MetaDataLink {
     color: #0071bc;
@@ -25,7 +24,6 @@ body{
 
 .om_header h1 {
     margin-left: 0;
-    color: green;
 }
 
 .om_container {
@@ -45,7 +43,7 @@ body{
     margin: 0 auto;
     max-width: 100%;
     vertical-align: middle;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 .thumb_overlay {
@@ -128,52 +126,77 @@ textarea {
     line-height: inherit;
 }
 
-.glyphicon, .glyphicons {
+.glyphicon,
+.glyphicons {
     margin-left: 0px;
     margin-right: 10px;
     /*color:green;*/
 }
 
-.btn-lg {padding: 10px 20px;}
+.btn-lg {
+    padding: 10px 20px;
+}
 
-.vuc_footer{margin-top: 20px; padding-top: 30px; padding-bottom: 30px; background-color: #f8f8f6;; text-align: center}
-.vuc_footer h2 {margin-top: 0px; margin-bottom: 20px; padding: 0px;}
-.footerText{margin: 0px; color: #666;}
-.footerCopywrite{margin-top: 20px; margin-bottom: 0px;}
+.vuc_footer {
+    margin-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #f8f8f6;
+    ;
+    text-align: center
+}
 
-.container_main{
+.vuc_footer h2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding: 0px;
+}
+
+.footerText {
+    margin: 0px;
+    color: #666;
+}
+
+.footerCopywrite {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.container_main {
     background-color: white;
 }
 
-.thumbnail{
-    border:1px solid #ddd;
+.thumbnail {
+    border: 1px solid #ddd;
 }
 
 
 /*gør .btn-lg mindre mellem første og tredje break-point*/
 
-
-@media only screen and (min-width:560px) and (max-width: 768px)  {
+@media only screen and (min-width:560px) and (max-width: 768px) {
     .btn-lg {
-        font-size:14px;
+        font-size: 14px;
     }
 }
-@media only screen and (max-width: 992px)  {
-    .indlejring_container{
-        display: none;   
+
+@media only screen and (max-width: 992px) {
+    .indlejring_container {
+        display: none;
     }
 }
-.btnSubText{
+
+.btnSubText {
     padding-left: 10px;
 }
 
-.post-box{
-    margin-bottom:10px;
+.post-box {
+    margin-bottom: 10px;
 }
 
-.no-text-transform{
+.no-text-transform {
     text-transform: none;
 }
+
 
 /* STYLES TIL DEN NYE HEADER */
 
@@ -183,7 +206,6 @@ textarea {
     /* width: 14%; */
     height: 145px;
 }
-
 
 .innner_logo {
     color: red;
@@ -217,7 +239,7 @@ textarea {
     color: #D8EEEF;
     /* padding-top: 20px; */
     font-size: 18px;
-        padding: 20px 30px 30px 30px;
+    padding: 20px 30px 30px 30px;
     /* margin-bottom: 20px; */
     margin-top: 20px;
 }
@@ -261,11 +283,17 @@ textarea {
 @media (max-width: 650px) {
     .menu {
         font-size: 12px;
-        margin-top: 0px;
+        margin-top: 6px;
+        margin-right: 0px;
+        padding-right: 0px;
     }
     .logo_text {
         font-size: 24px;
         margin-top: 12px;
+    }
+
+    a{
+        padding-right: 0px;
     }
 }
 
@@ -280,7 +308,7 @@ textarea {
     padding-right: 6px;
 }
 
-.container_overskrift{
+.container_overskrift {
     margin-top: -50px;
 }
 
@@ -290,9 +318,11 @@ textarea {
 .logo_text_embed {
     cursor: pointer;
 }
+
 .inner_inputcontainer_embed_raw {
     margin: 20px;
 }
+
 .footerlinks {
     margin-left: -16px;
 }

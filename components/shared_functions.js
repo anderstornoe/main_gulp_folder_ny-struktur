@@ -1109,10 +1109,13 @@ function correct_sound() {
 // detect browser size --> opfordr brugeren til at vende sin skærm: 
 
 function rotateCheck() {
+
     var size = findBootstrapEnvironment();
     var mobile_browser = detectmob();
     //alert(size);
-    if (size == "ExtraSmall") { //} && mobile_browser) {
+    console.log("rotateCheck: " + size);
+    console.log("Window-width: " + $(window).width());
+    if (size == "ExtraSmall"){// || size == "Small") { //} && mobile_browser) {
         UserMsgBox("body", "<H3> Roter din skærm</h3><img class='img-responsive' src='../library/img/rotate_screen.png'>");
 
 
@@ -1445,14 +1448,19 @@ function ReturnURLPerameters() {
 
 
 function microhint(obj, string, multiple, color) {
+var mh_length = $(".microhint").length;
+    console.log("NYT mh length: " + mh_length);
 
     if (multiple != true) {
+        
         $(".microhint").remove();
+        console.log("multiple == false, removed mh");
+        console.log("MULTIPLE != TRUE: mh length: " + mh_length);
     }
 
     var numHints = $(".microhint").length;
 
-    console.log("NUM HINTS: " + numHints);
+    console.log("NUM HINTS: " + mh_length);
 
     var top_pos;
     var left_pos;
@@ -1480,6 +1488,7 @@ function microhint(obj, string, multiple, color) {
 
     //console.log("MHP:" + this_triangle.height() / 2);
 
+    //
     console.log("DATA: " + data);
 
     //øvre kvadrant: 
@@ -1506,23 +1515,23 @@ function microhint(obj, string, multiple, color) {
         this_triangle.css("color", color);
     }
 
-    console.log("MS LEFT + MS width" + MicroHintleft_width + "Container: " + container_right_edge);
+    //console.log("MS LEFT + MS width" + MicroHintleft_width + "Container: " + container_right_edge);
 
     /*=============================================
     =Tjek om microhint overskrider container bredde=
     =============================================*/
 
-    console.log("HALLO:" + this_microhint.width() / 2 + "px");
+    //console.log("HALLO:" + this_microhint.width() / 2 + "px");
 
-    console.log("FP:" + fluid_padding);
+    //console.log("FP:" + fluid_padding);
 
-    console.log("microhint offset: " + this_microhint.offset().left + ", FL off: " + (fluid_offset.left + fluid_padding) + ", obj" + obj.offset().left);
+    //console.log("microhint offset: " + this_microhint.offset().left + ", FL off: " + (fluid_offset.left + fluid_padding) + ", obj" + obj.offset().left);
 
     var MicroHintleft_width = this_microhint.offset().left + this_microhint.width();
 
     var container_right_edge = fluid_offset.left + fluid_padding; // + $(".container-fluid").width();
 
-    console.log("Samlet width" + (this_microhint.offset().left + this_microhint.width()) + " WINDOW WIDTH: " + $(window).width());
+    //console.log("Samlet width" + (this_microhint.offset().left + this_microhint.width()) + " WINDOW WIDTH: " + $(window).width());
 
     if (this_microhint.offset().left < 0) {
         var neg_offset = Math.abs(this_microhint.offset().left);
@@ -1544,11 +1553,11 @@ function microhint(obj, string, multiple, color) {
     }
 
     function fadeOutMH() {
-        this_microhint.fadeOut("slow", function() {
+        //this_microhint.fadeOut("slow", function() {
             this_microhint.remove();
-            console.log("DET ER MIG DER FADER!");
+          console.log("attempt to remove MH");
             $("body").click(fadeOutMH).off();
-        });
+        //});
     };
 
     /* if ($(".microhint").offset().left < (fluid_offset.left + fluid_padding)) {
@@ -1576,6 +1585,7 @@ function microhint(obj, string, multiple, color) {
     /*=====  End of Section comment block  ======*/
 
     this_microhint.find(".label").css("width", "100%");
+    console.log("NUM HINTS: " + mh_length);
 };
 
 
