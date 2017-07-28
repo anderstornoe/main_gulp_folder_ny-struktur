@@ -9,7 +9,7 @@
 // }
 
 function visningssite_wrapping() {
-    console.log("wrapping ongoing");
+    console.log("wrapping ongoging");
 }
 
 
@@ -1539,7 +1539,7 @@ var mh_length = $(".microhint").length;
         //$(".triangle").css("left", $("") + "px");
 
     } else if (MicroHintleft_width + container_right_edge > $(window).width()) {
-        var new_pos = $(window).width() - this_microhint.width();
+        var new_pos = $(window).width() - (this_microhint.width() + 20);
         console.log("EXCEEDING WIDTH: " + new_pos);
         this_microhint.css("left", new_pos - 60 + "px");
 
