@@ -1547,7 +1547,8 @@ var mh_length = $(".microhint").length;
 
     if (multiple != true) {
         setTimeout(function() {
-            $("body").click(fadeOutMH);
+            $(".microhint").on('touchend click',(fadeOutMH));
+
 
         }, 100);
     }
@@ -1556,7 +1557,9 @@ var mh_length = $(".microhint").length;
         //this_microhint.fadeOut("slow", function() {
             this_microhint.remove();
           console.log("attempt to remove MH");
-            $("body").click(fadeOutMH).off();
+            $(".microhint").on('touchend click',function(){
+                (fadeOutMH).off();
+            });
         //});
     };
 
@@ -1684,5 +1687,78 @@ function google_analytics() {
 }
 
 
-
 /*=====  End of Google Analytics new 2017 (maj)  ======*/
+
+/*=============================================
+=            TESKTFORKLARING   =
+=============================================*/
+/**
+ *
+ * Anvendes til at lægge forklarings links på udvalget ord i en given tekst(tekstcontainer). 
+ * Forklaringsordene skal ligge i et dataArray som er formatteret eks sådan:
+ 
+EKSEMPEL: 
+ * "forklaringer": [
+        ["fællesbopæl","Når en række individer bor under samme tag / teltdug eller lignende."],
+        ["efterspørgsel","Hvor stor er ønsket fra forbrugeren efter produktet."]
+    ],
+ 
+ANVENDT EKSEMPEL: http://localhost:8080/samf_okokreds/okosystem.html 
+
+ */
+
+
+function tekst_forklaring (tekstcontainer, dataArray){
+
+//Loop igennem tekstcontaineren og led efter ord, der findes i array'et: 
+var html = tekstcontainer.html(); 
+  for (var i = 0; i < dataArray.length; i++) {
+
+    var searchword = dataArray[i][0];
+
+    html = html.replace(searchword, "delimitter_" + i);
+  }
+
+  for (var i = 0; i < dataArray.length; i++) {
+    var searchword = dataArray[i][0];
+
+    var delimiter = "delimitter_" + i;
+
+    //html.replace(/(er)/g, '<span class="smallcaps">HEJ EHJ</span>');
+
+    html = html.replace(delimiter, "<a class='forklaring'>" + searchword +"</a>");
+
+    tekstcontainer.html(html);
+
+
+
+  }
+
+
+$(".forklaring").click(function() {
+        var clicked_word = ($(this).text().toString());
+        var forklaring = "";
+
+        for (var i = 0; i < dataArray.length; i++) {
+
+            console.log(dataArray[i][0] + ", " + clicked_word)
+            if (dataArray[i][0].toString() == clicked_word) {
+
+
+                forklaring = dataArray[i][1].toString();
+            }
+            if (forklaring == "") {
+                forklaring = "Forklaring findes ikke";
+            }
+        }
+
+        microhint($(this), "<b class='clicked_word'>" + clicked_word + "</b><br/>" + forklaring);
+
+        window.onscroll = function(e) {
+            $(".microhint").fadeOut(200, function() { $(this).remove() });
+        }
+    });
+}
+
+
+/*=====  End of Section comment block  TEKSTFORKLARING ======*/
