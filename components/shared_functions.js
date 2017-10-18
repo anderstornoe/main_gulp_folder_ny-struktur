@@ -1716,13 +1716,25 @@ var html = tekstcontainer.html();
 
     var searchword = dataArray[i][0];
 
+    console.log("searchword: " + searchword)
+
     html = html.replace(searchword, "delimitter_" + i);
   }
 
-  for (var i = 0; i < dataArray.length; i++) {
+  for (var i = dataArray.length-1; i > 0; i--) {
     var searchword = dataArray[i][0];
 
     var delimiter = "delimitter_" + i;
+
+
+//Plan at forfine forklaringsmaskine, så den understreger HELE ordet  
+    var indeks = tekstcontainer.text().indexOf(delimiter);
+
+// VI SER På det når der er tid ... 
+
+
+
+    console.log("searchword: " + searchword + ", delimiter: " + delimiter + "indeks: " + indeks);
 
     //html.replace(/(er)/g, '<span class="smallcaps">HEJ EHJ</span>');
 
@@ -1736,13 +1748,13 @@ var html = tekstcontainer.html();
 
 
 $(".forklaring").click(function() {
-        var clicked_word = ($(this).text().toString());
+        var clicked_word = ($(this).text().toString().toLowerCase());
         var forklaring = "";
 
         for (var i = 0; i < dataArray.length; i++) {
 
             console.log(dataArray[i][0] + ", " + clicked_word)
-            if (dataArray[i][0].toString() == clicked_word) {
+            if (dataArray[i][0].toString().toLowerCase() == clicked_word) {
 
 
                 forklaring = dataArray[i][1].toString();
