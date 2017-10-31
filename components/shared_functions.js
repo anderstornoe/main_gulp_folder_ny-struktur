@@ -1115,7 +1115,7 @@ function rotateCheck() {
     //alert(size);
     console.log("rotateCheck: " + size);
     console.log("Window-width: " + $(window).width());
-    if (size == "ExtraSmall"){// || size == "Small") { //} && mobile_browser) {
+    if (size == "ExtraSmall") { // || size == "Small") { //} && mobile_browser) {
         UserMsgBox("body", "<H3> Roter din skærm</h3><img class='img-responsive' src='../library/img/rotate_screen.png'>");
 
 
@@ -1408,7 +1408,7 @@ function getUrlVars() {
 ================================================*/
 
 function ReturnURLPerameters() {
-	var UlrVarObj = {};
+    var UlrVarObj = {};
     var UrlVarStr = window.location.search.substring(1);
     console.log("ReturnURLPerameters - UrlVarStr: " + UrlVarStr);
     var UrlVarPairArray = decodeURIComponent(UrlVarStr).split("&"); // decodeURIComponent handles %26" for the char "&" AND "%3D" for the char "=".
@@ -1448,11 +1448,11 @@ function ReturnURLPerameters() {
 
 
 function microhint(obj, string, multiple, color) {
-var mh_length = $(".microhint").length;
+    var mh_length = $(".microhint").length;
     console.log("NYT mh length: " + mh_length);
 
     if (multiple != true) {
-        
+
         $(".microhint").remove();
         console.log("multiple == false, removed mh");
         console.log("MULTIPLE != TRUE: mh length: " + mh_length);
@@ -1547,7 +1547,7 @@ var mh_length = $(".microhint").length;
 
     if (multiple != true) {
         setTimeout(function() {
-            $(".microhint").on('touchend click',(fadeOutMH));
+            $(".microhint").on('touchend click', (fadeOutMH));
 
 
         }, 100);
@@ -1555,11 +1555,11 @@ var mh_length = $(".microhint").length;
 
     function fadeOutMH() {
         //this_microhint.fadeOut("slow", function() {
-            this_microhint.remove();
-          console.log("attempt to remove MH");
-            $(".microhint").on('touchend click',function(){
-                (fadeOutMH).off();
-            });
+        this_microhint.remove();
+        console.log("attempt to remove MH");
+        $(".microhint").on('touchend click', function() {
+            (fadeOutMH).off();
+        });
         //});
     };
 
@@ -1708,46 +1708,46 @@ ANVENDT EKSEMPEL: http://localhost:8080/samf_okokreds/okosystem.html
  */
 
 
-function tekst_forklaring (tekstcontainer, dataArray){
+function tekst_forklaring(tekstcontainer, dataArray) {
 
-//Loop igennem tekstcontaineren og led efter ord, der findes i array'et: 
-var html = tekstcontainer.html(); 
-  for (var i = 0; i < dataArray.length; i++) {
+    //Loop igennem tekstcontaineren og led efter ord, der findes i array'et: 
+    var html = tekstcontainer.html();
+    for (var i = 0; i < dataArray.length; i++) {
 
-    var searchword = dataArray[i][0];
+        var searchword = dataArray[i][0];
 
-    console.log("searchword: " + searchword)
+        console.log("searchword: " + searchword)
 
-    html = html.replace(searchword, "delimitter_" + i);
-  }
+        html = html.replace(searchword, "delimitter_" + i);
+    }
 
-  for (var i = dataArray.length-1; i > 0; i--) {
-    var searchword = dataArray[i][0];
+    for (var i = dataArray.length - 1; i > -1; i--) {
+        var searchword = dataArray[i][0];
 
-    var delimiter = "delimitter_" + i;
-
-
-//Plan at forfine forklaringsmaskine, så den understreger HELE ordet  
-    var indeks = tekstcontainer.text().indexOf(delimiter);
-
-// VI SER På det når der er tid ... 
+        var delimiter = "delimitter_" + i;
 
 
+        //Plan at forfine forklaringsmaskine, så den understreger HELE ordet  
+        var indeks = tekstcontainer.text().indexOf(delimiter);
 
-    console.log("searchword: " + searchword + ", delimiter: " + delimiter + "indeks: " + indeks);
-
-    //html.replace(/(er)/g, '<span class="smallcaps">HEJ EHJ</span>');
-
-    html = html.replace(delimiter, "<a class='forklaring'>" + searchword +"</a>");
-
-    tekstcontainer.html(html);
+        // VI SER På det når der er tid ... 
 
 
 
-  }
+        console.log("searchword: " + searchword + ", delimiter: " + delimiter + "indeks: " + indeks);
+
+        //html.replace(/(er)/g, '<span class="smallcaps">HEJ EHJ</span>');
+
+        html = html.replace(delimiter, "<a class='forklaring'>" + searchword + "</a>");
+
+        tekstcontainer.html(html);
 
 
-$(".forklaring").click(function() {
+
+    }
+
+
+    $(".forklaring").click(function() {
         var clicked_word = ($(this).text().toString().toLowerCase());
         var forklaring = "";
 
@@ -1773,4 +1773,23 @@ $(".forklaring").click(function() {
 }
 
 
+
 /*=====  End of Section comment block  TEKSTFORKLARING ======*/
+
+// AUTOSAVE FUNKTION: 
+
+function saveTimer() {
+    var saveTimer;
+
+    $(document).keypress(function() {
+        //var saveTimer;
+        clearTimeout(saveTimer)
+        saveTimer = setTimeout(function() { console.log("Slut med det!"); }, 1000);
+        //console.log("hej");
+    });
+
+}
+
+
+//
+//$("input").f
