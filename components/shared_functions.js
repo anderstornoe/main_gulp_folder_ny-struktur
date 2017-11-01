@@ -253,6 +253,18 @@ function UserMsgBox_xclick(TargetSelector, UserMsg) {
 }
 
 
+function UserMsgBox_video(src) {
+
+    var HTML = '<div id="video_1" class="video embed-responsive embed-responsive-16by9 col-xs-12 col-md-12"><iframe class="embed-responsive-item" src="'+src+'?iv_load_policy=3&amp;modestbranding=1&amp;showinfo=0&amp;autohide=1&amp;rel=0" allowfullscreen="1" frameborder="0"></iframe></div>';
+    UserMsgBox_xclick('body', HTML);
+
+    $('.MsgBox_bgr').addClass('MsgBox_bgr_video');
+    $('#UserMsgBox').attr('id', 'UserMsgBox_video');
+
+    // $('MsgBox_bgr_video').hide().fadeIn();
+}
+
+
 
 /// INDLEJLRING SLUT !
 
