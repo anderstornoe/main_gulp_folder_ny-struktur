@@ -1778,17 +1778,37 @@ function tekst_forklaring(tekstcontainer, dataArray) {
 
 // AUTOSAVE FUNKTION: 
 
-function saveTimer() {
+function saveTimerUsrMsg() {
     var saveTimer;
 
+    $("body").append("<div class='saveTimerUsrMsg'>Gemmer...</div>")
+
+    $(".saveTimerUsrMsg").fadeOut(0);
+
     $(document).keypress(function() {
+        $(".saveTimerUsrMsg").html("Gemmer...")
+    
+    $(".saveTimerUsrMsg").fadeIn(0);        
         //var saveTimer;
         clearTimeout(saveTimer)
-        saveTimer = setTimeout(function() { console.log("Slut med det!"); }, 1000);
+        saveTimer = setTimeout(function() { 
+
+            savefeedback();
+            console.log("Slut med det!"); }, 2000);
         //console.log("hej");
     });
 
 }
+
+function savefeedback(){
+    $(".saveTimerUsrMsg").html("Ændringer er gemt");
+        $(".saveTimerUsrMsg").animate({
+        width: "100%"
+    }, 700, function() {
+   $(".saveTimerUsrMsg").css("width", "auto").fadeOut(0);
+
+    });
+} 
 
 
 //
