@@ -1127,7 +1127,7 @@ function rotateCheck() {
     //alert(size);
     console.log("rotateCheck: " + size);
     console.log("Window-width: " + $(window).width());
-    if (size == "ExtraSmall"){// || size == "Small") { //} && mobile_browser) {
+    if (size == "ExtraSmall") { // || size == "Small") { //} && mobile_browser) {
         UserMsgBox("body", "<H3> Roter din skærm</h3><img class='img-responsive' src='../library/img/rotate_screen.png'>");
 
 
@@ -1420,7 +1420,7 @@ function getUrlVars() {
 ================================================*/
 
 function ReturnURLPerameters() {
-	var UlrVarObj = {};
+    var UlrVarObj = {};
     var UrlVarStr = window.location.search.substring(1);
     console.log("ReturnURLPerameters - UrlVarStr: " + UrlVarStr);
     var UrlVarPairArray = decodeURIComponent(UrlVarStr).split("&"); // decodeURIComponent handles %26" for the char "&" AND "%3D" for the char "=".
@@ -1460,11 +1460,11 @@ function ReturnURLPerameters() {
 
 
 function microhint(obj, string, multiple, color) {
-var mh_length = $(".microhint").length;
+    var mh_length = $(".microhint").length;
     console.log("NYT mh length: " + mh_length);
 
     if (multiple != true) {
-        
+
         $(".microhint").remove();
         console.log("multiple == false, removed mh");
         console.log("MULTIPLE != TRUE: mh length: " + mh_length);
@@ -1559,16 +1559,19 @@ var mh_length = $(".microhint").length;
 
     if (multiple != true) {
         setTimeout(function() {
-            $("body").click(fadeOutMH);
+            $(".microhint").on('touchend click', (fadeOutMH));
+
 
         }, 100);
     }
 
     function fadeOutMH() {
         //this_microhint.fadeOut("slow", function() {
-            this_microhint.remove();
-          console.log("attempt to remove MH");
-            $("body").click(fadeOutMH).off();
+        this_microhint.remove();
+        console.log("attempt to remove MH");
+        $(".microhint").on('touchend click', function() {
+            (fadeOutMH).off();
+        });
         //});
     };
 
@@ -1696,5 +1699,129 @@ function google_analytics() {
 }
 
 
-
 /*=====  End of Google Analytics new 2017 (maj)  ======*/
+
+/*=============================================
+=            TESKTFORKLARING   =
+=============================================*/
+/**
+ *
+ * Anvendes til at lægge forklarings links på udvalget ord i en given tekst(tekstcontainer). 
+ * Forklaringsordene skal ligge i et dataArray som er formatteret eks sådan:
+ 
+EKSEMPEL: 
+ * "forklaringer": [
+        ["fællesbopæl","Når en række individer bor under samme tag / teltdug eller lignende."],
+        ["efterspørgsel","Hvor stor er ønsket fra forbrugeren efter produktet."]
+    ],
+ 
+ANVENDT EKSEMPEL: http://localhost:8080/samf_okokreds/okosystem.html 
+
+ */
+
+
+function tekst_forklaring(tekstcontainer, dataArray) {
+
+    //Loop igennem tekstcontaineren og led efter ord, der findes i array'et: 
+    var html = tekstcontainer.html();
+    for (var i = 0; i < dataArray.length; i++) {
+
+        var searchword = dataArray[i][0];
+
+        console.log("searchword: " + searchword)
+
+        html = html.replace(searchword, "delimitter_" + i);
+    }
+
+    for (var i = dataArray.length - 1; i > -1; i--) {
+        var searchword = dataArray[i][0];
+
+        var delimiter = "delimitter_" + i;
+
+
+        //Plan at forfine forklaringsmaskine, så den understreger HELE ordet  
+        var indeks = tekstcontainer.text().indexOf(delimiter);
+
+        // VI SER På det når der er tid ... 
+
+
+
+        console.log("searchword: " + searchword + ", delimiter: " + delimiter + "indeks: " + indeks);
+
+        //html.replace(/(er)/g, '<span class="smallcaps">HEJ EHJ</span>');
+
+        html = html.replace(delimiter, "<a class='forklaring'>" + searchword + "</a>");
+
+        tekstcontainer.html(html);
+
+
+
+    }
+
+
+    $(".forklaring").click(function() {
+        var clicked_word = ($(this).text().toString().toLowerCase());
+        var forklaring = "";
+
+        for (var i = 0; i < dataArray.length; i++) {
+
+            console.log(dataArray[i][0] + ", " + clicked_word)
+            if (dataArray[i][0].toString().toLowerCase() == clicked_word) {
+
+
+                forklaring = dataArray[i][1].toString();
+            }
+            if (forklaring == "") {
+                forklaring = "Forklaring findes ikke";
+            }
+        }
+
+        microhint($(this), "<b class='clicked_word'>" + clicked_word + "</b><br/>" + forklaring);
+
+        window.onscroll = function(e) {
+            $(".microhint").fadeOut(200, function() { $(this).remove() });
+        }
+    });
+}
+
+
+
+/*=====  End of Section comment block  TEKSTFORKLARING ======*/
+
+// AUTOSAVE FUNKTION: 
+
+function saveTimerUsrMsg() {
+    var saveTimer;
+
+    $("body").append("<div class='saveTimerUsrMsg'>Gemmer...</div>")
+
+    $(".saveTimerUsrMsg").fadeOut(0);
+
+    $(document).keypress(function() {
+        $(".saveTimerUsrMsg").html("Gemmer...")
+    
+    $(".saveTimerUsrMsg").fadeIn(0);        
+        //var saveTimer;
+        clearTimeout(saveTimer)
+        saveTimer = setTimeout(function() { 
+
+            savefeedback();
+            console.log("Slut med det!"); }, 2000);
+        //console.log("hej");
+    });
+
+}
+
+function savefeedback(){
+    $(".saveTimerUsrMsg").html("Ændringer er gemt");
+        $(".saveTimerUsrMsg").animate({
+        width: "100%"
+    }, 700, function() {
+   $(".saveTimerUsrMsg").css("width", "auto").fadeOut(0);
+
+    });
+} 
+
+
+//
+//$("input").f

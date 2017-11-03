@@ -384,3 +384,24 @@ audio::-webkit-media-controls-panel {
 }
 
 /* SKJUL DOWNLOAD KNAPPEN SLUT*/
+
+
+/*FORKLARING CSS*/
+
+.forklaring{
+    cursor: pointer;
+}
+
+/**/
+
+.saveTimerUsrMsg{
+   background-color: rgba(225,225,225,.7);
+    position: fixed;
+    height: 20px;
+    bottom: 0px;
+    font-size: 12px;
+    padding: 0px 9px 2px 6px;
+    min-width: 130px;
+    border-radius: 0px 4px 0px 0px;
+    color: #777;
+}
