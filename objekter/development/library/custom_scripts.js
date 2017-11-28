@@ -1766,9 +1766,11 @@ function tekst_forklaring(tekstcontainer, dataArray) {
 
         microhint($(this), "<b class='clicked_word'>" + clicked_word + "</b><br/>" + forklaring);
 
+        
+    // Tilføjet forklaring til klassen microhint, for at kunne fjerne forklaringer mere smooth 
         var ml = $(".microhint").length-1;
-
         $(".microhint").eq(ml).addClass("forklaring")
+    // ATO 25/11 
 
         window.onscroll = function(e) {
             $(".microhint").fadeOut(200, function() { $(this).remove() });
