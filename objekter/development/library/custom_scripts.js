@@ -1766,6 +1766,10 @@ function tekst_forklaring(tekstcontainer, dataArray) {
 
         microhint($(this), "<b class='clicked_word'>" + clicked_word + "</b><br/>" + forklaring);
 
+        var ml = $(".microhint").length-1;
+
+        $(".microhint").eq(ml).addClass("forklaring")
+
         window.onscroll = function(e) {
             $(".microhint").fadeOut(200, function() { $(this).remove() });
         }
