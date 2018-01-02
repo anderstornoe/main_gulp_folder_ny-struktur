@@ -254,7 +254,8 @@
 .instruktion_noLines {
     border: none;
     font-weight: 500;
-    padding-top: 0px
+    padding-top: 0px;
+    margin-left: -15px;
 }
 
 .instruktion_noLines:before {
