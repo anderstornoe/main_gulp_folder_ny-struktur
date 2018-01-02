@@ -1047,6 +1047,19 @@ function instruction_8col(instructionText) {
     return HTML;
 }
 
+// Tilføjet af THAN d. 02-01-2018
+function instruction_noLines(instructionText) {
+    var HTML = '<div class="col-xs-12 col-md-8">';
+    HTML += '<h4 class="instruktion instruktion_noLines">';
+    HTML += '<div class="col-xs-1  glyphicon glyphicon-arrow-right"></div>';
+    HTML += '<div class="col-xs-11  instructionText">' + instructionText + '</div>';
+    HTML += '</h4>';
+    HTML += '</div>';
+    HTML += '<div class="col-xs-12"></div>';
+
+    return HTML;
+}
+
 
 function explanation(explanationText) {
     var HTML = '<div class="explanation col-xs-12 col-md-8">';

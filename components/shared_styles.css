@@ -249,6 +249,23 @@
 }
 
 
+/* ".instruction_noLines" tilføjet af THAN d. 02-01-2018  */
+
+.instruktion_noLines {
+    border: none;
+    font-weight: 500;
+    padding-top: 0px
+}
+
+.instruktion_noLines:before {
+    border: none;
+}
+
+.instruktion_noLines h4 {
+    margin-top: 0px; 
+}
+
+
 /*Denne style anvendes i videquizzerne, er vist blevet slettet ved en fejl.. */
 
 

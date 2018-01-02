@@ -160,7 +160,7 @@
          .pipe(gulp.dest('objekter/production/' + objDistFolder))
 
      gulp.src("objekter/production/" + objSrcFolder + "/*.js")
-        .pipe(uglify())   // Kommenteret ud af THAN d. 25/9-2017 for fejlsøgning i Internet Explorer på live server.
+         .pipe(uglify())   // Kommenteret ud af THAN d. 25/9-2017 for fejlsøgning i Internet Explorer på live server.
         // .pipe(stripDebug())
          .pipe(gulp.dest('objekter/production/' + objDistFolder))
 
