@@ -76,6 +76,12 @@ function embedlink(obj) {
     var HrefObj = obj.parent().parent().find("a").eq(0).attr("href").replace("../", "/");
     console.log("embedlink - HrefObj: " + HrefObj);
 
+    HrefObj = HrefObj.replace("https://elearning.kvuc.dk", "");
+
+
+
+    console.log("HrefObj: " + HrefObj);
+
     var embedFronter = '<iframe height="570" width="100%" frameborder="0" src="' + UrlVarStr + HrefObj + '"></iframe>';
     // <<<<<<< HEAD
     var embedMoodle = embedFronter; //'<embed height="670" width="100%" src="' + UrlVarStr + HrefObj + '"></embed>';
@@ -117,6 +123,8 @@ function embedlink(obj) {
                 obj.parent().parent().append(embedwrapping);
                 $(".embedToggle").slideUp(0);
                 $(".embedToggle").slideDown("slow");
+
+                console.log("ToggleDown");
                 $(".tab").click(function() {
 
                     var indeks = $(this).index();
@@ -127,6 +135,9 @@ function embedlink(obj) {
                 });
 
             });
+
+               $(".thumbnail").removeClass("blurred_embed");
+            obj.parent().parent().parent().parent().addClass("blurred_embed");
             //
 
         } else {
@@ -134,6 +145,9 @@ function embedlink(obj) {
             obj.parent().parent().append(embedwrapping);
             $(".embedToggle").slideUp(0);
             $(".embedToggle").slideDown("slow");
+
+
+
             $(".tab").click(function() {
 
                 var indeks = $(this).index();
@@ -142,6 +156,10 @@ function embedlink(obj) {
                 //alert (indeks);
                 changeLink(indeks);
             });
+
+            $(".thumbnail").removeClass("blurred_embed");
+            obj.parent().parent().parent().parent().addClass("blurred_embed");
+
         }
         //alert(obj.parent().html());
     }
