@@ -78,9 +78,9 @@ function header_new() {
 
     HTML += '<div class="top_header ">'
     HTML += '<div class="container-fluid">'
-    HTML += '<div class="col-xs-6">';
-    HTML += '<a href="https://www.vucdigital.dk/search/"><div class="innner_logo"> <img class="v_logo" src="https://www.vucdigital.dk/search/img/VucdigitalLOGO_forHeader.svg"> </a><div>';
-    HTML += '<span class="logo_text">vucdigital.dk</span>';
+    HTML += '<a href="https://www.vucdigital.dk/search/"><div class="col-xs-6">';
+    HTML += '<div class="innner_logo"> <img class="v_logo" src="https://www.vucdigital.dk/search/img/VucdigitalLOGO_forHeader.svg"> </a><div>';
+    HTML += '<span class="logo_text">vucdigital.dk</span></a>';
     HTML += '</div> </div>';
     HTML += '<div class="txt_container"> </div>'
     HTML += '</div>';

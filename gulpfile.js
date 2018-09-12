@@ -30,7 +30,8 @@
          'bower_components/jquery-svg-pan-zoom/compiled/jquery.svg.pan.zoom.js',
          'bower_components/paper/dist/paper-full.js',
          'bower_components/clipboard/dist/clipboard.min.js',
-         'bower_components/qtip2/jquery.qtip.js'
+         'bower_components/qtip2/jquery.qtip.js',
+         'bower_components/vue/dist/vue.min.js'
 
 
      ],
@@ -192,7 +193,7 @@
      var conn = ftp.create({
          host: 'u13dfs6.nixweb09.dandomain.dk',
          user: 'u13dfs6',
-         password: 'x3pXLTtVY',
+         password: '3UbsUzvM8',
          parallel: 3,
          log: gutil.log
      });

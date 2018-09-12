@@ -97,7 +97,7 @@ function embedlink(obj) {
     var embedArray = [embedFronter, embedMoodle];
 
     //var embedwrapping = "<div class='embedToggle'><p>Indsæt dette link i dit LMS eller på din webside</p><input class='embedtext' type='text' value='" + embedArray[0] + "'></input><div class='tabcontainer'><div class='tab_1 tab activetab'>Moodle</div><div class='tab_2 tab'>Fronter</div></div><div class='togglecontainer'><a class='MetaDataLink' href='https://www.youtube.com/watch?v=0cKkCRRTC_c'>Hjælp til indlejring i Moodle </a></div></div>";
-    var embedwrapping = "<div class='embedToggle'><p>Indsæt dette link i dit LMS eller på din webside</p><input class='embedtext' type='text' value='" + embedArray[0] + "'></input><a class='MetaDataLink' target='_blank' href='https://www.youtube.com/watch?v=0cKkCRRTC_c'>Hjælp til indlejring i Moodle </a><a class='MetaDataLink' target='_blank' href='https://www.youtube.com/embed/kUsW0vEXeF4'>Hjælp til indlejring i Fronter </a></div></div>";
+    var embedwrapping = "<div class='embedToggle'><p>Indsæt dette link i dit LMS eller på din webside</p><input class='embedtext' type='text' value='" + embedArray[0] + "'></input><a class='MetaDataLink' target='_blank' href='https://www.youtube.com/watch?v=7lebfIPvWJk'>Hjælp til indlejring i Moodle </a><a class='MetaDataLink' target='_blank' href='https://www.youtube.com/embed/kUsW0vEXeF4'>Hjælp til indlejring i Fronter </a></div></div>";
 
     var embedWidth;
     var embedHeight;
@@ -1512,7 +1512,7 @@ function microhint(obj, string, multiple, color) {
 
     //$(".microhint").remove();
 
-    $("body").append("<div class='microhint'>" + string + "<span class='glyphicon triangle glyphicon  glyphicon-arrow-up'></span><div class='microhint_close'><span class='glyphicon glyphicon-remove'></span></div></div>");
+    $("body").append("<div class='microhint'><span class='mh_text'>"+  string + "</span><div class='mh_bgr'></div><span class='glyphicon triangle glyphicon  glyphicon-arrow-up'></span><div class='microhint_close'><span class='glyphicon glyphicon-remove'></span></div></div>");
 
 
     $(".microhint").draggable();
