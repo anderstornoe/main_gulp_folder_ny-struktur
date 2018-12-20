@@ -31,7 +31,9 @@
          'bower_components/paper/dist/paper-full.js',
          'bower_components/clipboard/dist/clipboard.min.js',
          'bower_components/qtip2/jquery.qtip.js',
-         'bower_components/vue/dist/vue.min.js'
+         'bower_components/vue/dist/vue.min.js',
+         'bower_components/anyresize/any-resize-event.js'
+
 
 
      ],

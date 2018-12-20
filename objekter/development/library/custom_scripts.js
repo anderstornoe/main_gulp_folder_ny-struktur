@@ -82,9 +82,10 @@ function embedlink(obj) {
 
     console.log("HrefObj: " + HrefObj);
 
-    var embedFronter = '<iframe height="570" width="100%" frameborder="0" src="' + UrlVarStr + HrefObj + '"></iframe>';
+    var embedFronter = '<script src="https://www.vucdigital.dk/iframe.js" data="'+ UrlVarStr + HrefObj +'"></script>';
+    var embedMoodle = '<iframe height="570" width="100%" frameborder="0" allow="microphone" src="' + UrlVarStr + HrefObj + '"></iframe>';
     // <<<<<<< HEAD
-    var embedMoodle = embedFronter; //'<embed height="670" width="100%" src="' + UrlVarStr + HrefObj + '"></embed>';
+    //var embedMoodle = embedFronter; //'<embed height="670" width="100%" src="' + UrlVarStr + HrefObj + '"></embed>';
     // =======
     // var embedMoodle = '<embed height="670" width="970" src="' + UrlVarStr + HrefObj + '"></embed>';
     // >>>>>>> 74fec925709b0def67b697ad47831c62fd4ebf36
@@ -97,7 +98,7 @@ function embedlink(obj) {
     var embedArray = [embedFronter, embedMoodle];
 
     //var embedwrapping = "<div class='embedToggle'><p>Indsæt dette link i dit LMS eller på din webside</p><input class='embedtext' type='text' value='" + embedArray[0] + "'></input><div class='tabcontainer'><div class='tab_1 tab activetab'>Moodle</div><div class='tab_2 tab'>Fronter</div></div><div class='togglecontainer'><a class='MetaDataLink' href='https://www.youtube.com/watch?v=0cKkCRRTC_c'>Hjælp til indlejring i Moodle </a></div></div>";
-    var embedwrapping = "<div class='embedToggle'><p>Indsæt dette link i dit LMS eller på din webside</p><input class='embedtext' type='text' value='" + embedArray[0] + "'></input><a class='MetaDataLink' target='_blank' href='https://www.youtube.com/watch?v=7lebfIPvWJk'>Hjælp til indlejring i Moodle </a><a class='MetaDataLink' target='_blank' href='https://www.youtube.com/embed/kUsW0vEXeF4'>Hjælp til indlejring i Fronter </a></div></div>";
+    var embedwrapping = "<div class='embedToggle'><p>Indsæt dette link i dit LMS eller på din webside</p><p>Responsiv højde:</p><input class='embedtext' type='text' value='" + embedArray[0] + "'><br/></input><p><br/>Fast højde:</p><input class='embedtext' type='text' value='" + embedArray[1] + "'></input><a class='MetaDataLink' target='_blank' href='https://www.youtube.com/watch?v=7lebfIPvWJk'>Hjælp til indlejring i Moodle </a><a class='MetaDataLink' target='_blank' href='https://www.youtube.com/embed/kUsW0vEXeF4'>Hjælp til indlejring i Fronter </a></div></div>";
 
     var embedWidth;
     var embedHeight;
@@ -136,7 +137,7 @@ function embedlink(obj) {
 
             });
 
-               $(".thumbnail").removeClass("blurred_embed");
+            $(".thumbnail").removeClass("blurred_embed");
             obj.parent().parent().parent().parent().addClass("blurred_embed");
             //
 
@@ -273,7 +274,7 @@ function UserMsgBox_xclick(TargetSelector, UserMsg) {
 
 function UserMsgBox_video(src) {
 
-    var HTML = '<div id="video_1" class="video embed-responsive embed-responsive-16by9 col-xs-12 col-md-12"><iframe class="embed-responsive-item" src="'+src+'?iv_load_policy=3&amp;modestbranding=1&amp;showinfo=0&amp;autohide=1&amp;rel=0" allowfullscreen="1" frameborder="0"></iframe></div>';
+    var HTML = '<div id="video_1" class="video embed-responsive embed-responsive-16by9 col-xs-12 col-md-12"><iframe class="embed-responsive-item" src="' + src + '?iv_load_policy=3&amp;modestbranding=1&amp;showinfo=0&amp;autohide=1&amp;rel=0" allowfullscreen="1" frameborder="0"></iframe></div>';
     UserMsgBox_xclick('body', HTML);
 
     $('.MsgBox_bgr').addClass('MsgBox_bgr_video');
@@ -1512,7 +1513,7 @@ function microhint(obj, string, multiple, color) {
 
     //$(".microhint").remove();
 
-    $("body").append("<div class='microhint'><span class='mh_text'>"+  string + "</span><div class='mh_bgr'></div><span class='glyphicon triangle glyphicon  glyphicon-arrow-up'></span><div class='microhint_close'><span class='glyphicon glyphicon-remove'></span></div></div>");
+    $("body").append("<div class='microhint'><span class='mh_text'>" + string + "</span><div class='mh_bgr'></div><span class='glyphicon triangle glyphicon  glyphicon-arrow-up'></span><div class='microhint_close'><span class='glyphicon glyphicon-remove'></span></div></div>");
 
 
     $(".microhint").draggable();
@@ -1809,11 +1810,11 @@ function tekst_forklaring(tekstcontainer, dataArray) {
 
         microhint($(this), "<b class='clicked_word'>" + clicked_word + "</b><br/>" + forklaring);
 
-        
-    // Tilføjet forklaring til klassen microhint, for at kunne fjerne forklaringer mere smooth 
-        var ml = $(".microhint").length-1;
+
+        // Tilføjet forklaring til klassen microhint, for at kunne fjerne forklaringer mere smooth 
+        var ml = $(".microhint").length - 1;
         $(".microhint").eq(ml).addClass("forklaring")
-    // ATO 25/11 
+            // ATO 25/11 
 
         window.onscroll = function(e) {
             $(".microhint").fadeOut(200, function() { $(this).remove() });
@@ -1836,29 +1837,71 @@ function saveTimerUsrMsg() {
 
     $(document).keypress(function() {
         $(".saveTimerUsrMsg").html("Gemmer...")
-    
-    $(".saveTimerUsrMsg").fadeIn(0);        
+
+        $(".saveTimerUsrMsg").fadeIn(0);
         //var saveTimer;
         clearTimeout(saveTimer)
-        saveTimer = setTimeout(function() { 
+        saveTimer = setTimeout(function() {
 
             savefeedback();
-            console.log("Slut med det!"); }, 2000);
+            console.log("Slut med det!");
+        }, 2000);
         //console.log("hej");
     });
 
 }
 
-function savefeedback(){
+function savefeedback() {
     $(".saveTimerUsrMsg").html("Ændringer er gemt");
-        $(".saveTimerUsrMsg").animate({
+    $(".saveTimerUsrMsg").animate({
         width: "100%"
     }, 700, function() {
-   $(".saveTimerUsrMsg").css("width", "auto").fadeOut(0);
+        $(".saveTimerUsrMsg").css("width", "auto").fadeOut(0);
 
     });
-} 
-
+}
 
 //
 //$("input").f
+
+
+/*=================================================
+=            Automatic resize function            =
+=================================================*/
+
+
+
+/*=====  End of Automatic resize function  ======*/
+
+
+
+
+function iframeResize() {
+    var height = 15 + $('body').innerHeight(); // IMPORTANT: If body's height is set to 100% with CSS this will not work.
+    //console.log("height: " + height)
+    //parent.postMessage("resize::" + height, "*");
+    //var pathname = window.location.pathname;
+    var url = window.location.pathname + window.location.search;
+    url = url.replace(/\W/g, '');
+
+    //console.log("URL FRA SHARED: " + url + "height fra shared: " + height);
+
+    parent.postMessage("url::" + url + "|resize::" + height, "*");
+    //parent.postMessage("url::" + url, "*");
+
+}
+
+$(document).ready(function() {
+    iframeResize();
+    //setInterval(iframeResize, 400);
+    var doc_body = document.body;
+    doc_body.addEventListener('onresize', function() {
+        iframeResize();
+        //console.log("Calling iframe");
+    });
+});
+
+/*$(window).resize(function() {
+    console.log("<div>Handler for .resize() called.</div>");
+    iframeResize();
+});*/
