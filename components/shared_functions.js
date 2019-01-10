@@ -8,6 +8,9 @@
 //     return replaced_string;
 // }
 
+console.log("hejsa!");
+
+
 function visningssite_wrapping() {
     console.log("wrapping ongoging");
 }
@@ -82,7 +85,7 @@ function embedlink(obj) {
 
     console.log("HrefObj: " + HrefObj);
 
-    var embedFronter = '<script src="https://www.vucdigital.dk/iframe.js" data="'+ UrlVarStr + HrefObj +'"></script>';
+    var embedFronter = '<script src="https://www.vucdigital.dk/library/js/iframe.js" data="'+ UrlVarStr + HrefObj +'"></script>';
     var embedMoodle = '<iframe height="570" width="100%" frameborder="0" allow="microphone" src="' + UrlVarStr + HrefObj + '"></iframe>';
     
     //var embedMoodle = embedFronter; //'<embed height="670" width="100%" src="' + UrlVarStr + HrefObj + '"></embed>';

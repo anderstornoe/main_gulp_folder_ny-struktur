@@ -8,6 +8,9 @@
 //     return replaced_string;
 // }
 
+console.log("hejsa!");
+
+
 function visningssite_wrapping() {
     console.log("wrapping ongoging");
 }
@@ -82,13 +85,13 @@ function embedlink(obj) {
 
     console.log("HrefObj: " + HrefObj);
 
-    var embedFronter = '<script src="https://www.vucdigital.dk/iframe.js" data="'+ UrlVarStr + HrefObj +'"></script>';
+    var embedFronter = '<script src="https://www.vucdigital.dk/library/js/iframe.js" data="'+ UrlVarStr + HrefObj +'"></script>';
     var embedMoodle = '<iframe height="570" width="100%" frameborder="0" allow="microphone" src="' + UrlVarStr + HrefObj + '"></iframe>';
-    // <<<<<<< HEAD
+    
     //var embedMoodle = embedFronter; //'<embed height="670" width="100%" src="' + UrlVarStr + HrefObj + '"></embed>';
     // =======
     // var embedMoodle = '<embed height="670" width="970" src="' + UrlVarStr + HrefObj + '"></embed>';
-    // >>>>>>> 74fec925709b0def67b697ad47831c62fd4ebf36
+    
 
     // var embedFronter = '<iframe height="570" width="820" src="http://eundervisning-wp.dk/pf_kem2015/' + obj.parent().parent().find("a").eq(0).attr("href") + '"></iframe>';
     // var embedMoodle = '<embed height="670" width="970" src="http://eundervisning-wp.dk/pf_kem2015/' + obj.parent().parent().find("a").eq(0).attr("href") + '"></embed>';

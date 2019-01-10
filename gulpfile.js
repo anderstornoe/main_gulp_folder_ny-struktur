@@ -33,9 +33,6 @@
          'bower_components/qtip2/jquery.qtip.js',
          'bower_components/vue/dist/vue.min.js',
          'bower_components/anyresize/any-resize-event.js'
-
-
-
      ],
 
      cssSources = [
@@ -46,7 +43,7 @@
 
 
  gulp.task('log', function() {
-     gutil.log("Log kører bro....");
+     gutil.log("Log kører.. ");
  });
 
  gulp.task('js', function() {
@@ -101,12 +98,13 @@
 
  //ALT DER VEDRØRER PRODUCTION, TRIMMING OG DEPLOYMENT:  POSSIBLE ARGUMENT-CALL FROM TERMINAL: "gulp copy_production --option objekter/development/My_Object_Folder_Name"
  gulp.task('copy_production', function() {
+    gutil.log("copy_production initiated");
 
      var objSrcFolder = "**";
      var objDistFolder = "";
      var objPath = process.argv[4]; // Get the argument "objekter/development/My_Object_Folder_Name" from the call.
 
-     // gutil.log("copy_production - objPath 1: " + objPath );  //  TILFOEJET d. 29-02-2016
+     gutil.log("copy_production - objPath 1: " + objPath );  //  TILFOEJET d. 29-02-2016
 
      if (typeof objPath !== "undefined") { // Only executed if an argument is given in the call to the gulp-task.
          objPath = String(objPath);
@@ -137,6 +135,7 @@
 
  // POSSIBLE ARGUMENT-CALL FROM TERMINAL: "gulp deploy --option objekter/development/My_Object_Folder_Name" 
  gulp.task('trim_files', function() {
+    gutil.log("trim_files initiated");
 
      var objSrcFolder = "**";
      var objDistFolder = "";
