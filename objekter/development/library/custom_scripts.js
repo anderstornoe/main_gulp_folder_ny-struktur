@@ -8,7 +8,7 @@
 //     return replaced_string;
 // }
 
-console.log("hejsa!");
+console.log("hej!");
 
 
 function visningssite_wrapping() {
